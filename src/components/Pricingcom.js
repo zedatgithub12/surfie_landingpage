@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
 import { Link, useNavigate } from "react-router-dom";
-import IntroImage from "../assets/mob.png";
-import { BsCircle } from "react-icons/bs";
 import Cbe from "../assets/cbe.png";
 import Telebirr from "../assets/telebirr.png";
 import Amole from "../assets/amole.png";

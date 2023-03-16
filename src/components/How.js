@@ -2,9 +2,8 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import IntroImage from "../assets/mob.png";
-import Button from "react-bootstrap/Button";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import {
   MdWebAssetOff,

@@ -1,16 +1,14 @@
 import React from "react";
-import { Col, Container, Row, Input, Button } from "react-bootstrap";
-import { MdFacebook, MdTimer } from "react-icons/md";
+import { Col, Container, Row } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 import { RiQuestionnaireFill } from "react-icons/ri";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
-import { FaInstagram, FaTelegram } from "react-icons/fa";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { GoLocation } from "react-icons/go";
 
-import { Link, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 
 function Faqfull() {
