@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import { GiBinoculars } from "react-icons/gi";
 import { RiParentLine } from "react-icons/ri";
 import { FcMindMap } from "react-icons/fc";
-import { Container, Row, Col } from "react-bootstrap";
+import {  Row } from "react-bootstrap";
 
 function Teamcarousel() {
   const [index, setIndex] = useState(0);

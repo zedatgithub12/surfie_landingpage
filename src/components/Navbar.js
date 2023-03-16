@@ -1,26 +1,12 @@
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-
-import logo from "../assets/logo.png";
 import Surfie from "../assets/surfie.png";
-
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-
-import { FaBars, FaTimes } from "react-icons/fa";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import { NavItem } from "react-bootstrap";
 
 const Navbars = () => {
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
-
-  const [color, setColor] = useState(false);
-
-  const [showBasic, setShowBasic] = useState(false);
   return (
     <Navbar className="colored" expand="lg" sticky="top" >
       <Container fluid>

@@ -1,5 +1,3 @@
-
-import IntroImage from "../assets/bg.png";
 import Coca from "../assets/coca.png";
 import Rainbow from "../assets/rainbow.png";
 import Uniceif from "../assets/uniseif.png";

@@ -1,6 +1,4 @@
 import React from "react";
-import { Container, Navbar, NavLink } from "react-bootstrap";
-
 import Navbars from "../components/Navbar";
 import HeroImage from "../components/HeroImage";
 import Footer from "../components/Footer";
