@@ -701,11 +701,11 @@ function CreateAccount() {
 
               <Col>
                 <Link
-                  to="/customers"
+                  to="/"
                   variant = "light"
                   className="
                 d-flex justify-content-evenly align-self-center
-                text-decoration-none text-dark btn primary-bg text-dark "
+                text-decoration-none text-dark btn primary-fill text-dark "
                 >
                   Home
                 </Link>
