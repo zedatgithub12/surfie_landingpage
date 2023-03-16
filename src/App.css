@@ -1,0 +1,266 @@
+
+.license {
+    width: 80px;
+    height: 80px;
+   z-index: 1000;
+}
+.space{
+    margin-top: -50px;
+    overflow: visible;
+}
+.features{
+    width: 120px;
+    height: 120px;
+}
+.fcard{
+    width: 80px;
+    height: 80px;
+}
+.faq{
+    width: 90px;
+    height: 90px;
+}
+.contact{
+    width: 70px;
+    height: 70px;
+}
+
+.nav-link.active{
+font-weight:bold;
+ }
+
+
+.primary-bg{
+    color: #00c6d4;
+  }
+  .primary-fill{
+    background-color: #00c6d4;
+  }
+  
+  .primary-text{
+    color: #00c6d4;
+  }
+
+
+  .btncolor{
+    background-color: #00c6d4;
+    border: none;
+    color: rgb(255, 255, 255);
+    border-radius: 0.5vh;
+  }
+  .colored2{
+    background-color:#eff7f7;
+   } 
+   .colored{
+    background-color:hsl(184, 100%, 42%,0.85);
+    
+   }  
+   
+   .textcolor-w{
+    color: aliceblue;
+   }
+
+.textcolor-c{
+  color: #afe0e4;
+}
+
+.textcolor-ct{
+  background-color :rgb(255,255,255,0.2);
+}  
+.cardcol{
+  background-color: #faffff;
+}
+
+
+/* Heero image */
+
+#frontimage{
+  background-image: url("./assets/bg.png");
+  background-color: #00eeff;
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+
+  width: 98.6vw;
+  height: 100%;
+}
+
+
+.colored1{
+background-color:#eff7f7;
+
+
+}  
+
+
+.content1{
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 30px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+}
+.content2{
+
+font-family: 'Merriweather';
+font-style: normal;
+font-weight: 700;
+font-size: 64px;
+line-height: 80px;
+
+color: #FFFFFF;
+}
+.content3{
+
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+display: flex;
+align-items: center;
+color: #FFFFFF;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button{
+   
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+
+}
+
+
+@media screen and (min-width:320px) and (max-width:480px){
+
+  .content1{
+       left:20px;  
+       font-size:2vh;
+       font-size:3vw;
+       top: 9vh;
+       width:90vw;
+       line-height: normal;
+  }
+      .content2{
+        left:20px;
+        margin-top:4px;
+        font-size:3vh;
+        font-size:7vw;
+        width:90vw;
+        top: 15vh;
+       line-height: normal;
+         
+      }
+          .content3{
+            left:20px;            
+            font-size:2vh;
+            font-size:3.5vw;
+            width:75vw;
+            top: 19.3vh;
+            line-height: normal;
+            
+          }
+    #getbutton{
+     display: none;
+    }
+
+    #sponsor {
+    width: 20vw ;  
+      }
+      #image{ display: none;}
+ 
+
+}   
+
+
+@media screen and (min-width:480px) and (max-width:767px){
+  .content1{
+    left:20px;  
+    font-size:4vh;
+    font-size:3vw;
+    width:90vw;
+    top: 12vh;
+    line-height: normal;
+}
+   .content2{
+     left:20px;
+     margin-top:4px;
+     font-size:3vh;
+     font-size:7vw;
+     width:70vw;
+     top: 17vh;
+    line-height: normal;
+
+   }
+       .content3{
+        left:20px;  
+    font-size:4vh;
+    font-size:3vw;
+    width:65vw;
+    top: 31.5vh;
+    line-height: normal;
+         
+       }
+ #getbutton{
+  display: none;
+ }
+ #sponsor {
+  width: 20vw ;  } 
+  
+  #image{ display: none;}
+
+
+}
+
+@media screen and (min-width:768px) and (max-width:1024px){
+  .content1{
+    left:30px;  
+    font-size:2vh;
+    font-size:2vw;
+    width:50vw;
+    top: 12vh;
+    line-height: normal;
+}
+   .content2{
+     left:30px;
+     margin-top:4px;
+     font-size:2vh;
+     font-size:6vw;
+     width:70vw;
+     top: 19vh;
+    line-height: normal;
+      
+   }
+    .content3{
+    left:30px;  
+    font-size:4vh;
+
+    font-size:2.3vw;
+    width:50vw;
+    top: 40vh;
+    line-height: normal;
+         
+       }
+ .button{
+  top: 15vh;
+
+ }
+ #image{
+  width: 50vw;
+  height: 50vw;
+  padding-top: 0vh;
+  padding-bottom: 0vh;
+}
+    
+#card{
+    padding-left: 10vw;
+    padding-right: 10vw;
+}    
+}

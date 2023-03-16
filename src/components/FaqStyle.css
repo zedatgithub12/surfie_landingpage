@@ -1,0 +1,24 @@
+
+.faq{
+    position: absolute;  
+    height: 45px;
+    left: 453px;
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 45px;
+  justify-content: center;
+  color: #515151;
+  }
+  .faq1{
+    position: absolute;
+    width: 1062px;
+    height: 86px;
+    left: 206px;
+    right:171;
+    top: 4341px;    
+    background: #EFF6FF;
+    border-radius: 4px;
+  }
+  
