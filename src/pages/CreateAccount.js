@@ -22,6 +22,7 @@ import { BsCheckCircle } from "react-icons/bs";
 import Connection from "../constants/Connections";
 import Modal from "react-bootstrap/Modal";
 import Navbars from "../components/Navbar";
+import Constants from "../constants/Constants";
 
 
 function CreateAccount() {
@@ -159,23 +160,24 @@ function CreateAccount() {
   };
 
   // the phone number to be sent to puresight
-  //which a character at the start of phone number shouldn't contain any special character
+  // which a character at the start of phone number shouldn't contain any special character
 
-  // const MakeitPhone = (phone) => {
-  //   var FirstChar = phone.charAt(0);
-  //   var Phoneno = phone;
-  //   var ccode = "251";
+  const MakeitPhone = (phone) => {
+    var FirstChar = phone.charAt(0);
+    var Phoneno = phone;
+    var ccode = "251";
 
-  //   if (FirstChar === "+") {
-  //     Phoneno = phone.slice(1, phone.length - 1);
-  //   } else if (FirstChar === 0) {
-  //     Phoneno = parseInt(ccode) + phone.slice(1, phone.length - 1);
-  //   }
+    if (FirstChar === "+") {
+      Phoneno = phone.slice(1, phone.length - 1);
+    } else if (FirstChar === 0) {
+      Phoneno = parseInt(ccode) + phone.slice(1, phone.length - 1);
+    }
 
-  //   return Phoneno;
-  // };
+    return Phoneno;
+  };
 
 
+ 
   const Pricing = (license)=>{
     var price;
     switch(license){
@@ -194,8 +196,8 @@ function CreateAccount() {
   }
   //validate user input when user pressed submit button
   const ValidateInput = () => {
-    // var packages = `AFROMINA_${license}`; //packages id to be sent to puresight
-    // console.log(MakeitPhone(input.phone))
+    var packages = `AFROMINA_${license}`; //packages id to be sent to puresight
+ 
 
     if (
       input.firstname === "" ||
@@ -240,29 +242,13 @@ function CreateAccount() {
 
       return false;
     } else {
-      // var RemoteApi = Connection.remote;
-      // var headers = {
-      //   "Content-Type": "application/json",
-      //   "Access-Control-Allow-Origin": "*",
-      // };
-      // var Datas = {
-      //   adminUser: Constants.user,
-      //   adminPassword: Constants.password,
-      //   email: input.emailaddress,
-      //   emailSecondary: MakeitPhone(input.phone),
-      //   packageId: packages,
-      //   subscriptionId: 1,
-      //   externalRef: "AfroMiNA",
-      // };
+      var RemoteApi = Connection.remote+ `CreateAccountWithPackageId.py?adminUser=${Constants.user}&adminPassword=${Constants.password}&email=${input.emailaddress}&phoneNumber=${MakeitPhone(input.phone)}&packageId=${packages}&subscriptionId=1&externalRef=AFROMINA`;
 
-      // fetch(RemoteApi, {
-      //   method: "POST",
-      //   headers: headers,
-      //   body: JSON.stringify(Datas),
-      // })
-      //   .then((res) => res.json())
-      //   .then((res) => {
-      //     if (res.Status.id == 0) {
+      fetch(RemoteApi)
+      
+      .then((res) => {
+        console.log(res.Status.id);
+          if (res.Status.id === 0) {
         setLoading(true);
       var Api = Connection.api + Connection.customers; // update this line of code to the something like 'http://localhost:3000/customers?_page=${currentPage}&_limit=${limit}
       var headers = {
@@ -270,11 +256,12 @@ function CreateAccount() {
         "Content-Type": "application/json",
       };
       const data = {
+        remote_id: res.Account.account_id,
         firstname: input.firstname,
         middlename: input.middlename,
         lastname: input.lastname,
         emailaddress: input.emailaddress,
-        phone: input.phone,
+        phone: MakeitPhone(input.phone),
         address: input.address,
         username: input.username,
         password: input.password,
@@ -308,31 +295,53 @@ function CreateAccount() {
             setLoading(false);
           }
         });
-      // } else if (res.Status.id == 1001) {
-      //   console.log(res.Status.desc);
-      // } else if (res.Status.id == 1002) {
-      //   console.log(res.Status.desc);
-      // } else if (res.Status.id == 1003) {
-      //   console.log(res.Status.desc);
-      // } else if (res.Status.id == 1004) {
-      //   console.log(res.Status.desc);
-      // } else if (res.Status.id == 1005) {
-      //   console.log(res.Status.desc);
-      // } else if (res.Status.id == 1006) {
-      //   console.log(res.Status.desc);
-      // } else if (res.Status.id == 1007) {
-      //   console.log(res.Status.desc);
-      // } else if (res.Status.id == 1008) {
-      //   console.log(res.Status.desc);
-      // } else if (res.Status.id == 1009) {
-      //   console.log(res.Status.desc);
-      // } else {
-      //   console.log("couldn't trace error");
-      // }
+      } else if (res.Status.id === 1001) {
+        setInput({
+          ...input,
+          errormessage: "Error Missing Parameter!",
+        });
+       
+      } else if (res.Status.id === 1002) {
+        setInput({
+          ...input,
+          errormessage: "Invalid Username or Password!",
+        });
+     
+      } else if (res.Status.id === 1004) {
+         setInput({
+          ...input,
+          errormessage: "Invalid Package Id!",
+        });
+      }
+      else if (res.Status.id === 2021) {
+        setInput({
+          ...input,
+          errormessage: "Email already exist!",
+        });
+      }
+       else if (res.Status.id === 2022) {
+        setInput({
+          ...input,
+          errormessage: "Phone number already exist!",
+        });
+  
+      } else {
+       
+        setInput({
+          ...input,
+          errormessage: "Invalid response!",
+        });
+      }
+        }
+      ).catch((e)=>{
+        console.log(e);
+      })
     }
 
     return true;
   };
+
+  
 
   
   return (
