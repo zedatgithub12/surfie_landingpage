@@ -4,30 +4,30 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
-import Button from '@mui/material/Button';
+
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
 const steps = [
   {
-    label: 'Get start',
-    description: `Press get started button and create account, select number of
-    license and pay the subscription fee.`,
+    label: <h6>Get start</h6>,
+    description: <p>Press get started button and create account, select number of
+    license and pay the subscription fee.</p>,
   },
   {
-    label: 'Downlaod Parent Application',
-    description:`There is an email sent to email address provided while creating an
+    label: <h6>Downlaod Parent Application</h6>,
+    description:<p>There is an email sent to email address provided while creating an
       account the email and click download parent app link and download
-      parent app`,
+      parent app</p>,
   },
   {
-    label: 'Download Child Application',
-    description: `Download child app on child device and enter your email in the
-    parent email field and click finish`,
+    label: <h6>Download Child Application</h6>,
+    description: <p>Download child app on child device and enter your email in the
+    parent email field and click finish</p>,
   },
   {
-    label: 'Last Step done setup ',
-    description: `Tada! it’s done you have set all account setup! if you are looking for how to manage your account online Sign in`,
+    label: <h6>Last Step </h6>,
+    description: <p>Tada! it’s done you have set all account setup! if you are looking for how to manage your account online Sign in</p>,
   },
 
  
@@ -49,21 +49,21 @@ export default function VerticalLinearStepper() {
   };
 
   return (
-    <Box sx={{ maxWidth: 1000 }}>
-      <Stepper activeStep={activeStep} orientation="vertical">
-        {steps.map((step, index) => (
+    <Box className="text-muted" sx={{ maxWidth: 1000 }}>
+      <Stepper  activeStep={activeStep} orientation="vertical">
+        {steps.map ((step, index) => (
           <Step key={step.label}>
             <StepLabel
               optional={
                 index === 3 ? (
-                  <Typography variant="caption">Last step</Typography>
+                  <Typography className="primary-bg" variant="caption">Last step</Typography>
                 ) : null
               }
             >
               {step.label}
             </StepLabel>
             <StepContent>
-              <Typography>{step.description}</Typography>
+              <Typography >{step.description}</Typography>
               <Box sx={{ mb: 2 }}>
                 <div>
                   <button type="button"  className="mt-2 p-2 btncolor"
@@ -89,7 +89,7 @@ export default function VerticalLinearStepper() {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} sx={{ p: 3 }}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
+          <Typography className="primary-bg" >All steps completed - you&apos;re finished</Typography>
           <button type="button" className="mt-3 btn btn-light border border-2" onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
             Reset
           </button>

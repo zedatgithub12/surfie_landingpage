@@ -30,10 +30,10 @@ function Faqfull() {
       <Container>
         <Row className="pb-5 d-flex justify-content-center align-items-center ">
           <Col sm={10}>
-            <Accordion >
+            <Accordion flush>
               <Accordion.Item eventKey="0">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className=" py-2">
                     Can i disconnect my children's devices from the Internet in
                     case they spent too much time online?</h6>
                 </Accordion.Header>
@@ -46,7 +46,7 @@ function Faqfull() {
               </Accordion.Item>
               <Accordion.Item eventKey="1">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className=" py-2">
                     I installed the child-app on my children's iphones but i do
                     not see any information on what application they used?</h6>
                 </Accordion.Header>
@@ -60,7 +60,7 @@ function Faqfull() {
               </Accordion.Item>
               <Accordion.Item eventKey="2">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className="py-2">
                     During the SurfieEthiopia-Kid app installation, I got a VPN
                     connection error "Your certeficate is permature" what shouid i
                     do?</h6>
@@ -76,7 +76,7 @@ function Faqfull() {
 
               <Accordion.Item eventKey="3">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className=" py-2">
                     I forgot my Parental app password. what can i do?</h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
@@ -87,7 +87,7 @@ function Faqfull() {
               </Accordion.Item>
               <Accordion.Item eventKey="5">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className="py-2">
                     I have Surfie Ethiopia installed on my son's device and i want
                     to give this device to my daughter now. How can i change the
                     profile?</h6>
@@ -103,7 +103,7 @@ function Faqfull() {
               </Accordion.Item>
               <Accordion.Item eventKey="6">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className=" py-2">
                     I have Surfie Ethiopia installed on my son's device and i want
                     to give this device to my daughter now. How can i change the
                     profile?</h6>
@@ -130,7 +130,7 @@ function Faqfull() {
               </Accordion.Item>
               <Accordion.Item eventKey="7">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className=" py-2">
                     How can i change my child's profile picture?</h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
@@ -147,7 +147,7 @@ function Faqfull() {
               </Accordion.Item>
               <Accordion.Item eventKey="8">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className="py-2">
                     I installed the parental application on my android phone, i
                     then created a profile for my daughter and sent the download
                     link of the child-app to her phone. Later day i checked her
@@ -164,7 +164,7 @@ function Faqfull() {
               </Accordion.Item>
               <Accordion.Item eventKey="9">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className="py-2">
                     I can't see any Facebook activities of my son. why?</h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
@@ -177,7 +177,7 @@ function Faqfull() {
               </Accordion.Item>
               <Accordion.Item eventKey="10">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className=" py-2">
                     I subscribed from your service, How do i delete my account?</h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
@@ -189,7 +189,7 @@ function Faqfull() {
               </Accordion.Item>
               <Accordion.Item eventKey="11">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className="py-2">
                     How do i cancel my subscription?</h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
@@ -225,7 +225,7 @@ function Faqfull() {
               </Accordion.Item>
               <Accordion.Item eventKey="12">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className="py-2">
                     My daughter's profile is gray and it says "You turned her
                     device off". How do i turn it on again?</h6>
                 </Accordion.Header>
@@ -237,7 +237,7 @@ function Faqfull() {
               </Accordion.Item>
               <Accordion.Item eventKey="13">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className="py-2">
                     I used the option to disconnect the computer of son from the
                     internet. Now i want to reconnect him, but it does't seem to
                     work. what can i do?</h6>
@@ -251,7 +251,7 @@ function Faqfull() {
               </Accordion.Item>
               <Accordion.Item eventKey="14">
                 <Accordion.Header>
-                  <h6 className="fw-bold py-2">
+                  <h6 className=" py-2">
                     I do not see my daughter's location anymore and i don't get
                     notification when she leaves school. what can i do?</h6>
                 </Accordion.Header>
