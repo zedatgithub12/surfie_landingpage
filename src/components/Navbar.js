@@ -8,44 +8,50 @@ import { NavItem } from "react-bootstrap";
 
 const Navbars = () => {
   return (
-    <Navbar className="colored" expand="lg" sticky="top" >
+    <Navbar className=" colored " expand="lg" sticky="top" >
       <Container fluid>
         <Navbar.Brand href="/">
           <img
-            className=" ms-3 "
+            className=" ms-4 "
             src={Surfie}
             alt="Surfie"
-            width="80px"
-            height="40px"
+            width="90px"
+            height="43px"
           />{" "}
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbarScroll" />
 
-        <Navbar.Collapse id="navbarScroll" className="  m-auto align-center">
-          <Nav className=" me-auto my-2 my-lg-0 ms-4 ">
+        <Navbar.Collapse  className="  m-auto align-center">
+          <Nav className="me-auto my-2 my-lg-0 ">
+            
+          <NavItem>
+              <NavLink className=" nav-link ps-5 ">               
+              </NavLink>
+            </NavItem>
+
             <NavItem>
-              <NavLink to="/" className=" text-white nav-link ">
+              <NavLink to="/" className=" text-white nav-link ps-5 ">
                 Home
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/features" className="nav-link text-white">
+              <NavLink to="/features" className="nav-link text-white ps-5">
                 Features
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/pricing" className="nav-link text-white">
+              <NavLink to="/pricing" className="nav-link text-white ps-5">
                 Pricing
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/about" className="nav-link text-white">
+              <NavLink to="/about" className="nav-link text-white ps-5">
                 About Us
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/contact" className="nav-link pb-3 text-white">
+              <NavLink to="/contact" className="nav-link pb-3 text-white ps-5">
                 Contact
               </NavLink>
             </NavItem>
@@ -57,7 +63,7 @@ const Navbars = () => {
             </NavLink>
           </NavItem> */}
 
-<NavLink to="/account" className="btn btn-outline-light ">
+<NavLink to="/account" className="ms-3 px-4 button btn btn-outline-light get">
             Get started
           </NavLink>
         </Navbar.Collapse>

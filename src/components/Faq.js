@@ -12,10 +12,10 @@ const Faq = () => {
         </Row>
         <Row className="pb-5 d-flex justify-content-center align-items-center ">
           <Col sm={10}>
-            <Accordion defaultActiveKey="0">
+            <Accordion defaultActiveKey="0" class="accordion accordion-flush" >
             <Accordion.Item eventKey="0">
                 <Accordion.Header>
-                <h6 className="fw-bold py-2">
+                <h6 className="fw-semibold py-1">
                   Can i disconnect my children's devices from the Internet in
                   case they spent too much time online?</h6>
                 </Accordion.Header>
@@ -28,7 +28,7 @@ const Faq = () => {
               </Accordion.Item>
               <Accordion.Item eventKey="1">
                 <Accordion.Header>
-                <h6 className="fw-bold py-2">
+                <h6 className="fw-semibold py-1">
                   I installed the child-app on my children's iphones but i do
                   not see any information on what application they used?</h6>
                 </Accordion.Header>
@@ -42,7 +42,7 @@ const Faq = () => {
               </Accordion.Item>
               <Accordion.Item eventKey="2">
                 <Accordion.Header>
-                <h6 className="fw-bold py-2">
+                <h6 className="fw-semibold py-1">
                   During the SurfieEthiopia-Kid app installation, I got a VPN
                   connection error "Your certeficate is permature" what shouid i
                   do?</h6>
@@ -58,7 +58,7 @@ const Faq = () => {
 
               <Accordion.Item eventKey="3">
                 <Accordion.Header>
-                <h6 className="fw-bold py-2">
+                <h6 className="fw-semibold py-1">
                   I forgot my Parental app password. what can i do?</h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">

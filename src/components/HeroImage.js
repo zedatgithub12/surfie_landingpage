@@ -1,11 +1,12 @@
-import Coca from "../assets/coca.png";
-import Rainbow from "../assets/rainbow.png";
-import Uniceif from "../assets/uniseif.png";
+import Afromina from "../assets/afromina.png";
+import Puresight from "../assets/puresight.png";
+import Surfiecolor from "../assets/surfiecolor.png";
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import { NavLink } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 
 
 const HeroImage = () => {
@@ -18,20 +19,13 @@ const HeroImage = () => {
           <div className=" mt-3 pt-1 ms-4" >
 
           </div>
-          <h5 className="mt-5 pt-5 ms-3 w-75 pb-2 text-white" >
-            We are ensuring online safety for families and children in Ethiopia{" "}
-          </h5>
-          <h1 className="  ms-3 fw-bold text-white"> Parental Control Application</h1>
-          <p className=" mb-5 ms-3 text-light mt-4 w-75">
-
-            By proving a parental control mobile application for parents that
-            will allow them to be involved and supportive of their child`s
-            internet use, without affecting their child's digital skills and
-            familiarity with the online environment.
-
-          </p>
-
-          <NavLink to="/account" className="btn button btn-outline-light mb-5 ms-4 ">
+          <h6 className="mt-5 pt-5 ms-2  text-white" >
+            AI-Based Online Child Safety Service
+          </h6>
+         
+          <h1 className="  ms-2 fw-bold text-white w-85"> Parental Control Application</h1>
+      
+          <NavLink to="/account" className="mt-4 get btn button btn-outline-light mb-5 ms-3 px-3">
             Get started
           </NavLink>
 
@@ -43,13 +37,33 @@ const HeroImage = () => {
 
       </Row>
 
-      <Row className=" colored1">
-        <Col className=" d-flex align-items-center justify-content-center" >
-          <img className="pe-3 me-2" src={Coca} alt="Cocacola" width={150} id="sponsor" />
-          <img className="pe-3 me-2" src={Rainbow} alt="Rainbow" width={150} id="sponsor" />
-          <img className="pe-3 me-2" src={Uniceif} alt="Uniceif" width={150} id="sponsor" />
+      <Marquee gradientWidth={50} className=" colored1 " >
+      
+        <Row className=" align-items-center justify-content-between ">
+       
+        <Col>
+          <img className="image_wrap" src={Afromina} alt="Afromina" />
+          </Col>
+          <Col>
+          <img className="image_wrap" src={Puresight} alt="Puresight"  />
+          </Col>
+          <Col>
+          <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor"  />
         </Col>
-      </Row>
+        <Col>
+          <img className="image_wrap" src={Afromina} alt="Afromina" />
+          </Col>
+          <Col>
+          <img className="image_wrap" src={Puresight} alt="Puresight"  />
+          </Col>
+          <Col>
+          <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor"  />
+        </Col>
+
+        </Row>
+       
+      </Marquee>
+  
     </Container>
   );
 };

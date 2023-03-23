@@ -2,8 +2,10 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import IntroImage from "../assets/mob.png";
-
-import { useNavigate } from "react-router-dom";
+import Apple from "../assets/apple.png";
+import Google from "../assets/google.png";
+import Progressbar from "../components/Progressbar";
+import { Link, useNavigate } from "react-router-dom";
 
 import {
   MdWebAssetOff,
@@ -16,13 +18,13 @@ import { AiTwotoneSafetyCertificate } from "react-icons/ai";
 
 function How() {
   const navigate = useNavigate();
-  
+
   return (
     <div>
       <Container>
         <Row className="d-flex p-4 mt-3">
-          <h1 className="text-left pt-5"> How it works </h1>
-          <h4 className="pb-4 mb-5 text-muted"> Feature of Surfie Ethiopia </h4>
+          <h2 className="text-left pt-3"> Feature of Surfie Ethiopia </h2>
+       
         </Row>
 
         <Row>
@@ -31,12 +33,12 @@ function How() {
               <Card.Body>
                 <div className="d-flex justify-content-end position-absolute end-0 top-0 m-2 ">
                   <span className="align-items-center rounded-circle shadow-sm  border-light bg-white border ">
-                    <MdTimer size={22}  className="primary-bg m-2" />
+                    <MdTimer size={30} className="primary-bg m-2" />
                   </span>
                 </div>
                 <Card.Title>Set Time Limit</Card.Title>
-                <Card.Text>
-                  You can set how many hour your kids can use the digital device
+                <Card.Text className="text-muted">
+                  You can set how many hour your kids can use the digital device.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -45,12 +47,12 @@ function How() {
               <Card.Body>
                 <div className="d-flex justify-content-end position-absolute end-0 top-0 m-2 ">
                   <span className="align-items-center rounded-circle shadow-sm  border-light bg-white border ">
-                    <MdDevices size={22}  className="m-2 primary-bg" />
+                    <MdDevices size={30} className="m-2 primary-bg" />
                   </span>
                 </div>
                 <Card.Title>Cross Devices Protection</Card.Title>
-                <Card.Text>
-                  Provides protection at home and on the go on mobile devices{" "}
+                <Card.Text className="text-muted">
+                  Provides protection at home and on the go on mobile devices.{" "}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -59,23 +61,22 @@ function How() {
               <Card.Body>
                 <div className="d-flex justify-content-end position-absolute end-0 top-0 m-2 ">
                   <span className="align-items-center rounded-circle shadow-sm  border-light bg-white border ">
-                    <MdLocationPin size={22}  className="primary-bg m-2" />
+                    <MdLocationPin size={30} className="primary-bg m-2" />
                   </span>
                 </div>
                 <Card.Title>Track Location</Card.Title>
-                <Card.Text>
+                <Card.Text className="text-muted">
                   You can keep track of your child location and also set allowed
-                  geofence intervals
+                  geofence intervals.
                 </Card.Text>
               </Card.Body>
             </Card>
           </Col>
 
-          <Col 
+          <Col
             xl={6}
             className="d-flex justfy-content-center align-items-center rounded-circle m-auto"
-            
-         >
+          >
             <img
               className=" justfy-content-center border border-info m-auto rounded-circle"
               src={IntroImage}
@@ -91,12 +92,12 @@ function How() {
               <Card.Body>
                 <div className="d-flex justify-content-end position-absolute end-0 top-0 m-2 ">
                   <span className="align-items-center rounded-circle shadow-sm  border-light bg-white border ">
-                    <MdWebAssetOff size={22} className="primary-bg m-2" />
+                    <MdWebAssetOff size={30} className="primary-bg m-2" />
                   </span>
                 </div>
                 <Card.Title>Web filtering</Card.Title>
 
-                <Card.Text className="text-dark">
+                <Card.Text className="text-muted">
                   You can block website access and allow the one you trusted.
                 </Card.Text>
               </Card.Body>
@@ -107,13 +108,13 @@ function How() {
                 <div className="d-flex justify-content-end position-absolute end-0 top-0 m-2 ">
                   <span className="align-items-center rounded-circle shadow-sm  border-light bg-white border ">
                     <MdOutlineAppBlocking
-                      size={22}
+                      size={30}
                       className=" primary-bg m-2"
                     />
                   </span>
                 </div>
                 <Card.Title>Block Apps</Card.Title>
-                <Card.Text>
+                <Card.Text className="text-muted">
                   You can block unwanted app access and allow the one you
                   trusted.
                 </Card.Text>
@@ -125,61 +126,71 @@ function How() {
                 <div className="d-flex justify-content-end position-absolute end-0 top-0 m-2 ">
                   <span className="align-items-center rounded-circle shadow-sm  border-light bg-white border ">
                     <AiTwotoneSafetyCertificate
-                      size={22}
+                      size={30}
                       className=" primary-bg m-2"
                     />
                   </span>
                 </div>
                 <Card.Title>Online Safety</Card.Title>
-                <Card.Text>Catch & block offensive contents.</Card.Text>
+                <Card.Text className="text-muted">
+                  Catch & block offensive contents.
+                </Card.Text>
               </Card.Body>
             </Card>
 
-           
-           
-            <button type="button"  className=" btncolor mb-5 p-2 " onClick={() => navigate("/features")}>
-            Find More
-              </button>
-
-
-
+            <Link className=" mb-5 p-2 fs-6  " id="find" to="/features">
+              Find More
+            </Link>
           </Col>
         </Row>
       </Container>
 
       <Container>
         <Row className=" mb-3 ">
-          
           <Col lg={5} className="mt-5">
             <h2 className="text-left  pt-5"> How to get started</h2>
-            <h5 className="pb-4 mt-4 text-muted ">
-              To use surfie and manage your kids device first you should
-              download surfie child Application.
-            </h5>
+            <p className="pb-4 mt-4 text-muted ">
+              To use Surfie and manage your kids device first you should
+              download Surfie Parent, click down below.
+            </p>
 
             <Row className="pt-2 pb-2 d-grid gap-5 d-md-flex">
-           <Col>
-              <button
-            type="button"
-            className="btncolor m-2 p-2 ps-5 pe-5  me-3"
-            onClick={() => navigate("/")}
-          >For Android</button>
+              <Col>
+                <img
+                  src={Apple}
+                  alt="Apple"
+                  width="200px"
+                  height="50px"
+                  className="mx-2  my-2 pointer"
+                  onClick={() =>
+                    navigate(
+                      "https://apps.apple.com/us/app/surfie-parent/id997309073"
+                    )
+                  }
+                />
 
-            <button
-            type="button"
-            className="m-2 p-2 ps-5 pe-5 btn btn-light border border-1 me-3"
-            onClick={() => navigate("/")}
-          >For Iphone</button>            
+                <img
+                  src={Google}
+                  alt="Google"
+                  width="200px"
+                  height="50px"
+                  className="mx-2  my-2 pointer"
+                  onClick={() =>
+                    navigate(
+                      "https://play.google.com/store/apps/details?id=com.puresight.surfie.parentapp"
+                    )
+                  }
+                />              
 
-</Col>
+
+
+              </Col>
             </Row>
-            </Col>
-         
+          </Col>
+          <Col sm={1} className="mt-5"></Col>
 
-          <Col sm={1} className="mt-5">
-            </Col>
-
-          <Col lg={6} className="mt-5">
+          <Col lg={6} className="mt-4">
+            <Progressbar />
           </Col>
 
         </Row>
