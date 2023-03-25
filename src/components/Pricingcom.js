@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Cbe from "../assets/cbe.png";
 import Telebirr from "../assets/telebirr.png";
-
+import { NavLink } from "react-router-dom";
 import Cash from "../assets/cash.png";
 import Chapa from "../assets/chapa.png";
 
 function Pricingcom() {
-  const navigate = useNavigate();
+ 
 
   const [monthly, setMonthly] = useState(true);
 
@@ -69,18 +69,20 @@ function Pricingcom() {
                 </h1>
               ) : (
                 <h1 className="card-title pricing-card-title">
-                  ETB 3,300<small className="text-muted fw-light">/annual</small>
+                  ETB 3,300
+                  <small className="text-muted fw-light">/annual</small>
                 </h1>
               )}
-              
-              {monthly ? ( 
+
+              {monthly ? (
                 <ul className="list-unstyled mt-5 mb-5">
                   <li>14 days free trial for 1 month subscription</li>
                 </ul>
-                ) : ( 
+              ) : (
                 <ul className="list-unstyled mt-5 mb-5">
-                 <li>Annually Pay only 3,300 ETB Get 1 month free</li>
-                </ul> )}
+                  <li>Annually Pay only 3,300 ETB Get 1 month free</li>
+                </ul>
+              )}
 
               <Link
                 to="/pricing"
@@ -112,14 +114,15 @@ function Pricingcom() {
                   <small className="text-muted fw-light">/annual</small>
                 </h1>
               )}
-              {monthly ? ( 
+              {monthly ? (
                 <ul className="list-unstyled mt-5 mb-5">
                   <li>14 days free trial for 1 month subscription</li>
                 </ul>
-                ) : ( 
+              ) : (
                 <ul className="list-unstyled mt-5 mb-5">
-                 <li>Annually Pay only 4,950 ETB Get 1 month free</li>
-                </ul> )}
+                  <li>Annually Pay only 4,950 ETB Get 1 month free</li>
+                </ul>
+              )}
               <Link
                 to="/pricing"
                 className=" w-100 btn btn-lg btn-outline-info"
@@ -150,14 +153,15 @@ function Pricingcom() {
                   <small className="text-muted fw-light">/annual</small>
                 </h1>
               )}
-              {monthly ? ( 
+              {monthly ? (
                 <ul className="list-unstyled mt-5 mb-5">
                   <li>14 days free trial for 1 month subscription</li>
                 </ul>
-                ) : ( 
+              ) : (
                 <ul className="list-unstyled mt-5 mb-5">
-                 <li>Annually Pay only 6,600 ETB Get 1 month free</li>
-                </ul> )}
+                  <li>Annually Pay only 6,600 ETB Get 1 month free</li>
+                </ul>
+              )}
               <Link
                 to="/pricing"
                 className=" w-100 btn btn-lg btn-outline-info"
@@ -176,23 +180,25 @@ function Pricingcom() {
           className="d-flex align-items-center justify-content-center"
         >
           <h6 className="py-4 px-3 ps-0 fs-5">
-            If you want Surfie Ethiopia license for more than 5 devices we have discount!
+            If you want Surfie Ethiopia license for more than 5 devices we have
+            discount!
           </h6>
         </Col>
 
-        <Col lg={3}
-        className="d-flex align-items-center justify-content-center">
-          <button
-            type="button"
-            className="btncolor p-2 px-5 "
-            onClick={() => navigate("/contact")}
-          >
-            Contact
-          </button>
+        <Col
+          lg={3}
+          className="d-flex align-items-center justify-content-center"
+        >
+          <NavLink to="/contact">
+            <button type="button" className="btncolor  p-2 px-5 ">
+              Contact
+            </button>
+          </NavLink>
+          
         </Col>
       </Row>
 
-      <Row className="d-flex pb-0 p-4 mt-3 text-center align-items-center">
+      <Row className="d-flex mb-5 pb-0 p-4 mt-3 text-center align-items-center">
         <Col lg={6}>
           <h1 className="text-left pt-5 pe-3"> Pay with </h1>
           <p className="pb-4 pe-3  text-left  text-muted"> It is Made Easy</p>
@@ -225,7 +231,7 @@ function Pricingcom() {
             width="86px"
             height="89px"
           />
-           <img
+          <img
             className="justfy-content-center p-2 "
             src={Chapa}
             alt="Chapa"

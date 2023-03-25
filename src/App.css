@@ -55,7 +55,8 @@ font-weight:bold;
     border: none;
     color: rgb(255, 255, 255);
     border-radius: 0.5vh;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
+   
   }
   .colored2{
     background-color:#eff7f7;
@@ -80,14 +81,15 @@ font-weight:bold;
   background-color: #faffff;
 }
 .image_wrap{
-  margin: 0px 60px;
-  width:130px;
+  margin: 0px 30px;
+  width:100px;
   filter: grayscale(100%);
   transition: filter 0.25s;
 }
 .image_wrap:hover{
   filter: grayscale(0%);
 }
+
 .pointer {
   cursor: pointer;}
 
@@ -115,7 +117,6 @@ font-weight:bold;
   letter-spacing: 0.2ch;  
   color:  #1896af;
 
-  border: 60%;
 
  }
  .just{
@@ -126,6 +127,22 @@ font-weight:bold;
     color:  #023438;
     box-shadow: 0 5px 15px rgba(181, 236, 250, 0.4);
  }
+
+.btnn{
+  border:none;
+  margin-left: 0%;
+
+}
+.btnn:hover{
+  background-color: #00c6d4;
+
+}
+.bg{
+  background-color: darkgrey;
+}
+.bg:hover{
+  background-color: darkgrey;
+}
 /* Heero image */
 
 #frontimage{
@@ -183,7 +200,7 @@ color: #FFFFFF;
 
 
 
-@media screen and (min-width:320px) and (max-width:480px){
+@media screen and (min-width:280px) and (max-width:480px){
 
   .content1{
        left:20px;  
@@ -216,7 +233,14 @@ color: #FFFFFF;
         padding-left: 10vw;
         padding-right: 10vw;
     }
-
+.alignme{
+  text-align: justify;
+ 
+}
+.reverseit{
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
 }   
 
 
@@ -251,6 +275,7 @@ color: #FFFFFF;
     padding-left: 10vw;
     padding-right: 10vw;
 }
+
 
 }
 
@@ -289,5 +314,15 @@ color: #FFFFFF;
     padding-left: 10vw;
     padding-right: 10vw;
     
-}    
+}   
+.hid{
+  display: none;
+  }
 }
+
+
+@media screen and (min-width:1024) and (max-width:1490px){
+  .hid{
+    display: none;
+    }
+  }
