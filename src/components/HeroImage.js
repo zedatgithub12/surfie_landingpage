@@ -59,7 +59,33 @@ const HeroImage = () => {
           <Col>
           <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor"  />
         </Col>
-
+        <Col>
+          <img className="image_wrap" src={Afromina} alt="Afromina" />
+          </Col>
+          <Col>
+          <img className="image_wrap" src={Puresight} alt="Puresight"  />
+          </Col>
+          <Col>
+          <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor"/>
+        </Col>
+        <Col>
+          <img className="image_wrap" src={Afromina} alt="Afromina" />
+          </Col>
+          <Col>
+          <img className="image_wrap" src={Puresight} alt="Puresight"  />
+          </Col>
+          <Col>
+          <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor"/>
+        </Col>
+        <Col>
+          <img className="image_wrap" src={Afromina} alt="Afromina" />
+          </Col>
+          <Col>
+          <img className="image_wrap" src={Puresight} alt="Puresight"  />
+          </Col>
+          <Col>
+          <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor"/>
+        </Col>
         </Row>
        
       </Marquee>

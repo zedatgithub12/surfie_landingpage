@@ -5,8 +5,8 @@ import IntroImage from "../assets/mob.png";
 import Apple from "../assets/apple.png";
 import Google from "../assets/google.png";
 import Progressbar from "../components/Progressbar";
-import { Link, useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   MdWebAssetOff,
   MdTimer,
@@ -17,14 +17,12 @@ import {
 import { AiTwotoneSafetyCertificate } from "react-icons/ai";
 
 function How() {
-  const navigate = useNavigate();
-
+ 
   return (
     <div>
       <Container>
         <Row className="d-flex p-4 mt-3">
           <h2 className="text-left pt-3"> Feature of Surfie Ethiopia </h2>
-       
         </Row>
 
         <Row>
@@ -38,7 +36,8 @@ function How() {
                 </div>
                 <Card.Title>Set Time Limit</Card.Title>
                 <Card.Text className="text-muted">
-                  You can set how many hour your kids can use the digital device.
+                  You can set how many hour your kids can use the digital
+                  device.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -156,35 +155,21 @@ function How() {
 
             <Row className="pt-2 pb-2 d-grid gap-5 d-md-flex">
               <Col>
-                <img
-                  src={Apple}
-                  alt="Apple"
-                  width="200px"
-                  height="50px"
-                  className="mx-2  my-2 pointer"
-                  onClick={() =>
-                    navigate(
-                      "https://apps.apple.com/us/app/surfie-parent/id997309073"
-                    )
-                  }
-                />
+                <NavLink
+                  to="https://apps.apple.com/us/app/surfie-parent/id997309073"
+                  className="mx-2 my-2 nav-link "
+                >
+                  <img src={Apple} alt="Apple" width="200px" height="50px" />
+                </NavLink>
 
-                <img
-                  src={Google}
-                  alt="Google"
-                  width="200px"
-                  height="50px"
-                  className="mx-2  my-2 pointer"
-                  onClick={() =>
-                    navigate(
-                      "https://play.google.com/store/apps/details?id=com.puresight.surfie.parentapp"
-                    )
-                  }
-                />              
-
-
-
+                <NavLink
+                  to="https://play.google.com/store/apps/details?id=com.puresight.surfie.parentapp"
+                  className="mx-2 my-2 nav-link "
+                >
+                  <img src={Google} alt="Google" width="200px" height="50px" />
+                </NavLink>
               </Col>
+              
             </Row>
           </Col>
           <Col sm={1} className="mt-5"></Col>
@@ -192,7 +177,6 @@ function How() {
           <Col lg={6} className="mt-4">
             <Progressbar />
           </Col>
-
         </Row>
       </Container>
     </div>

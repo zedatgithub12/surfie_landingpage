@@ -5,14 +5,14 @@ import Marquee from "react-fast-marquee";
 import Afromina from "../assets/afromina.png";
 import Puresight from "../assets/puresight.png";
 import Surfiecolor from "../assets/surfiecolor.png";
-import {useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 
 function Aboutus() {
-  const navigate = useNavigate();
+
   return (
-    
     <div className="">
-      <Row className="mt-3 d-flex pb-5 ">
+      <Row className="mt-3 d-flex pb-2 ">
         <Col sm={2}>
           <div className="mt-3 d-flex justify-content-center align-items-center rounded-circle features shadow-sm  colored2 m-auto ">
             <AiOutlineProfile size={80} className="primary-bg m-auto" />
@@ -20,7 +20,7 @@ function Aboutus() {
         </Col>
         <Col sm={7} className=" ps-4">
           <h1 className=""> Who we are </h1>
-          <h6 className=" pt-4 mb-5 text-muted just">
+          <h6 className=" pt-4 p-3  mb-5 text-muted just">
             AfroMiNA Digital Technologies PLC is an African digital solutions
             company based in Ethiopia established back in 2018 with the motto
             “Striving to Narrow Down the Digital Divide in Africa” working
@@ -32,24 +32,27 @@ function Aboutus() {
               currently protecting millions of kids and families all over the
               world, we brought a digital solution called Surfie Ethiopia for
               Ethiopian society to contribute our part in ensuring the online
-              safety of families and children in Ethiopia.  </p>  
-          
-            <button
-             className="p-2 px-5 over align-items-center justify-content-center button"
-            type="button"          
-            onClick={() => navigate("/https://www.puresight.com/#home-stats-cont")}
-          >
-            Overview
-          </button>
-          
+              safety of families and children in Ethiopia.{" "}
+            </p>
+            <NavLink
+              to="https://www.puresight.com/#home-stats-cont"
+              className="mx-2 my-2 nav-link">
+              <button
+                type="button"
+                className="p-2 px-5 over align-items-center justify-content-center button nav-link"
+              >
+                Overview
+              </button>
+            </NavLink>
+
           </h6>
         </Col>
       </Row>
       <Container>
-        <Row className="mt-3 d-flex  pb-5">
+        <Row className="mt-3 d-flex ">
           <Col sm={5} className="pe-3">
             <h2 className=""> Vision </h2>
-            <h6 className=" pb-4 mb-5 text-muted just">
+            <h6 className=" p-3 pb-2 mb-5 text-muted just">
               To be one of the leading forefronts in ensuring online safety for
               families and children in Ethiopia.
             </h6>
@@ -57,7 +60,7 @@ function Aboutus() {
 
           <Col sm={5} className="pe-3">
             <h2 className="">Mission </h2>
-            <h6 className=" pb-4 mb-5 text-muted just">
+            <h6 className="p-3 pb-4 mb-5 text-muted just">
               To support and assure millions of families in Ethiopia to protect
               their children from any online unsafe activities, which they are
               exposed to because of smart devices, with our parental control
@@ -66,30 +69,29 @@ function Aboutus() {
             </h6>
           </Col>
         </Row>
-        </Container>
-        <Marquee gradientWidth={50} className=" colored1 ">
-          <Row className=" align-items-center justify-content-between ">
-            <Col>
-              <img className="image_wrap" src={Afromina} alt="Afromina" />
-            </Col>
-            <Col>
-              <img className="image_wrap" src={Puresight} alt="Puresight" />
-            </Col>
-            <Col>
-              <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor" />
-            </Col>
-            <Col>
-              <img className="image_wrap" src={Afromina} alt="Afromina" />
-            </Col>
-            <Col>
-              <img className="image_wrap" src={Puresight} alt="Puresight" />
-            </Col>
-            <Col>
-              <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor" />
-            </Col>
-          </Row>
-        </Marquee>
-     
+      </Container>
+      <Marquee gradientWidth={50} className=" colored1 ">
+        <Row className=" align-items-center justify-content-between ">
+          <Col>
+            <img className="image_wrap" src={Afromina} alt="Afromina" />
+          </Col>
+          <Col>
+            <img className="image_wrap" src={Puresight} alt="Puresight" />
+          </Col>
+          <Col>
+            <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor" />
+          </Col>
+          <Col>
+            <img className="image_wrap" src={Afromina} alt="Afromina" />
+          </Col>
+          <Col>
+            <img className="image_wrap" src={Puresight} alt="Puresight" />
+          </Col>
+          <Col>
+            <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor" />
+          </Col>
+        </Row>
+      </Marquee>
     </div>
   );
 }

@@ -3,35 +3,43 @@ import Surfie from "../assets/surfie.png";
 import { FaFacebook, FaInstagram, FaTelegram } from "react-icons/fa";
 import { Col, Container, Row } from "react-bootstrap";
 import { HiOutlineMail,HiOutlinePhoneMissedCall,HiOutlineLocationMarker } from "react-icons/hi";
-
+import { NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 const Footer = () => {
   return (
     <Container fluid>
-      <Row className="fot text-white  py-3">
+      <Row className="fot text-white  pt-3">
         <Col >
-          <p className="fs-5 text-center ">
+          <p className="fs-6 text-center ">
             Schedule Surfie Ethiopia demo today!  
-             <Button
-            className=" ms-3  text-center btn-light con"
-            href="/pricing"
-          >
+
+            <NavLink to="/pricing">
+            <Button className=" text-center mt-2 ms-3 btn-light con">
             Schedule demo
-          </Button>
+            </Button>
+          </NavLink>
           </p>
         
-        </Col>
+        </Col>                       
       </Row>
 
       <Row className="primary-fill pt-4 ps-3 text-white pb-4">
-        <Col sm={3} className="">
-          <ul className="list-unstyled text-small ">
+        <Col sm={4} className="align-items-center">
+          <ul className="list-unstyled text-small mt-1">
             <img className="mt-4" src={Surfie} alt="Surfief" width={110} />
             <li className="pt-3 mb-1">AI-Based Online Child Safety Service </li>
-          </ul>
+       
+          
+            <li className="py-3"  >
+            
+              <FaFacebook size={25} className=""/>
+              <FaInstagram size={25} className="ms-3"/>
+              <FaTelegram size={25} className="ms-3"/>
+            </li>
+            </ul>
         </Col>
 
-        <Col sm={3}>
+        <Col sm={4} className="align-items-center">
           <h5>Menus <hr className="w-25"/></h5>
         
           <ul className="list-unstyled text-small mt-1">
@@ -67,7 +75,7 @@ const Footer = () => {
             </li>
           </ul>
         </Col>
-        <Col sm={4}>
+        <Col sm={4} className="align-items-center">
           <h5>Contact us<hr className="w-25"/></h5>
           <ul className="list-unstyled text-small mt-1 fw-normal">
           
@@ -96,17 +104,7 @@ const Footer = () => {
           </ul>
         </Col>
 
-        <Col sm={2}>
-          <h5>Connect now<hr className="w-25"/></h5>
-          <ul className="list-unstyled text-small mt-1">
-            <li className="mb-1 white">
-            
-              <FaFacebook size={25} className=""/>
-              <FaInstagram size={25} className="ms-3"/>
-              <FaTelegram size={25} className="ms-3"/>
-            </li>
-          </ul>
-        </Col>
+      
       </Row>
       <Row className="pt-3 copyright">
         <Col className="d-flex align-items-center justify-content-center">

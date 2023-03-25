@@ -1,15 +1,14 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
-import { RiQuestionnaireFill } from "react-icons/ri";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { GoLocation } from "react-icons/go";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
 
-import {useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 function Faqfull() {
   const navigate = useNavigate();
@@ -18,7 +17,7 @@ function Faqfull() {
       <Row className="mt-3 d-flex pb-4 ">
         <Col sm={2}>
           <div className=" mt-3 mb-2  d-flex justify-content-center align-items-center rounded-circle faq shadow-sm colored2 m-auto ">
-            <RiQuestionnaireFill size={50} className="primary-bg m-auto " />
+            <AiOutlineQuestionCircle size={50} className="primary-bg m-auto " />
           </div>
         </Col>
         <Col sm={8} className=" ps-4">
@@ -35,7 +34,8 @@ function Faqfull() {
                 <Accordion.Header>
                   <h6 className=" py-2">
                     Can i disconnect my children's devices from the Internet in
-                    case they spent too much time online?</h6>
+                    case they spent too much time online ?
+                  </h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   Yes, you can. Just open the parent app (Surfie-Parent) and tab
@@ -48,7 +48,8 @@ function Faqfull() {
                 <Accordion.Header>
                   <h6 className=" py-2">
                     I installed the child-app on my children's iphones but i do
-                    not see any information on what application they used?</h6>
+                    not see any information on what application they used?
+                  </h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   At this stage, our protection for iPhones include: WhatsApp
@@ -61,9 +62,10 @@ function Faqfull() {
               <Accordion.Item eventKey="2">
                 <Accordion.Header>
                   <h6 className="py-2">
-                    During the SurfieEthiopia-Kid app installation, I got a VPN
-                    connection error "Your certeficate is permature" what shouid i
-                    do?</h6>
+                    During the Surfie-Kid app installation, I got a VPN
+                    connection error "Your certeficate is permature" what shouid
+                    i do?
+                  </h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   <ul>
@@ -77,7 +79,8 @@ function Faqfull() {
               <Accordion.Item eventKey="3">
                 <Accordion.Header>
                   <h6 className=" py-2">
-                    I forgot my Parental app password. what can i do?</h6>
+                    I forgot my Parental app password. what can i do?
+                  </h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   Tab the "Forgot Password" option on the sign in screen of the
@@ -88,9 +91,10 @@ function Faqfull() {
               <Accordion.Item eventKey="5">
                 <Accordion.Header>
                   <h6 className="py-2">
-                    I have Surfie Ethiopia installed on my son's device and i want
-                    to give this device to my daughter now. How can i change the
-                    profile?</h6>
+                    I have Surfie installed on my son's device and i want to
+                    give this device to my daughter now. How can i change the
+                    profile?
+                  </h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   Login to our parent web-portal at:
@@ -104,9 +108,8 @@ function Faqfull() {
               <Accordion.Item eventKey="6">
                 <Accordion.Header>
                   <h6 className=" py-2">
-                    I have Surfie Ethiopia installed on my son's device and i want
-                    to give this device to my daughter now. How can i change the
-                    profile?</h6>
+                    How can i block or allow specific website?
+                  </h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   <ul>
@@ -131,7 +134,8 @@ function Faqfull() {
               <Accordion.Item eventKey="7">
                 <Accordion.Header>
                   <h6 className=" py-2">
-                    How can i change my child's profile picture?</h6>
+                    How can i change my child's profile picture?
+                  </h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   <ul>
@@ -152,7 +156,8 @@ function Faqfull() {
                     then created a profile for my daughter and sent the download
                     link of the child-app to her phone. Later day i checked her
                     online activities but i only saw three empty screen: Social,
-                    Web, and Time. Why and where is the Location and App screen?</h6>
+                    Web, and Time. Why and where is the Location and App screen?
+                  </h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   You did not complete the installation of the child-app on your
@@ -165,7 +170,8 @@ function Faqfull() {
               <Accordion.Item eventKey="9">
                 <Accordion.Header>
                   <h6 className="py-2">
-                    I can't see any Facebook activities of my son. why?</h6>
+                    I can't see any Facebook activities of my son. why?
+                  </h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   You have to activate our Facebook protection. Open the
@@ -178,25 +184,25 @@ function Faqfull() {
               <Accordion.Item eventKey="10">
                 <Accordion.Header>
                   <h6 className=" py-2">
-                    I subscribed from your service, How do i delete my account?</h6>
+                    I subscribed from your service, How do i delete my account?
+                  </h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   <ul>
                     <li> To delete your account please contact us </li>
-                    <li>support@puresight.com </li>
+                    <li>support@surfieethiopia.com </li>
                   </ul>
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="11">
                 <Accordion.Header>
-                  <h6 className="py-2">
-                    How do i cancel my subscription?</h6>
+                  <h6 className="py-2">How do i cancel my subscription?</h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   <ul>
-                    <li>Purchase was made via PureSight website: </li>
+                    <li>Purchase was made via surifieethiopia.com website: </li>
                     <li>
-                      Contact us at: support@puresight.com with your order
+                      Contact us at: support@surfieethiopia.com with your order
                       number{" "}
                     </li>
                     <li> Purchase was made via Apple App store:</li>
@@ -227,7 +233,8 @@ function Faqfull() {
                 <Accordion.Header>
                   <h6 className="py-2">
                     My daughter's profile is gray and it says "You turned her
-                    device off". How do i turn it on again?</h6>
+                    device off". How do i turn it on again?
+                  </h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   It’s very easy. Open the parent-app (Surfie-Parent) and tab
@@ -240,7 +247,8 @@ function Faqfull() {
                   <h6 className="py-2">
                     I used the option to disconnect the computer of son from the
                     internet. Now i want to reconnect him, but it does't seem to
-                    work. what can i do?</h6>
+                    work. what can i do?
+                  </h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   The reconnect may take some time. To speed things up we
@@ -253,7 +261,8 @@ function Faqfull() {
                 <Accordion.Header>
                   <h6 className=" py-2">
                     I do not see my daughter's location anymore and i don't get
-                    notification when she leaves school. what can i do?</h6>
+                    notification when she leaves school. what can i do?
+                  </h6>
                 </Accordion.Header>
                 <Accordion.Body className="text-muted my-3">
                   <ul>
@@ -289,24 +298,17 @@ function Faqfull() {
 
       <Row className=" pt-3 d-flex pb-5 ">
         <Col sm={2}>
-          <div className="  primary-fill d-flex justify-content-center align-items-center rounded-circle faq shadow-sm colored2 m-auto ">
-            <MdOutlineAlternateEmail
-              size={50}
-              className="primary-bg m-auto"
-            />
+          <div className=" mb-3 primary-fill d-flex justify-content-center align-items-center rounded-circle faq shadow-sm colored2 m-auto ">
+            <MdOutlineAlternateEmail size={50} className="primary-bg m-auto" />
           </div>
         </Col>
 
-        <Col className="ps-4 pe-4">
-          <h6 className="pe-3 mt-4 text-muted ">
-            Our support are waiting for you!
-          </h6>
-          <h2 className="pb-4 mb-5 "> CONTACT US </h2>
+        <Col sm={5} className="ps-4 pe-4">
+          <h2 className=" mb-4 "> CONTACT US </h2>
 
-          <h3> Send Us a Message</h3>
-          <h6 className="text-muted ">
+          <h6 className="col text-muted ">
             {" "}
-            The response will be sent to email provided
+            Make sure all fields are filled before submitting!
           </h6>
 
           <form>
@@ -331,81 +333,79 @@ function Faqfull() {
             </Form.Group>
           </form>
 
-          <Row className="mb-3">
-            <h6 className="col text-muted ">
-              {" "}
-              Make sure all fields are filled before submitting!
-            </h6>
-
-            <button type="submit" className=" btncolor me-2 col-2 " onClick={() => navigate("/")}>
+          <Row className="mb-3 ">
+            <button
+              type="submit"
+              className=" mx-2 py-1 m-auto btncolor  col-2 "
+              onClick={() => navigate("/")}
+            >
               Send
             </button>
-
-
           </Row>
         </Col>
 
-
-
-        <Col className=" me-4 text-white pt-5 ps-5 ">
-
+        <Col sm={4} className="   text-white p-5 ">
           <Card className="rounded-4 ">
             <Card.Body className="primary-fill rounded-4 py-4">
-              <Card.Title className="pt-5 ps-3 pb-2"><h3>Get in Touch</h3></Card.Title>
+              <Card.Title className="pt-5 ps-3 pb-2">
+                <h3>Get in Touch</h3>
+              </Card.Title>
 
               <Card.Text className="ps-3 pt-0">
-                Our supports are always ready to give
-                answer to your queries, Don’t hesitate to drop a message.
-
+                Don’t hesitate to drop a message at any time.
               </Card.Text>
 
-              <Card.Text className="ps-3 pt-3">
-
+              <Card.Text className=" pt-3">
                 <Row className="ps-3">
-                  <Col sm={2}  >
-                    <div className="mt-2 d-flex justify-content-center align-items-center rounded-circle contact shadow-sm  textcolor-ct  m-auto ">
+                  <Col sm={2} className="hid">
+                    <div className=" mt-2 d-flex justify-content-center align-items-center rounded-circle contact shadow-sm  textcolor-ct  m-auto ">
                       <GoLocation size={30} className="m-auto" />
                     </div>
                   </Col>
-                  <Col sm={10} className="mt-2" >
-                    <h4 > Visit Us </h4>
-                    <h6 className=" textcolor-c pe-3"> Husen Building, 2nd Floor,Bole 24,
-                      Addis ababa Ethiopia</h6>
+                  <Col sm={10} className="mt-2">
+                    <h4> Visit Us </h4>
+                    <h6 className=" textcolor-c pe-3">
+                      {" "}
+                      Husen Building, 2nd Floor,Bole 24, Addis ababa Ethiopia
+                    </h6>
                   </Col>
                 </Row>
               </Card.Text>
 
-
-              <Card.Text className="ps-3 pt-3">
-
+              <Card.Text className=" pt-3">
                 <Row className="ps-3">
-                  <Col sm={2}  >
-                    <div className="mt-2 d-flex justify-content-center align-items-center rounded-circle contact shadow-sm  textcolor-ct  m-auto ">
+                  <Col sm={2} className="hid">
+                    <div className="hid mt-2 d-flex justify-content-center align-items-center rounded-circle contact shadow-sm  textcolor-ct  m-auto ">
                       <FiMail size={30} className="m-auto" />
                     </div>
                   </Col>
-                  <Col sm={10} className="mt-2 " >
-                    <h4 > Mail Us </h4>
-                    <h6 className=" textcolor-c pe-3"> Husen Building, 2nd Floor,Bole 24,
-                      Addis ababa Ethiopia</h6>
+                  <Col sm={10} className="mt-2 ">
+                    <h4> Mail Us </h4>
+                    <h6 className=" textcolor-c pe-3">
+                      {" "}
+                      support@surfieethiopia.com <br></br>
+                      or <br></br>
+                      contact@surfieethiopia.com{" "}
+                    </h6>
                   </Col>
                 </Row>
               </Card.Text>
 
-
-
-              <Card.Text className="ps-3 pt-3">
-
+              <Card.Text className=" pt-3">
                 <Row className="ps-3 ">
-                  <Col sm={2}  >
-                    <div className="mt-2 d-flex justify-content-center align-items-center rounded-circle contact shadow-sm  textcolor-ct m-auto ">
+                  <Col sm={2} className="hid">
+                    <div className=" hid mt-2 d-flex justify-content-center align-items-center rounded-circle contact shadow-sm  textcolor-ct m-auto ">
                       <FiPhoneCall size={30} className="m-auto" />
                     </div>
                   </Col>
-                  <Col sm={10} className="mt-2 " >
-                    <h4 > Call Us </h4>
-                    <h6 className="textcolor-c pe-3"> Husen Building, 2nd Floor,Bole 24,
-                      Addis ababa Ethiopia</h6>
+                  <Col sm={10} className="mt-2 ">
+                    <h4> Call Us </h4>
+                    <h6 className=" textcolor-c pe-3">
+                      {" "}
+                      +251-992 758 586 <br></br>
+                      or <br></br>
+                      +251-911 287 546{" "}
+                    </h6>
                   </Col>
                 </Row>
               </Card.Text>
@@ -415,13 +415,9 @@ function Faqfull() {
                 <FaInstagram type="button" size={30} className="col  ps-5 pe-2" onClick={() => navigate("/")} />
                 <FaTelegram type="button" size={30} className="col  ps-5 pe-2" onClick={() => navigate("/")} />
               </Row> */}
-
             </Card.Body>
           </Card>
-
-
         </Col>
-
       </Row>
     </div>
   );
