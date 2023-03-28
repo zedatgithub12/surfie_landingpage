@@ -17,7 +17,7 @@ const Navbars = () => {
             alt="Surfie"
             width="90px"
             height="43px"
-          />{" "}
+          />
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbarScroll" />

@@ -583,10 +583,11 @@ function CreateAccount() {
                           lg="6"
                           className="order-1 order-lg-2 border-start-1 align-items-center"
                         >
-                          <MDBRow className="mt-5 pt-5">
+                          <MDBRow className="mt-5 pt-5" id="image">
                             <MDBCardImage
                               src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
                               className="img-fluid"
+
                             />
                           </MDBRow>
 
