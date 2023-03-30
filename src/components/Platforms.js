@@ -2,7 +2,7 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import React, { useState } from "react";
 import {
   MdOutlineSupportAgent,
-  MdOutlineDevices,
+  MdOutlineAppShortcut
 } from "react-icons/md";
 import { BsLaptop } from "react-icons/bs";
 import { GiBabyFace, GiBinoculars } from "react-icons/gi";
@@ -35,17 +35,19 @@ function Platforms() {
   const [advanced10, setAdvanced10] = useState(false);
 
   return (
-    <div>
-      <Row className=" mt-3 d-flex  pb-5 ">
+    <>
+    <Container>
+      <Row className="py-3">
+        <Col sm={1}></Col>
         <Col sm={2}>
-          <div className=" mt-3 d-flex justify-content-center align-items-center rounded-circle features shadow-sm  colored2 m-auto ">
-            <MdOutlineDevices size={80} className="primary-bg m-auto" />
+          <div className=" mt-4 d-flex justify-content-center align-items-center rounded-circle features shadow-sm  colored2 m-auto ">
+            <MdOutlineAppShortcut size={80} className="primary-bg m-auto" />
           </div>
         </Col>
-        <Col sm={8} className=" ps-4">
+        <Col sm={6} className=" ps-4">
          
-          <h1 className="p-2"> Surfie Features </h1>
-          <h6 className=" p-3 mb-2 text-muted just">
+          <p className="p-2 mt-4 fs-2"> Surfie Features </p>
+          <h6 className="p-3 pt-0 mb-2 text-muted just">
             The internet has created endless opportunities and information
             available to everybody anywhere. Our kids’ natural curiosity can
             lead them to search, and be exposed to inappropriate content, unfit
@@ -54,13 +56,13 @@ function Platforms() {
             like it does in the movies. Young children might access pornography;
             teenagers could be checking about risky challenges like the Momo
             Challenge, anorexia and bulimia, and otherwise.</h6> 
-            <h6 className=" p-3 mb-2 text-muted just">
+            <p className=" p-3 mb-2 text-muted just fst-italic">
             Protect your kids
-            with the Surfie app’s innovative digital parenting features:
-          </h6>
+            with the Surfie app’s innovative digital parenting features
+          </p>
         </Col>
       </Row>
-
+      </Container>
       <Row className="d-flex justify-content-center align-items-center">
         <h3 className="text-center  pb-3 ">Surfie Platforms </h3>
       </Row>
@@ -69,12 +71,12 @@ function Platforms() {
         <Row className="p-3 d-flex justify-content-center ">
           <Col
             sm={3}
-            className=" primary-fill m-2 text-center border shadow-sm  mb-4 p-3 rounded"
+            className=" primary-fill m-2 text-center border-0 shadow-sm  mb-4 p-3 rounded"
           >
-            <div className="border-0 primary-fill">
+            
               <Card.Body>
                 <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm border-0 bg-white m-auto ">
-                  <RiParentLine size={60} className="primary-bg m-auto" />
+                  <RiParentLine size={60} className="text-secondary m-auto" />
                 </div>
 
                 <Card.Title>Surfie Parent</Card.Title>
@@ -83,44 +85,43 @@ function Platforms() {
                   child's digital world and keeps them safe and secure.
                 </Card.Text>
               </Card.Body>
-            </div>
+          
           </Col>
 
           <Col
             sm={3}
-            className="primary-fill m-2 text-center border shadow-sm  mb-4 p-3 rounded"
+            className="primary-fill m-2 text-center border-0 shadow-sm  mb-4 p-3 rounded"
           >
-            <div className="border-0 primary-fill">
               <Card.Body>
                 <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm border bg-white m-auto ">
-                  <GiBabyFace size={60} className=" primary-bg m-auto" />
+                  <GiBabyFace size={60} className=" text-secondary  m-auto" />
                 </div>
 
                 <Card.Title>Surfie Child</Card.Title>
                 <Card.Text className="textcolor-w">
                   Install the app across all of your child’s devices to protect
-                  them from online risks
+                  them from online risks.
                 </Card.Text>
               </Card.Body>
-            </div>
+          
           </Col>
 
           <Col
             sm={3}
-            className="primary-fill m-2 text-center border shadow-sm  mb-4 p-3 rounded"
+            className="primary-fill m-2 text-center border-0 shadow-sm  mb-4 p-3 rounded"
           >
-            <div className="border-0 primary-fill">
+           
               <Card.Body>
                 <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm border bg-white m-auto">
-                  <BsLaptop size={60} className="primary-bg m-auto" />
+                  <BsLaptop size={60} className="text-secondary m-auto" />
                 </div>
 
                 <Card.Title>Surfie PC Client</Card.Title>
                 <Card.Text className="textcolor-w">
-                  Surfie PC client is installed on Windows-based computers
+                  Surfie PC client is installed on Windows-based computers.
                 </Card.Text>
               </Card.Body>
-            </div>
+           
           </Col>
         </Row>
 
@@ -797,13 +798,13 @@ function Platforms() {
       </Container>
 
       <Row className=" mt-5  d-flex pb-5 d-flex justify-content-center align-items-center">
-        <h3 className="mt-3  text-center pb-3 fw-bold ">Surfie Advantages </h3>
+        <p className="mt-3  text-center pb-1 fw-bold fs-3">Advantages of using Surfie Ethiopia </p>
       </Row>
 
       <Container className="mb-5">
         <Row>
           <Col sm={3}>
-            <Card className="text-center border-0 shadow-sm m-2 mb-3 p-3">
+            <Card className="text-center border-0 shadow-sm m-2 mb-3 p-3 h-100">
               <Card.Body>
                 <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm  colored2 m-auto ">
                   <GiBinoculars size={40} className="primary-bg m-auto" />
@@ -820,7 +821,7 @@ function Platforms() {
           </Col>
 
           <Col sm={3}>
-            <Card className="text-center border-0  shadow-sm m-2 mb-3 p-3">
+            <Card className="text-center border-0  shadow-sm m-2 mb-3 p-3  h-100">
               <Card.Body>
                 <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm colored2 m-auto ">
                   <RiParentLine size={40} className="primary-bg m-auto" />
@@ -836,7 +837,7 @@ function Platforms() {
           </Col>
 
           <Col sm={3}>
-            <Card className="text-center border-0  shadow-sm m-2 mb-3 p-3">
+            <Card className="text-center border-0  shadow-sm m-2 mb-3 p-3  h-100">
               <Card.Body>
                 <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm colored2 m-auto ">
                   <FcMindMap size={40} className="primary-bg m-auto" />
@@ -852,7 +853,7 @@ function Platforms() {
           </Col>
 
           <Col sm={3}>
-            <Card className="text-center border-0  shadow-sm m-2 mb-3 p-3">
+            <Card className="text-center border-0  shadow-sm m-2 mb-3 p-3  h-100">
               <Card.Body>
                 <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm colored2 m-auto ">
                   <MdOutlineSupportAgent
@@ -870,8 +871,9 @@ function Platforms() {
             </Card>
           </Col>
         </Row>
+        <Row className="p-4"></Row>
       </Container>
-    </div>
+    </>
   );
 }
 export default Platforms;
