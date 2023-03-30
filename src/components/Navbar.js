@@ -7,8 +7,26 @@ import { NavLink } from "react-router-dom";
 import { NavItem } from "react-bootstrap";
 
 const Navbars = () => {
+  // const [navbarClass, setNavbarClass] = React.useState('navbar');
+
+  // React.useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.pageYOffset === 0) {
+  //       setNavbarClass('navbar colored blur');
+  //     } else {
+  //       setNavbarClass('navbar, colored blur');
+  //     }
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
+
   return (
-    <Navbar className=" colored " expand="lg" sticky="top" >
+    <Navbar  className="navbar colored blur" expand="lg" sticky="top" >
       <Container fluid>
         <Navbar.Brand href="/">
           <img

@@ -5,62 +5,50 @@ import Marquee from "react-fast-marquee";
 import Afromina from "../assets/afromina.png";
 import Puresight from "../assets/puresight.png";
 import Surfiecolor from "../assets/surfiecolor.png";
-import { NavLink } from "react-router-dom";
-
+import Placetobe from "../assets/p2b.png";
+import Minawifi from "../assets/minawifi.png";
+ 
 
 function Aboutus() {
 
+ 
   return (
-    <div className="">
-      <Row className="mt-3 d-flex pb-2 ">
+  <>
+       <Container>
+      <Row className="py-3">
+        <Col sm={1}></Col>
         <Col sm={2}>
-          <div className="mt-3 d-flex justify-content-center align-items-center rounded-circle features shadow-sm  colored2 m-auto ">
-            <AiOutlineProfile size={80} className="primary-bg m-auto" />
+          <div className=" mt-4 d-flex justify-content-center align-items-center rounded-circle features shadow-sm  colored2 m-auto ">
+          <AiOutlineProfile size={80} className="primary-bg m-auto" />
           </div>
         </Col>
-        <Col sm={7} className=" ps-4">
-          <h1 className=""> Who we are </h1>
-          <h6 className=" pt-4 p-3  mb-5 text-muted just">
-            AfroMiNA Digital Technologies PLC is an African digital solutions
-            company based in Ethiopia established back in 2018 with the motto
-            “Striving to Narrow Down the Digital Divide in Africa” working
-            mainly focused on easing the accessibility of impactful digital
-            solutions to society.
-            <p className="  mt-3 text-muted just">
-              Partnering with one of the world's leading online parental control
-              service providers called PureSight based in Israel, which is
-              currently protecting millions of kids and families all over the
-              world, we brought a digital solution called Surfie Ethiopia for
-              Ethiopian society to contribute our part in ensuring the online
-              safety of families and children in Ethiopia.{" "}
-            </p>
-            <NavLink
-              to="https://www.puresight.com/#home-stats-cont"
-              className="mx-2 my-2 nav-link">
-              <button
-                type="button"
-                className="p-2 px-5 over align-items-center justify-content-center button nav-link"
-              >
-                Overview
-              </button>
-            </NavLink>
-
-          </h6>
+        <Col sm={6} className=" ps-4">
+         
+          <p className="p-2 mt-4 fs-2"> Who we are  </p>
+          <h6 className="p-3 pt-0 mb-2 text-muted just lead">
+          AfroMiNA Digital Technologies PLC is an African digital solutions company based in Ethiopia established back in 2018 with the motto “Striving to Narrow Down the Digital Divide in Africa” working mainly focused on easing the accessibility of impactful digital solutions to society.
+          </h6> 
+            
+          <h6 className="p-3 pt-0 mb-2 text-muted just lead">
+          Partnering with one of the world's leading online parental control service providers called PureSight based in Israel, which is currently protecting millions of kids and families all over the world, we brought a digital solution called Surfie Ethiopia for Ethiopian society to contribute our part in ensuring the online safety of families and children in Ethiopia.
+         </h6>
         </Col>
       </Row>
-      <Container>
-        <Row className="mt-3 d-flex ">
-          <Col sm={5} className="pe-3">
-            <h2 className=""> Vision </h2>
-            <h6 className=" p-3 pb-2 mb-5 text-muted just">
+      </Container>
+
+      <Container fluid className="gradient">
+        <Row className="d-flex  justify-content-center">
+          <Col sm={4} className=" p-3 mb-3 m-3 h-100 px-4">
+            <p className="pt-2 fs-3 text-white">Vision </p>
+            <h6 className="mb-5 text-dark  just lead">
               To be one of the leading forefronts in ensuring online safety for
               families and children in Ethiopia.
             </h6>
           </Col>
 
-          <Col sm={5} className="pe-3">
-            <h2 className="">Mission </h2>
-            <h6 className="p-3 pb-4 mb-5 text-muted just">
+          <Col sm={4} className=" border-start border-secondary p-3 px-4 mb-3 m-3 h-100">
+            <p className="pt-2 fs-3 text-white">Mission </p>
+            <h6 className=" mb-5 text-dark  just lead">
               To support and assure millions of families in Ethiopia to protect
               their children from any online unsafe activities, which they are
               exposed to because of smart devices, with our parental control
@@ -69,30 +57,53 @@ function Aboutus() {
             </h6>
           </Col>
         </Row>
+      
       </Container>
+
+      
+      <Row className="p-5"></Row>
+      <Container>
+
+  
       <Marquee gradientWidth={50} className=" colored1 ">
-        <Row className=" align-items-center justify-content-between ">
-          <Col>
-            <img className="image_wrap" src={Afromina} alt="Afromina" />
-          </Col>
-          <Col>
-            <img className="image_wrap" src={Puresight} alt="Puresight" />
-          </Col>
-          <Col>
-            <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor" />
-          </Col>
-          <Col>
-            <img className="image_wrap" src={Afromina} alt="Afromina" />
-          </Col>
-          <Col>
-            <img className="image_wrap" src={Puresight} alt="Puresight" />
-          </Col>
-          <Col>
-            <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor" />
-          </Col>
-        </Row>
+        
+      <Row className=" align-items-center justify-content-between ">
+       
+       <Col>
+         <img className="image_wrap" src={Afromina} alt="Afromina" />
+         </Col>
+         <Col>
+         <img className="image_wrap" src={Puresight} alt="Puresight"  />
+         </Col>
+         <Col>
+         <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor"  />
+       </Col>
+       <Col>
+         <img className="image_wrap mina" src={Minawifi} alt="Minawifi" />
+         </Col>
+         <Col>
+         <img className="image_wrap p2" src={Placetobe} alt="Placetobe"  />
+         </Col>
+         <Col>
+         <img className="image_wrap" src={Afromina} alt="Afromina" />
+         </Col>
+         <Col>
+         <img className="image_wrap" src={Puresight} alt="Puresight"  />
+         </Col>
+         <Col>
+         <img className="image_wrap" src={Surfiecolor} alt="Surfiecolor"  />
+       </Col>
+       <Col>
+         <img className="image_wrap mina" src={Minawifi} alt="Minawifi" />
+         </Col>
+         <Col>
+         <img className="image_wrap p2" src={Placetobe} alt="Placetobe"  />
+         </Col>
+       </Row>
       </Marquee>
-    </div>
+      <Row className="p-5"></Row>
+      </Container>
+    </>
   );
 }
 export default Aboutus;

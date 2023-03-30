@@ -2,8 +2,8 @@ import React from "react";
 import Navbars from "../components/Navbar";
 import HeroImage from "../components/HeroImage";
 import Footer from "../components/Footer";
-
 import How from "../components/How";
+
 import Pricingcom from "../components/Pricingcom";
 
 
@@ -16,9 +16,9 @@ const Home=()=>{
         <Navbars/>  
         <HeroImage/>
         <How/>          
-        <Pricingcom/>    
+        <Pricingcom/>           
+        <Footer/> 
        
-        <Footer/>    
        </div>
     );
 };

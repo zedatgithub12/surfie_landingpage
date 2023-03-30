@@ -54,27 +54,31 @@ export default function VerticalLinearStepper() {
         {steps.map ((step, index) => (
           <Step key={step.label}>
             <StepLabel
+              
               optional={
                 index === 3 ? (
-                  <Typography className="primary-bg" variant="caption">Last step</Typography>
+                  <Typography className="primary-bg text-white" variant="caption" >Last step</Typography>
                 ) : null
+
+
               }
             >
-              {step.label}
+               <Typography className='text-dark fw-semibold' variant="caption">{step.label}</Typography>
+             
             </StepLabel>
             <StepContent>
-              <Typography >{step.description}</Typography>
+              <Typography className='text-dark'>{step.description}</Typography>
               <Box sx={{ mb: 2 }}>
                 <div>
                   <button type="button"  className="mt-2 p-2 btncolor"
-                    variant="contained"
+                    variant="light"
                     onClick={handleNext}
                     sx={{ mt: 1, mr: 1 }}
                   >
                     {index === steps.length - 1 ? 'Finish' : 'Continue'}
                   </button>
 
-                  <button type="button"  href="/" class=" ms-3 btn btn-light border border-2 "
+                  <button type="button"  href="/" class=" ms-3 btn btn-white text-dark fw-normal border-0 "
                     disabled={index === 0}
                     onClick={handleBack}
                     sx={{ mt: 1, mr: 1 }}
@@ -88,9 +92,9 @@ export default function VerticalLinearStepper() {
         ))}
       </Stepper>
       {activeStep === steps.length && (
-        <Paper square elevation={0} sx={{ p: 3 }}>
+        <Paper square elevation={0} sx={{ p: 3 }} className="bg-light rounded-4">
           <Typography className="primary-bg" >All steps completed - you&apos;re finished</Typography>
-          <button type="button" className="mt-3 btn btn-light border border-2" onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+          <button type="button" className="mt-3 btn btn-light shadow-sm px-4 text-muted" onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
             Reset
           </button>
         </Paper>

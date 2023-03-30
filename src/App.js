@@ -10,6 +10,7 @@ import CreateAccount from "./pages/CreateAccount";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
+
 function App() {
 
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/account" element={<CreateAccount />} />
+      
 
       </Routes>
 

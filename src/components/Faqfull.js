@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 import { MdOutlineAlternateEmail } from "react-icons/md";
@@ -7,11 +7,81 @@ import Card from "react-bootstrap/Card";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { GoLocation } from "react-icons/go";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
+import Connection from "../constants/Connections";
 
-import { useNavigate } from "react-router-dom";
 
 function Faqfull() {
-  const navigate = useNavigate();
+
+ const [info,setInfo] = useState({
+  username: "",
+  email: "",
+  message: "",
+  prompt:  "",
+ });
+
+ const updateName = (event)=>{
+ setInfo({
+   ...info,
+   username: event
+ })
+ }
+
+ const updateEmail = (event)=>{
+  setInfo({
+    ...info,
+    email: event
+  })
+}
+
+const updateMessage = (event)=>{
+  setInfo({
+    ...info,
+    message: event
+  })
+}
+
+
+  const DropMessage = () => {
+    var Api = Connection.api+Connection.contact;
+    var headers = {
+      accept: "application/json",
+      "Content-Type": "application/json"
+    }
+    const data={
+    name: info.username,
+    email: info.email,
+    message: info.message,
+    }
+
+    fetch(Api,{
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(data)
+    })
+    .then((response) => response.json())
+    .then((response) => {
+    
+      if(response === "succeed"){
+        setInfo({
+          ...info,
+          prompt: "Your message is accepted we will contact you soon!"
+        })
+      }
+      else{
+        setInfo({
+          ...info,
+          prompt: "We couldn't receive your message please retry later!"
+        })
+      }
+    })
+    .catch((e)=>{
+      setInfo({
+        ...info,
+        prompt: "There is error sending your message please retry later!"
+      })
+    })
+  };
+
   return (
     <div>
       <Row className="mt-3 d-flex pb-4 ">
@@ -268,7 +338,7 @@ function Faqfull() {
                   <ul>
                     <li>
                       In such a case you need to check a few things on your
-                      child’s mobile device.{" "}
+                      child’s mobile device.
                     </li>
                     <li>
                       For Android devices: First check if GPS is turned on and
@@ -280,13 +350,13 @@ function Faqfull() {
                       make sure that the location permission is turned on and
                       set to “always allow” (Note, the terms used by each phone
                       manufacturer might be slightly different.) If you need
-                      help, let us know.{" "}
+                      help, let us know.
                     </li>
                     <li>
                       For iOS devices: Check if the location permission for
                       Surfie Kids is turned on. Go to settings, scroll down to
                       Surfie-Kids and make sure the location permission is
-                      turned on and set to “always allow”.{" "}
+                      turned on and set to “always allow”.
                     </li>
                   </ul>
                 </Accordion.Body>
@@ -304,23 +374,33 @@ function Faqfull() {
         </Col>
 
         <Col sm={5} className="ps-4 pe-4">
-          <h2 className=" mb-4 "> CONTACT US </h2>
-
-          <h6 className="col text-muted ">
-            {" "}
-            Make sure all fields are filled before submitting!
-          </h6>
+          <p className="mb-4 fs-2 "> Contact Us </p>
 
           <form>
             <Row>
               <Col>
                 <Form.Group className="bg-light mb-3" controlId="Name">
-                  <Form.Control rows={1} placeholder="Name" />
+                  <Form.Control
+                    type="text"
+                    required
+                    rows={1}
+                    placeholder="Name"
+                    className="form-control border p-2 ps-3"
+                    defaultValue={info.username}
+                    onChange={updateName}
+                  />
                 </Form.Group>
               </Col>
               <Col>
                 <Form.Group className="bg-light mb-3" controlId="Email">
-                  <Form.Control type="email" placeholder="Email" />
+                  <Form.Control
+                    type="email"
+                    required
+                    placeholder="Email"
+                    className="form-control border p-2 ps-3"
+                    defaultValue={info.email}
+                    onChange={updateEmail}
+                  />
                 </Form.Group>
               </Col>
             </Row>
@@ -328,84 +408,87 @@ function Faqfull() {
               <Form.Control
                 as="textarea"
                 rows={8}
+                required
                 placeholder="Write you message here..."
+                className="form-control border p-2 ps-3"
+                defaultValue={info.message}
+                onChange={updateMessage}
               />
             </Form.Group>
+           
           </form>
 
           <Row className="mb-3 ">
-            <button
-              type="submit"
-              className=" mx-2 py-1 m-auto btncolor  col-2 "
-              onClick={() => navigate("/")}
-            >
-              Send
-            </button>
-          </Row>
+              <button
+                variant="light"
+                type="submit"
+                className=" btn btn-md  py-1 ms-2 primary-fill px-4 py-2 w-25 "
+                onSubmit={() => DropMessage()}
+              >
+                Send
+              </button>
+              <p className="bg-danger">{info.prompt}</p>
+            </Row>
         </Col>
 
-        <Col sm={4} className="   text-white p-5 ">
-          <Card className="rounded-4 ">
-            <Card.Body className="primary-fill rounded-4 py-4">
-              <Card.Title className="pt-5 ps-3 pb-2">
-                <h3>Get in Touch</h3>
+        <Col sm={4} className="text-white p-5 ">
+          <Card className="rounded-3 primary-fill">
+            <Card.Body className=" py-4">
+              <Card.Title className="pt-2 ps-3 pb-2">
+                <p className="fs-3 fw-bold">Get in Touch</p>
               </Card.Title>
 
-              <Card.Text className="ps-3 pt-0">
-                Don’t hesitate to drop a message at any time.
-              </Card.Text>
+              <p className="ps-3 pe-3 pt-0 just text-white fs-6">
+                Don’t hesitate to drop a message at any time <br />
+                we are 24/7 available.
+              </p>
 
               <Card.Text className=" pt-3">
-                <Row className="ps-3">
+                <Row className="ps-3 d-flex justify-content-between align-items-center">
                   <Col sm={2} className="hid">
-                    <div className=" mt-2 d-flex justify-content-center align-items-center rounded-circle contact shadow-sm  textcolor-ct  m-auto ">
-                      <GoLocation size={30} className="m-auto" />
+                    <div className=" mt-2 d-flex justify-content-center  rounded-circle contact shadow-sm  textcolor-ct ">
+                      <GoLocation size={28} className="m-auto" />
                     </div>
                   </Col>
-                  <Col sm={10} className="mt-2">
-                    <h4> Visit Us </h4>
-                    <h6 className=" textcolor-c pe-3">
-                      {" "}
+                  <Col sm={9} className="mt-2">
+                    <span className=" fs-5 fw-semibold pe-3 "> Visit Us </span>
+                    <p className=" fs-6 pe-3 small">
                       Husen Building, 2nd Floor,Bole 24, Addis ababa Ethiopia
-                    </h6>
+                    </p>
                   </Col>
                 </Row>
               </Card.Text>
 
               <Card.Text className=" pt-3">
-                <Row className="ps-3">
+                <Row className="ps-3 d-flex justify-content-between align-items-center">
                   <Col sm={2} className="hid">
-                    <div className="hid mt-2 d-flex justify-content-center align-items-center rounded-circle contact shadow-sm  textcolor-ct  m-auto ">
-                      <FiMail size={30} className="m-auto" />
+                    <div className="hid mt-2 d-flex justify-content-center  rounded-circle contact shadow-sm  textcolor-ct ">
+                      <FiMail size={28} className="m-auto" />
                     </div>
                   </Col>
-                  <Col sm={10} className="mt-2 ">
-                    <h4> Mail Us </h4>
-                    <h6 className=" textcolor-c pe-3">
-                      {" "}
-                      support@surfieethiopia.com <br></br>
-                      or <br></br>
-                      contact@surfieethiopia.com{" "}
-                    </h6>
+                  <Col sm={9} className="mt-2 ">
+                    <span className=" fs-5 fw-semibold pe-3 "> Mail Us </span>
+                    <p className=" fs-6 pe-3 small">
+                      support@surfieethiopia.com <br />
+                      contact@surfieethiopia.com
+                    </p>
                   </Col>
                 </Row>
               </Card.Text>
 
               <Card.Text className=" pt-3">
-                <Row className="ps-3 ">
+                <Row className="ps-3 d-flex justify-content-between align-items-center">
                   <Col sm={2} className="hid">
-                    <div className=" hid mt-2 d-flex justify-content-center align-items-center rounded-circle contact shadow-sm  textcolor-ct m-auto ">
-                      <FiPhoneCall size={30} className="m-auto" />
+                    <div className=" hid mt-2 d-flex justify-content-center rounded-circle contact shadow-sm  textcolor-ct">
+                      <FiPhoneCall size={28} className="m-auto" />
                     </div>
                   </Col>
-                  <Col sm={10} className="mt-2 ">
-                    <h4> Call Us </h4>
-                    <h6 className=" textcolor-c pe-3">
-                      {" "}
-                      +251-992 758 586 <br></br>
-                      or <br></br>
-                      +251-911 287 546{" "}
-                    </h6>
+                  <Col sm={9} className="mt-2 ">
+                    <span className=" fs-5 fw-semibold pe-3 "> Call Us </span>
+                    <p className=" fs-6 pe-3 small">
+                      +251-992 758 586 <br />
+                      +251-911 287 546
+                    </p>
                   </Col>
                 </Row>
               </Card.Text>

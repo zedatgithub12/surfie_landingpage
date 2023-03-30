@@ -1,4 +1,22 @@
-
+*{
+  padding:0px;
+  margin:0px;
+}
+body{
+  background-color: #fbffff;
+  padding:0px;
+  margin:0px;
+}
+.secondary-color {
+  color:#d1d1d1
+}
+.secondary-bg {
+background-color: #d1d1d1;
+  
+}
+.gradient {
+  background-image: linear-gradient(to right, #4af3ff , #00c6d4);
+}
 .license {
     width: 80px;
     height: 80px;
@@ -58,8 +76,19 @@ font-weight:bold;
     font-size: 1.0rem;
    
   }
+  #btnnn{
+    background-color: #00c6d4;
+    border: none;
+    color: rgb(255, 255, 255);   
+    font-size: 1.0rem; 
+    
+  }
+
   .colored2{
-    background-color:#eff7f7;
+    background-color:#e2ffff;
+    background-image: url("./assets/surfieethiopia.png");
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
    } 
    .colored{
     background-color:hsl(184, 100%, 42%,0.85);
@@ -78,7 +107,7 @@ font-weight:bold;
   background-color :rgb(255,255,255,0.2);
 }  
 .cardcol{
-  background-color: #faffff;
+  background-color: #ffffff;
 }
 .image_wrap{
   margin: 0px 30px;
@@ -199,9 +228,37 @@ color: #FFFFFF;
 }
 
 
+.mina{
+  height: 40px;
+}
+.p2{
+  width: 130px;
+  height: 120px;
+}
+.blur{
+  backdrop-filter: blur(6px); 
+}
 
 @media screen and (min-width:280px) and (max-width:480px){
 
+
+#getstartedbtn{
+display: flex;
+align-content: center;
+
+width: 40%;
+text-align:center,
+}
+#homepage{
+opacity: 1;
+padding-top: 20;
+align-items: center;
+justify-content: center;
+
+}
+#emptycloumn{
+  display: none;
+}
   .content1{
        left:20px;  
        font-size:2vh;
@@ -241,6 +298,7 @@ color: #FFFFFF;
   flex-wrap: wrap;
   flex-direction: column-reverse;
 }
+
 }   
 
 

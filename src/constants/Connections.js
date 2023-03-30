@@ -19,7 +19,10 @@ const Connection = {
     closeTicket: "/closeticket/",
 
     //mailing api's
-    compose: "/compose"
+    compose: "/compose",
+
+    //drop message
+    contact: "/contact",
 };
 
 export default Connection;
