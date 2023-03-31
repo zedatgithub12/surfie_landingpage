@@ -22,8 +22,6 @@ import { BsCheckCircle } from "react-icons/bs";
 import Connection from "../constants/Connections";
 import Modal from "react-bootstrap/Modal";
 import Navbars from "../components/Navbar";
-import Constants from "../constants/Constants";
-import XMLParser from "react-xml-parser";
 
 function CreateAccount() {
   const [loading, setLoading] = useState(false);
@@ -269,45 +267,45 @@ function CreateAccount() {
               .then((response) => response.json())
               .then((response) => {
 
-                if (response == 0) {
+                if (response === 0) {
                   setInput({
                     ...input,
                     errormessage: "Successfully Created!",
                   });
                   handleShow();
                   setLoading(false);
-                } else if (response == 1001) {
+                } else if (response === 1001) {
                   setInput({
                     ...input,
                     errormessage: "There is Missing Parameter!",
                   });
                   setLoading(false);
-                } else if (response == 1002) {
+                } else if (response === 1002) {
                   setInput({
                     ...input,
                     errormessage: "Invalid Username or Password!",
                   });
                   setLoading(false);
-                } else if (response == 1004) {
+                } else if (response === 1004) {
                   setInput({
                     ...input,
                     errormessage: "Invalid Package Id!",
                   });
                   setLoading(false);
-                } else if (response == 1021) {
+                } else if (response === 1021) {
                   setInput({
                     ...input,
                     errormessage: "Email already exist!",
                   });
                   setLoading(false);
-                } else if (response == 1022) {
+                } else if (response === 1022) {
                   setInput({
                     ...input,
                     errormessage: "Phone number already exist!",
                   });
                   setLoading(false);
                 } 
-                else if (response == 500) {
+                else if (response === 500) {
                   setInput({
                     ...input,
                     errormessage: "Error creating Account!",

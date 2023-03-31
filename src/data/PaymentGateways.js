@@ -1,5 +1,5 @@
 
-import chapa from "../assets/chapa.png";
+// import chapa from "../assets/chapa.png";
 import cash from "../assets/cash.png";
 
 const Gateways = [
