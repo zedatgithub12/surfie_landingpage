@@ -237,25 +237,7 @@ function CreateAccount() {
 
       return false;
     } else {
-      var RemoteApi =
-        Connection.remote +
-        `CreateAccountWithPackageId.py?adminUser=${
-          Constants.user
-        }&adminPassword=${Constants.password}&email=${
-          input.emailaddress
-        }&phoneNumber=${MakeitPhone(
-          input.phone
-        )}&packageId=${packages}&subscriptionId=1&externalRef=AFROMINA`;
-
-        fetch(RemoteApi)
-        .then((res) => res.text())
-        .then((res) => {
-
-        var xml = new XMLParser().parseFromString(res); // Assume xmlText contains the example XML
-        var message = xml.children[0].attributes.id;
-          if (message === "0") {
-            var remoteid = xml.children[1].children[0].attributes.account_id; // an id given to user from external server
-           
+      
             setLoading(true);
             var Api = Connection.api + Connection.customers; // update this line of code to the something like 'http://localhost:3000/customers?_page=${currentPage}&_limit=${limit}
             var headers = {
@@ -263,7 +245,6 @@ function CreateAccount() {
               "Content-Type": "application/json",
             };
             const data = {
-              remote_id: remoteid,
               firstname: input.firstname,
               middlename: input.middlename,
               lastname: input.lastname,
@@ -276,6 +257,7 @@ function CreateAccount() {
               license: license,
               price: Pricing(license),
               payment: selected.active,
+              package: packages,
               status: 0,
             };
 
@@ -286,60 +268,67 @@ function CreateAccount() {
             })
               .then((response) => response.json())
               .then((response) => {
-                if (response === "succeed") {
+
+                if (response == 0) {
                   setInput({
                     ...input,
                     errormessage: "Successfully Created!",
                   });
                   handleShow();
                   setLoading(false);
-                } else {
+                } else if (response == 1001) {
                   setInput({
                     ...input,
-                    errormessage: "error creating account!",
+                    errormessage: "There is Missing Parameter!",
                   });
-
+                  setLoading(false);
+                } else if (response == 1002) {
+                  setInput({
+                    ...input,
+                    errormessage: "Invalid Username or Password!",
+                  });
+                  setLoading(false);
+                } else if (response == 1004) {
+                  setInput({
+                    ...input,
+                    errormessage: "Invalid Package Id!",
+                  });
+                  setLoading(false);
+                } else if (response == 1021) {
+                  setInput({
+                    ...input,
+                    errormessage: "Email already exist!",
+                  });
+                  setLoading(false);
+                } else if (response == 1022) {
+                  setInput({
+                    ...input,
+                    errormessage: "Phone number already exist!",
+                  });
+                  setLoading(false);
+                } 
+                else if (response == 500) {
+                  setInput({
+                    ...input,
+                    errormessage: "Error creating Account!",
+                  });
                   setLoading(false);
                 }
-              });
-          } else if (message === "1001") {
-            setInput({
-              ...input,
-              errormessage: "Error Missing Parameter!",
-            });
-          } else if (message === "1002") {
-            setInput({
-              ...input,
-              errormessage: "Invalid Username or Password!",
-            });
-          } else if (message === "1004") {
-            setInput({
-              ...input,
-              errormessage: "Invalid Package Id!",
-            });
-          } else if (message === "1021") {
-            setInput({
-              ...input,
-              errormessage: "Email already exist!",
-            });
-          } else if (message === "1022") {
-            setInput({
-              ...input,
-              errormessage: "Phone number already exist!",
-            });
-          } else {
-            setInput({
-              ...input,
-              errormessage: "Invalid response!",
-            });
-          }
-        })
-        .catch((e) => {
-          console.log(e);
-          setLoading(false);
-        });
-    }
-
+                else {
+                  setInput({
+                    ...input,
+                    errormessage: "Unable to create account, retry later!",
+                  });
+                  setLoading(false);
+                }
+              }).catch((e)=>{
+                setInput({
+                  ...input,
+                  errormessage: "There is error creating account!",
+                });
+              })
+            
+          } 
     return true;
   };
 
@@ -370,7 +359,7 @@ function CreateAccount() {
                             </h4>
 
                             <MDBRow>
-                              <p className="fw-semibold text-primary">
+                              <p className="fw-semibold primary-text">
                                 Add User Information
                               </p>
                               <MDBCol sm="6">
@@ -447,10 +436,10 @@ function CreateAccount() {
                               onChange={UpdateAddress}
                             />
 
-                            <p className="fw-semibold text-primary mt-3">
+                            <p className="fw-semibold primary-text mt-3">
                               User Credentials
                             </p>
-                            <hr className="text-primary mt-0" />
+                            <hr className="primary-text mt-0" />
 
                             <MDBInput
                               wrapperClass="mt-2 mb-1"
@@ -493,17 +482,17 @@ function CreateAccount() {
                                 <Button
                                   title="show password"
                                   onClick={() => setShowPass(!showpass)}
-                                  variant="white"
-                                  className="position-absolute end-0 text-center  bg-success bg-gradient text-white rounded-0 rounded-end border-3  me-2 "
+                                  variant="light"
+                                  className="position-absolute end-0 text-center primary-fill text-dark rounded-0 rounded-end border-3  me-2 "
                                 >
                                   {showpass ? (
                                     <AiOutlineEye
-                                      size={18}
+                                      size={22}
                                       className="me-1 pb-1"
                                     />
                                   ) : (
                                     <AiOutlineEyeInvisible
-                                      size={18}
+                                      size={22}
                                       className="me-1 pb-1"
                                     />
                                   )}
@@ -555,7 +544,7 @@ function CreateAccount() {
                                     variant="light"
                                     title="1 License"
                                     id="dropdown-basic"
-                                    className="bg-success bg-gradient border-0 text-white fw-medium font-link"
+                                    className="primary-fill border-0 text-dark fw-medium font-link"
                                   >
                                     {Period}
                                   </Dropdown.Toggle>
@@ -593,10 +582,10 @@ function CreateAccount() {
 
                           <MDBRow className="mt-5 pt-1">
                             <MDBCol>
-                              <p className="fw-semibold text-primary ps-3">
+                              <p className="fw-semibold primary-text ps-3">
                                 Choose payment method
                               </p>
-                              <hr className="text-primary mt-0 ms-3" />
+                              <hr className="primary-text mt-0 ms-3" />
                             </MDBCol>
                           </MDBRow>
 
@@ -693,7 +682,7 @@ function CreateAccount() {
           >
             <BsCheckCircle size={66} className="text-success m-3" />
             <p className="fs-5 ">Successfully Created</p>
-            <p className="fs-6 ">We have sent you an email check your inbox</p>
+            <p className="fs-6 text-muted"> We will send you an email as soon as your account get activated!</p>
          
             <Row className="d-flex justify-content-evenly align-items-center m-auto mt-5 w-50">
               <Col>

@@ -9,11 +9,11 @@ const Gateways = [
   name: "With Cash",
   icon: cash,
     },
-    {
-        id: "1001",
-        name: "Chapa",
-        icon: chapa,
-          },
+    // {
+    //     id: "1001",
+    //     name: "Chapa",
+    //     icon: chapa,
+    //       },
          
 ];
 export default Gateways;
