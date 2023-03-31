@@ -13,22 +13,84 @@ import { AiFillCheckCircle,AiFillWarning } from "react-icons/ai";
 import FormHelperText from "@mui/joy/FormHelperText";
 import Input from "@mui/joy/Input";
 import Button from "@mui/joy/Button";
+import Connection from "../constants/Connections";
+
 const Footer = () => {
   const [data, setData] = React.useState({
     email: "",
     status: "initial",
+     emailval: false,
+     emailprompt: "",
+     loading: false,
   });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setData((current) => ({ ...current, status: "loading" }));
-    try {
-      // Replace timeout with real backend operation
-      setTimeout(() => {
-        setData({ email: "", status: "sent" });
-      }, 1500);
-    } catch (error) {
-      setData((current) => ({ ...current, status: "failure" }));
+const updateEmail =(event)=>{
+ 
+    setData({
+      ...data,
+      email: event.target.value,
+      status: "initial",
+    })
+  }
+
+
+  const handleSubmit = () => {
+  
+    const re = /\S+@\S+\.\S+/;
+
+    if(!(re.test(data.email))){
+      setData({
+        ...data,
+        status: "failure",
+        emailval: true,
+        emailprompt: "Please provide valid email",
+      });
+    }
+    else{
+      setData({
+        ...data,
+        emailval: false,
+        loading: true,
+      });
+
+    var Api = Connection.api+Connection.trial;
+    var headers ={
+
+      accept: "application/json",
+      "Content-Type": "application/json"
+    };
+    var datas ={
+      email: data.email,
+    };
+
+    fetch(Api,{
+      method: "POST",
+      headers:headers,
+      body: JSON.stringify(datas)
+    }).then((response) => response.json())
+    .then((response)=>{
+
+      if(response === "succeed"){
+        setData({
+          ...data,
+          status: "sent",
+          loading: false,
+        });
+      }
+      else if(response === "exists"){
+        setData({
+          ...data,
+          status: "exist",
+          loading: false,
+        });
+      }
+ }).catch((e)=>{
+  setData({
+    ...data,
+    status: "failure",
+    loading: false,
+  });
+ });
     }
   };
 
@@ -40,7 +102,7 @@ const Footer = () => {
                 </p>
         <Col sm={4} className="pb-4">
         
-                <form onSubmit={handleSubmit} className="">
+                <form >
                   <FormControl>
                     <Input
                   
@@ -49,42 +111,56 @@ const Footer = () => {
                       type="email"
                       required
                       value={data.email}
-                      onChange={(event) =>
-                        setData({
-                          email: event.target.value,
-                          status: "initial",
-                        })
-                      }
+                      onChange={updateEmail}
                       error={data.status === "failure"}
                       endDecorator={
+
                         <Button
                          className="rounded-pill px-4 gradient text-dark"
-                          
-                          loading={data.status === "loading"}
-                          type="submit"
-                        
+                         type="button"
+                          onClick={() => handleSubmit()}
                         >
-                          Free Trial
+                          {data.loading ? (
+                      <div
+                        class="spinner-border spinner-border-sm text-white"
+                        role="status"
+                      >
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                    ) : (
+                      <span className="fw-light">Free Trial</span>
+                    )}
+                          
                         </Button>
                       }
                     />
+                      {data.status === "exist" && (
+                      <FormHelperText
+                      
+                        className="fs-6 fw-normal text-dark"
+                      >
+                        <AiFillWarning size={28} className="text-danger mx-2" />
+                        We have already sent you an emailcheck your inbox or spam folder!
+                      </FormHelperText>
+                    )}
                     {data.status === "failure" && (
                       <FormHelperText
                         sx={(theme) => ({
                           color: theme.vars.palette.danger[400],
                         })}
+                        className="fs-6 fw-normal"
                       >
-                        <AiFillWarning size={16} className="text-danger mx-2" />
+                        <AiFillWarning size={28} className="text-dark mx-2" />
                         Oops! something went wrong, please try again later.
                       </FormHelperText>
                     )}
 
                     {data.status === "sent" && (
                       <FormHelperText
-                        className="text-success "
+                        className="text-success fw-semibold"
                       >
-                        <AiFillCheckCircle size={16} className="text-success mx-2" />
-                        The link to download app is sent to email provided!
+                        <AiFillCheckCircle size={20} className="text-succees mx-2" />
+                        The link to download the app is sent to email provided!
                       </FormHelperText>
                     )}
                   </FormControl>

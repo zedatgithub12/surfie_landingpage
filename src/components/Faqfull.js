@@ -42,7 +42,7 @@ const updateMessage = (event)=>{
 
 
   const DropMessage = () => {
-    var Api = Connection.api+Connection.contact;
+    var Api = Connection.api+Connection.newQuery;
     var headers = {
       accept: "application/json",
       "Content-Type": "application/json"
@@ -51,16 +51,17 @@ const updateMessage = (event)=>{
     name: info.username,
     email: info.email,
     message: info.message,
+    status: "1",
     }
 
     fetch(Api,{
       method: "POST",
       headers: headers,
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     })
     .then((response) => response.json())
     .then((response) => {
-    
+     console.log(response);
       if(response === "succeed"){
         setInfo({
           ...info,
@@ -83,8 +84,8 @@ const updateMessage = (event)=>{
   };
 
   return (
-    <div>
-      <Row className="mt-3 d-flex pb-4 ">
+    <>
+          <Row className="mt-3 d-flex pb-4 ">
         <Col sm={2}>
           <div className=" mt-3 mb-2  d-flex justify-content-center align-items-center rounded-circle faq shadow-sm colored2 m-auto ">
             <AiOutlineQuestionCircle size={50} className="primary-bg m-auto " />
@@ -423,7 +424,7 @@ const updateMessage = (event)=>{
                 variant="light"
                 type="submit"
                 className=" btn btn-md  py-1 ms-2 primary-fill px-4 py-2 w-25 "
-                onSubmit={() => DropMessage()}
+                onClick={() => DropMessage()}
               >
                 Send
               </button>
@@ -502,7 +503,7 @@ const updateMessage = (event)=>{
           </Card>
         </Col>
       </Row>
-    </div>
+    </>
   );
 }
 export default Faqfull;

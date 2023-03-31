@@ -16,6 +16,7 @@ const Connection = {
 
     // support api's
     support: "/support",
+    newQuery: "/newquery",
     closeTicket: "/closeticket/",
 
     //mailing api's
@@ -23,6 +24,9 @@ const Connection = {
 
     //drop message
     contact: "/contact",
+
+    //free trial email collection api
+    trial: "/trial",
 };
 
 export default Connection;
