@@ -4,21 +4,22 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
-
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import { useTranslation } from 'react-i18next';
+
 
 const steps = [
   {
-    label: <h6>Get start</h6>,
+    label: <h6>Get started</h6>,
     description: <p>Press get started button and create account, select number of
     license and pay the subscription fee.</p>,
   },
   {
     label: <h6>Downlaod Parent Application</h6>,
     description:<p>There is an email sent to email address provided while creating an
-      account the email and click download parent app link and download
-      parent app</p>,
+      account, click download parent app link and download
+      parent app and signin using your email.</p>,
   },
   {
     label: <h6>Download Child Application</h6>,
@@ -27,7 +28,7 @@ const steps = [
   },
   {
     label: <h6>Last Step </h6>,
-    description: <p>Tada! it’s done you have set all account setup! if you are looking for how to manage your account online Sign in</p>,
+    description: <p>Tada! it’s done you have set all account setup! if you have any challenge setting-up your account contact us anytime</p>,
   },
 
  
@@ -35,6 +36,8 @@ const steps = [
 
 export default function VerticalLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
+  const { t } = useTranslation();
+
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -57,7 +60,7 @@ export default function VerticalLinearStepper() {
               
               optional={
                 index === 3 ? (
-                  <Typography className="primary-bg text-white" variant="caption" >Last step</Typography>
+                  <Typography className="primary-bg text-white" variant="caption" >{t('Last step')}</Typography>
                 ) : null
 
 
@@ -75,7 +78,7 @@ export default function VerticalLinearStepper() {
                     onClick={handleNext}
                     sx={{ mt: 1, mr: 1 }}
                   >
-                    {index === steps.length - 1 ? 'Finish' : 'Continue'}
+                    {t(index === steps.length - 1 ? 'Finish' : 'Continue')}
                   </button>
 
                   <button type="button"  href="/" class=" ms-3 btn btn-white text-dark fw-normal border-0 "
@@ -83,7 +86,7 @@ export default function VerticalLinearStepper() {
                     onClick={handleBack}
                     sx={{ mt: 1, mr: 1 }}
                   >
-                    Back
+                    {t('Back')}
                   </button>
                 </div>
               </Box>
@@ -93,9 +96,9 @@ export default function VerticalLinearStepper() {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} sx={{ p: 3 }} className="bg-light rounded-4">
-          <Typography className="primary-bg" >All steps completed - you&apos;re finished</Typography>
+          <Typography className="primary-bg" >{t('All steps completed happy parenting')}</Typography>
           <button type="button" className="mt-3 btn btn-light shadow-sm px-4 text-muted" onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-            Reset
+            {t('Reset')}
           </button>
         </Paper>
       )}

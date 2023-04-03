@@ -6,16 +6,17 @@ import Telebirr from "../assets/telebirr.png";
 import { NavLink } from "react-router-dom";
 import Cash from "../assets/cash.png";
 import Chapa from "../assets/chapa.png";
+import { useTranslation } from 'react-i18next';
 
 function Pricingcom() {
   const [monthly, setMonthly] = useState(true);
-
+  const { t } = useTranslation();
   return (
     <Container fluid>
       <Row className="d-flex p-4 mt-3 justify-content-center align-items-center">
-        <h2 className="text-center mt-3 fw-bold"> Package Pricing </h2>
+        <h2 className="text-center mt-3 fw-bold"> {t('Package Pricing')} </h2>
         <p className="text-center text-secondary fw-semibold mb-3 fs-6">
-          One license for one device
+          {t('One license for one device')}
         </p>
       </Row>
 
@@ -31,7 +32,7 @@ function Pricingcom() {
               }
               onClick={() => setMonthly(!monthly)}
             >
-              Monthly
+              {t('Monthly')}
             </button>
             <button
               type="button"
@@ -42,7 +43,7 @@ function Pricingcom() {
               }
               onClick={() => setMonthly(!monthly)}
             >
-              Annual
+              {t('Annual')}
             </button>
           </div>
         </div>
@@ -57,28 +58,28 @@ function Pricingcom() {
 
             <div className="card overflow-visible border-0 rounded-3 shadow-sm space py-2">
               <div className="rounded-top py-5 primary-fill rounded-top-3">
-                <h4 className="mt-3 fw-normal text-white ">Device Licence</h4>
+                <h4 className="mt-3 fw-normal text-white ">{t('Device Licence')}</h4>
               </div>
               <div className="card-body cardcol ">
                 {monthly ? (
                   <p className=" pricing-card-title fs-4 pt-2">
-                    300 Birr{" "}
-                    <small className="text-muted fw-light">/month</small>
+                    300 {t('Birr')}{" "}
+                    <small className="text-muted fw-light">/{t('month')}</small>
                   </p>
                 ) : (
                   <p className="pricing-card-title fs-4 pt-2">
-                    3,300 Birr
-                    <small className="text-muted fw-light">/annual</small>
+                    3,300 {t('Birr')}
+                    <small className="text-muted fw-light">/{t('annual')}</small>
                   </p>
                 )}
 
                 {monthly ? (
                   <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>14 days free trial for 1 monthly subscription</li>
+                    <li>{t('14 days free trial')}</li>
                   </ul>
                 ) : (
                   <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>Annually Pay only 3,300 Birr Get 1 month free</li>
+                    <li>{t('Annually Pay only 3,300 Birr Get 1 month free')}</li>
                   </ul>
                 )}
 
@@ -86,7 +87,7 @@ function Pricingcom() {
                   to="/account"
                   className=" w-75  btn btn-md bg-dark fw-normal text-light"
                 >
-                  Select
+                  {t('Select')}
                 </Link>
               </div>
             </div>
@@ -98,34 +99,34 @@ function Pricingcom() {
             </div>
             <div className="card overflow-visible border-0 rounded-3 shadow-sm space py-2">
               <div className="rounded-top py-5 primary-fill">
-                <h4 className="mt-3 fw-normal text-white">Device Licence</h4>
+                <h4 className="mt-3 fw-normal text-white">{t('Device Licence')}</h4>
               </div>
               <div className="card-body cardcol">
                 {monthly ? (
                   <p className="pricing-card-title fs-4 pt-2">
-                    450 Birr{" "}
-                    <small className="text-muted fw-light">/month</small>
+                    450 {t('Birr')}{" "}
+                    <small className="text-muted fw-light">/{t('month')}</small>
                   </p>
                 ) : (
                   <p className="card-title pricing-card-title fs-4 pt-2">
-                    4,950 Birr
-                    <small className="text-muted fw-light">/annual</small>
+                    4,950 {t('Birr')}
+                    <small className="text-muted fw-light">/{t('annual')}</small>
                   </p>
                 )}
                 {monthly ? (
                   <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>14 days free trial for 1 month subscription</li>
+                     <li>{t('14 days free trial')}</li>
                   </ul>
                 ) : (
                   <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>Annually Pay only 4,950 Birr Get 1 month free</li>
+                    <li>{t('Annually Pay only 4,950 Birr Get 1 month free')}</li>
                   </ul>
                 )}
                 <Link
                   to="/account"
                   className=" w-75  btn btn-md bg-dark fw-normal text-light"
                 >
-                  Select
+                  {t('Select')}
                 </Link>
               </div>
             </div>
@@ -137,34 +138,34 @@ function Pricingcom() {
             </div>
             <div className="card overflow-visible border-0 rounded-3 shadow-sm space py-2">
               <div className="rounded-top py-5 primary-fill">
-                <h4 className="mt-3 fw-normal text-white">Device Licence</h4>
+                <h4 className="mt-3 fw-normal text-white">{t('Device Licence')}</h4>
               </div>
               <div className="card-body cardcol">
                 {monthly ? (
                   <p className="card-title pricing-card-title fs-4  pt-2">
-                    600 Birr{" "}
-                    <small className="text-muted fw-light">/month</small>
+                    600 {t('Birr')}{" "}
+                    <small className="text-muted fw-light">/{t('month')}</small>
                   </p>
                 ) : (
                   <p className="card-title pricing-card-title fs-4  pt-2">
-                    6,600 Birr
-                    <small className="text-muted fw-light">/annual</small>
+                    6,600 {t('Birr')}
+                    <small className="text-muted fw-light">/{t('annual')}</small>
                   </p>
                 )}
                 {monthly ? (
                   <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>14 days free trial for 1 month subscription</li>
+                    <li>{t('14 days free trial')}</li>
                   </ul>
                 ) : (
                   <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>Annually Pay only 6,600 ETB Get 1 month free</li>
+                    <li>{t('Annually Pay only 6,600 ETB Get 1 month free')}</li>
                   </ul>
                 )}
                 <Link
                   to="/account"
                   className=" w-75  btn btn-md bg-dark fw-normal text-light"
                 >
-                  Select
+                  {t('Select')}
                 </Link>
               </div>
             </div>
@@ -180,7 +181,7 @@ function Pricingcom() {
             className="d-flex align-items-center justify-content-center ps-4"
           >
             <p className="  text-center text-dark fw-light fs-4 ">
-              If you want Surfie Ethiopia license for more than 5 devices Contact us!
+              {t('If you want Surfie Ethiopia license for more than 5 devices Contact us!')}
             </p>
           </Col>
 
@@ -192,7 +193,7 @@ function Pricingcom() {
               to="/contact"
               className="btn btn-light primary-bg text-dark  fw-semibold p-2 px-5 text-decoration-none"
             >
-              Contact
+              {t('Contact')}
             </NavLink>
           </Col>
         </Row>
@@ -202,8 +203,8 @@ function Pricingcom() {
       <Row className="p-3"></Row> 
       <Row className="d-flex mb-5 pb-0 p-4 mt-3 text-center align-items-center">
         <Col lg={7} >
-          <h1 className="text-left pt-5 pe-3"> Pay with </h1>
-          <p className="pb-4 pe-3  text-left  text-muted"> It is Made Easy</p>
+          <h1 className="text-left pt-5 pe-3"> {t('Pay with')} </h1>
+          <p className="pb-4 pe-3  text-left  text-muted"> {t('It is Made Easy')}</p>
         </Col>
 
 
