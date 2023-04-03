@@ -14,8 +14,11 @@ import FormHelperText from "@mui/joy/FormHelperText";
 import Input from "@mui/joy/Input";
 import Button from "@mui/joy/Button";
 import Connection from "../constants/Connections";
+import { useTranslation } from 'react-i18next';
+
 
 const Footer = () => {
+  const { t } = useTranslation();
   const [data, setData] = React.useState({
     email: "",
     status: "initial",
@@ -98,7 +101,7 @@ const updateEmail =(event)=>{
     <Container fluid>
       <Row className="fot text-white  pt-3">
       <p className="fs-4 text-center text-dark mt-2" >
-                  Do you feel like trying?
+                  {t('Do you feel like trying?')}
                 </p>
         <Col sm={4} className="pb-4">
         
@@ -107,7 +110,7 @@ const updateEmail =(event)=>{
                     <Input
                   
                       className="px-3 py-2 rounded-pill ps-4 "
-                      placeholder="Enter your email address"
+                      placeholder={t('Enter your email address')}
                       type="email"
                       required
                       value={data.email}
@@ -125,10 +128,10 @@ const updateEmail =(event)=>{
                         class="spinner-border spinner-border-sm text-white"
                         role="status"
                       >
-                        <span class="visually-hidden">Loading...</span>
+                        <span class="visually-hidden">{t('Loading...')}</span>
                       </div>
                     ) : (
-                      <span className="fw-light">Free Trial</span>
+                      <span className="fw-light">{t('Free Trial')}</span>
                     )}
                           
                         </Button>

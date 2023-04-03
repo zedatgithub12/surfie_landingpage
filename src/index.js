@@ -1,4 +1,5 @@
 import React from 'react';
+import './i18n';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
