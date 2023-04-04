@@ -22,8 +22,14 @@ import { BsCheckCircle } from "react-icons/bs";
 import Connection from "../constants/Connections";
 import Modal from "react-bootstrap/Modal";
 import Navbars from "../components/Navbar";
+import { useTranslation } from "react-i18next";
+
+
+
 
 function CreateAccount() {
+
+  const {t} = useTranslation();
   const [loading, setLoading] = useState(false);
   const [license, setLicense] = useState("Select License");
   const [Period, setPeriod] = useState("monthly");
@@ -353,17 +359,17 @@ function CreateAccount() {
                         <MDBCol sd="6">
                           <MDBCardBody className="text-black d-flex flex-column justify-content-center ">
                             <h4 className="mb-4 text-uppercase fw-bold">
-                              Create Account
+                              {t('Create Account')}
                             </h4>
 
                             <MDBRow>
                               <p className="fw-semibold primary-text">
-                                Add User Information
+                                {t('Add User Information')}
                               </p>
                               <MDBCol sm="6">
                                 <MDBInput
                                   wrapperClass="mb-2"
-                                  label="First Name"
+                                  label={t("First Name")}
                                   size="md"
                                   id="form1"
                                   type="text"
@@ -376,7 +382,7 @@ function CreateAccount() {
                               <MDBCol sm="6">
                                 <MDBInput
                                   wrapperClass="mb-2"
-                                  label="Middle Name"
+                                  label={t("Middle Name")}
                                   size="md"
                                   id="form2"
                                   type="text"
@@ -388,7 +394,7 @@ function CreateAccount() {
                             </MDBRow>
                             <MDBInput
                               wrapperClass="mb-2"
-                              label="Last Name"
+                              label={t("Last Name")}
                               size="md"
                               id="form9"
                               type="text"
@@ -400,7 +406,7 @@ function CreateAccount() {
                               <MDBCol sm="6">
                                 <MDBInput
                                   wrapperClass="mb-2"
-                                  label="Email Address"
+                                  label={t("Email Address")}
                                   size="md"
                                   id="form3"
                                   type="email"
@@ -413,7 +419,7 @@ function CreateAccount() {
                               <MDBCol sm="6">
                                 <MDBInput
                                   wrapperClass="mb-2"
-                                  label="Phone"
+                                  label={t("Phone")}
                                   size="md"
                                   id="form4"
                                   type="phone"
@@ -426,7 +432,7 @@ function CreateAccount() {
 
                             <MDBInput
                               wrapperClass="mb-2"
-                              label="Living Address"
+                              label={t("Living Address")}
                               size="md"
                               id="form5"
                               type="address"
@@ -435,13 +441,13 @@ function CreateAccount() {
                             />
 
                             <p className="fw-semibold primary-text mt-3">
-                              User Credentials
+                              {t('Account Credentials')}
                             </p>
                             <hr className="primary-text mt-0" />
 
                             <MDBInput
                               wrapperClass="mt-2 mb-1"
-                              label="Username"
+                              label={t("Username")}
                               size="md"
                               id="form6"
                               type="text"
@@ -453,7 +459,7 @@ function CreateAccount() {
                               <MDBCol sm="6">
                                 <MDBInput
                                   wrapperClass="mb-2"
-                                  label="Password"
+                                  label={t("Password")}
                                   size="md"
                                   id="form7"
                                   type={showpass ? "text" : "password"}
@@ -469,7 +475,7 @@ function CreateAccount() {
                               >
                                 <MDBInput
                                   wrapperClass={input.passmatch + "mb-4"}
-                                  label="Confirm Password"
+                                  label={t("Confirm Password")}
                                   size="md"
                                   id="form8"
                                   type={showpass ? "text" : "password"}
@@ -507,30 +513,30 @@ function CreateAccount() {
                                     className="text-dark border m-0 me-5 fw-semibold font-link"
                                   >
                                     {license === "Select License"
-                                      ? "Select License"
-                                      : license + " License"}
+                                      ? t("Select License")
+                                      : license + t(" License")}
                                   </Dropdown.Toggle>
 
                                   <Dropdown.Menu variant="light" id="licenses">
                                     <Dropdown.Item
                                       onClick={() => setLicense(0)}
                                     >
-                                      Select Package
+                                      {t('Select License')}
                                     </Dropdown.Item>
                                     <Dropdown.Item
                                       onClick={() => setLicense(5)}
                                     >
-                                      5 License
+                                      5 {t(" License")}
                                     </Dropdown.Item>
                                     <Dropdown.Item
                                       onClick={() => setLicense(10)}
                                     >
-                                      10 License
+                                      10 {t(" License")}
                                     </Dropdown.Item>
                                     <Dropdown.Item
                                       onClick={() => setLicense(15)}
                                     >
-                                      15 License
+                                      15 {t(" License")}
                                     </Dropdown.Item>
                                   </Dropdown.Menu>
                                 </Dropdown>
@@ -544,19 +550,19 @@ function CreateAccount() {
                                     id="dropdown-basic"
                                     className="primary-fill border-0 text-dark fw-medium font-link"
                                   >
-                                    {Period}
+                                    {t(Period)}
                                   </Dropdown.Toggle>
 
                                   <Dropdown.Menu variant="light">
                                     <Dropdown.Item
                                       onClick={() => setPeriod("monthly")}
                                     >
-                                      Monthly
+                                      {t('Monthly')}
                                     </Dropdown.Item>
                                     <Dropdown.Item
                                       onClick={() => setPeriod("annual")}
                                     >
-                                      Annual
+                                      {t('Annual')}
                                     </Dropdown.Item>
                                   </Dropdown.Menu>
                                 </Dropdown>
@@ -581,7 +587,7 @@ function CreateAccount() {
                           <MDBRow className="mt-5 pt-1">
                             <MDBCol>
                               <p className="fw-semibold primary-text ps-3">
-                                Choose payment method
+                                {t('Choose payment method')}
                               </p>
                               <hr className="primary-text mt-0 ms-3" />
                             </MDBCol>
@@ -618,7 +624,7 @@ function CreateAccount() {
                                         onChange={() => Select(item.id)}
                                         className="align-self-start me-2 "
                                       />
-                                      {item.name}
+                                      {t(item.name)}
                                     </div>
                                   </div>
                                 </div>
@@ -638,7 +644,7 @@ function CreateAccount() {
                           onClick={() => navigate("/")}
                         >
                       
-                            Back
+                            {t('Back')}
                          
                         </Button>
 
@@ -655,10 +661,10 @@ function CreateAccount() {
                               class="spinner-border spinner-border-sm text-secondary"
                               role="status"
                             >
-                              <span class="visually-hidden">Loading...</span>
+                              <span class="visually-hidden">{t('Loading...')}</span>
                             </div>
                           ) : (
-                            <span>Create Account</span>
+                            <span>{t('Create Account')}</span>
                           )}
                         </Button>
                       </div>
@@ -679,8 +685,8 @@ function CreateAccount() {
             className=" text-center align-items-center justify-content-center  m-auto p-3  mt-2 mb-1 "
           >
             <BsCheckCircle size={66} className="text-success m-3" />
-            <p className="fs-5 ">Successfully Created</p>
-            <p className="fs-6 text-muted"> We will send you an email as soon as your account get activated!</p>
+            <p className="fs-5 ">{t('Successfully Created')}</p>
+            <p className="fs-6 text-muted"> {t('We will send you an email as soon as your account get activated!')}</p>
          
             <Row className="d-flex justify-content-evenly align-items-center m-auto mt-5 w-50">
               <Col>
@@ -693,7 +699,7 @@ function CreateAccount() {
                 btn btn-light
                 text-decoration-none text-dark fw-semibold "
                 >
-                  Back
+                  {t('Back')}
                 </Link>
               </Col>
 
@@ -705,7 +711,7 @@ function CreateAccount() {
                 d-flex justify-content-evenly align-self-center
                 text-decoration-none text-dark btn primary-fill text-dark "
                 >
-                  Home
+                  {t('Home')}
                 </Link>
               </Col>
             </Row>

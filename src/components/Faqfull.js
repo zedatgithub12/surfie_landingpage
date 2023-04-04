@@ -8,9 +8,12 @@ import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { GoLocation } from "react-icons/go";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import Connection from "../constants/Connections";
+import { useTranslation } from "react-i18next";
 
 
 function Faqfull() {
+const {t} = useTranslation();
+
 
  const [info,setInfo] = useState({
   username: "",
@@ -92,8 +95,8 @@ const updateMessage = (event)=>{
           </div>
         </Col>
         <Col sm={8} className=" ps-4">
-          <h2 className="pe-3 mt-3 "> Frequently Asked Questions -FAQ</h2>
-          <h6 className=" text-muted">How can we help you?</h6>
+          <h2 className="pe-3 mt-3 ">{t('Frequently Asked Questions -FAQ')}</h2>
+          <h6 className=" text-muted">{t('How can we help you?')}</h6>
         </Col>
       </Row>
 

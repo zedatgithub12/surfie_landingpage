@@ -7,10 +7,10 @@ import Puresight from "../assets/puresight.png";
 import Surfiecolor from "../assets/surfiecolor.png";
 import Placetobe from "../assets/p2b.png";
 import Minawifi from "../assets/minawifi.png";
- 
+ import { useTranslation } from "react-i18next";
 
 function Aboutus() {
-
+  const {t} = useTranslation();
  
   return (
   <>
@@ -24,14 +24,14 @@ function Aboutus() {
         </Col>
         <Col sm={6} className=" ps-4">
          
-          <p className="p-2 mt-4 fs-2"> Who we are  </p>
-          <h6 className="p-3 pt-0 mb-2 text-muted just lead">
-          AfroMiNA Digital Technologies PLC is an African digital solutions company based in Ethiopia established back in 2018 with the motto “Striving to Narrow Down the Digital Divide in Africa” working mainly focused on easing the accessibility of impactful digital solutions to society.
-          </h6> 
+          <p className="p-2 mt-4 fs-2"> {t('Who we are')}  </p>
+          <p className="p-3 pt-0 mb-2 text-muted just fs-5 lead">
+          {t('AfroMiNA Digital Technologies PLC is an African digital solutions company based in Ethiopia established back in 2018 with the motto “Striving to Narrow Down the Digital Divide in Africa” working mainly focused on easing the accessibility of impactful digital solutions to society.')}
+          </p> 
             
-          <h6 className="p-3 pt-0 mb-2 text-muted just lead">
-          Partnering with one of the world's leading online parental control service providers called PureSight based in Israel, which is currently protecting millions of kids and families all over the world, we brought a digital solution called Surfie Ethiopia for Ethiopian society to contribute our part in ensuring the online safety of families and children in Ethiopia.
-         </h6>
+          <p className="p-3 pt-0 mb-2 text-muted just fs-5 lead">
+          {t('In-partnership with one of the world leading online parental control service providers called PureSight based in Israel, which is currently protecting millions of kids and families all over the world, we brought a digital solution called Surfie Ethiopia for Ethiopian society to contribute our part in ensuring the online safety of families and children in Ethiopia.')}
+         </p>
         </Col>
       </Row>
       </Container>
@@ -39,21 +39,16 @@ function Aboutus() {
       <Container fluid className="gradient">
         <Row className="d-flex  justify-content-center">
           <Col sm={4} className=" p-3 mb-3 m-3 h-100 px-4">
-            <p className="pt-2 fs-3 text-white">Vision </p>
+            <p className="pt-2 fs-3 text-white">{t('Vision')} </p>
             <h6 className="mb-5 text-dark  just lead">
-              To be one of the leading forefronts in ensuring online safety for
-              families and children in Ethiopia.
+              {t('To be one of the leading forefronts in ensuring online safety for families and children in Ethiopia.')}
             </h6>
           </Col>
 
           <Col sm={4} className=" border-start border-secondary p-3 px-4 mb-3 m-3 h-100">
-            <p className="pt-2 fs-3 text-white">Mission </p>
+            <p className="pt-2 fs-3 text-white">{t('Mission')} </p>
             <h6 className=" mb-5 text-dark  just lead">
-              To support and assure millions of families in Ethiopia to protect
-              their children from any online unsafe activities, which they are
-              exposed to because of smart devices, with our parental control
-              mobile application, Surfie Ethiopia, and contribute towards
-              creating good citizenship for our country and the world.
+              {t('To support and assure millions of families in Ethiopia to protect their children from any online unsafe activities, which they are exposed to because of smart devices, with our parental control mobile application, Surfie Ethiopia, and contribute towards creating good citizenship for our country and the world.')}
             </h6>
           </Col>
         </Row>

@@ -5,7 +5,7 @@ import {
   MdOutlineAppShortcut
 } from "react-icons/md";
 import { BsLaptop } from "react-icons/bs";
-import { GiBabyFace, GiBinoculars } from "react-icons/gi";
+import { GiBinoculars } from "react-icons/gi";
 import { RiParentLine } from "react-icons/ri";
 import { FcMindMap } from "react-icons/fc";
 import Card from "react-bootstrap/Card";
@@ -20,8 +20,12 @@ import Eyesup from "../assets/eyesup.jpg";
 import Browse from "../assets/browse.jpg";
 import Family from "../assets/family.jpg";
 import Online from "../assets/online.jpg";
+import { useTranslation } from "react-i18next";
+import { FaChild } from "react-icons/fa";
 
 function Platforms() {
+
+  const {t} = useTranslation();
   const [advanced, setAdvanced] = useState(false);
   const [advanced1, setAdvanced1] = useState(false);
   const [advanced2, setAdvanced2] = useState(false);
@@ -44,30 +48,24 @@ function Platforms() {
             <MdOutlineAppShortcut size={80} className="primary-bg m-auto" />
           </div>
         </Col>
-        <Col sm={6} className=" ps-4">
+        <Col sm={6} className="ps-4">
          
-          <p className="p-2 mt-4 fs-2"> Surfie Features </p>
-          <h6 className="p-3 pt-0 mb-2 text-muted just">
-            The internet has created endless opportunities and information
-            available to everybody anywhere. Our kids’ natural curiosity can
-            lead them to search, and be exposed to inappropriate content, unfit
-            for their age. It also can give them bad examples, leading them to
-            believe that certain life experiences – such as sex – works just
-            like it does in the movies. Young children might access pornography;
-            teenagers could be checking about risky challenges like the Momo
-            Challenge, anorexia and bulimia, and otherwise.</h6> 
+          <p className="p-2 mt-4 fs-2"> {t('Surfie Features')} </p>
+          <p className="p-3 pt-0 mb-2 text-muted just fs-6 lead">
+          {t('The internet has created endless opportunities and information is available to everybody anywhere. Our kids natural curiosity can lead them to search, and be exposed to inappropriate content, unfit for their age.')} </p> 
             <p className=" p-3 mb-2 text-muted just fst-italic">
-            Protect your kids
-            with the Surfie app’s innovative digital parenting features
+            {t('Protect your kids with the Surfie apps innovative digital parenting features')}
           </p>
         </Col>
       </Row>
+     
       </Container>
-      <Row className="d-flex justify-content-center align-items-center">
-        <h3 className="text-center  pb-3 ">Surfie Platforms </h3>
-      </Row>
+    
 
       <Container>
+      <Row className="d-flex justify-content-center align-items-center">
+        <h3 className="text-center  pb-3 ">{t('Surfie Platforms')} </h3>
+      </Row>
         <Row className="p-3 d-flex justify-content-center ">
           <Col
             sm={3}
@@ -75,14 +73,13 @@ function Platforms() {
           >
             
               <Card.Body>
-                <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm border-0 bg-white m-auto ">
-                  <RiParentLine size={60} className="text-secondary m-auto" />
+                <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm border-0 primary-bg border-0 m-auto ">
+                  <RiParentLine size={60} className="text-white m-auto" />
                 </div>
 
-                <Card.Title>Surfie Parent</Card.Title>
+                <Card.Title>{t('Surfie Parent')}</Card.Title>
                 <Card.Text className="textcolor-w">
-                  A friendly, easy to use app that offers 24/7 access to your
-                  child's digital world and keeps them safe and secure.
+                  {t('An approachable, simple-to-use tool that gives you constant access to your kids smart gadgets and keeps them safe and secure.')}
                 </Card.Text>
               </Card.Body>
           
@@ -93,14 +90,13 @@ function Platforms() {
             className="primary-fill m-2 text-center border-0 shadow-sm  mb-4 p-3 rounded"
           >
               <Card.Body>
-                <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm border bg-white m-auto ">
-                  <GiBabyFace size={60} className=" text-secondary  m-auto" />
+                <div className="mb-4 d-flex justify-content-center align-items-center primary-bg rounded-circle fcard shadow-sm border m-auto border-0 ">
+                  <FaChild size={60} className=" text-white  m-auto" />
                 </div>
 
-                <Card.Title>Surfie Child</Card.Title>
+                <Card.Title>{t('Surfie Child')}</Card.Title>
                 <Card.Text className="textcolor-w">
-                  Install the app across all of your child’s devices to protect
-                  them from online risks.
+                  {t('Install the app across all of your childrens devices to protect them from online risks.')}
                 </Card.Text>
               </Card.Body>
           
@@ -112,13 +108,13 @@ function Platforms() {
           >
            
               <Card.Body>
-                <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm border bg-white m-auto">
-                  <BsLaptop size={60} className="text-secondary m-auto" />
+                <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm border primary-bg border-0 m-auto">
+                  <BsLaptop size={60} className="text-white m-auto" />
                 </div>
 
-                <Card.Title>Surfie PC Client</Card.Title>
+                <Card.Title>{t('Surfie PC Client')}</Card.Title>
                 <Card.Text className="textcolor-w">
-                  Surfie PC client is installed on Windows-based computers.
+                  {t('Surfie PC client is installed on Windows-based computers.')}
                 </Card.Text>
               </Card.Body>
            
@@ -139,11 +135,9 @@ function Platforms() {
             </Col>
 
             <Col sm={5}>
-              <h4 className=""> Advanced Internet Filtering </h4>
+              <h4 className=""> {t('Advanced Internet Filtering')} </h4>
               <p className=" text-muted">
-                Monitor and filter your kids’ internet consumption, based on
-                their age. Block access, restrict access and filter out what you
-                think is appropriate –or let Surfie decide for you.
+                {t('Monitor and filter your kids internet consumption, based on their age. Block access, restrict access and filter out what you think is appropriate or let Surfie decide for you.')}
               </p>
               {advanced ? (
                 <Button
@@ -151,7 +145,7 @@ function Platforms() {
                   className="btnn rounded-pill bg "
                   onClick={() => setAdvanced(false)}
                 >
-                  Read Less
+                  {t('Read Less')}
                 </Button>
               ) : (
                 <Button
@@ -159,7 +153,7 @@ function Platforms() {
                   className="btnn rounded-pill primary-fill"
                   onClick={() => setAdvanced(true)}
                 >
-                  Read More
+                  {t('Read More')}
                 </Button>
               )}
             </Col>
