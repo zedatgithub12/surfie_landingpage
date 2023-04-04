@@ -68,8 +68,8 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 660,
-  height: 450,
+  width: "80%",
+  height: "60%",
   p: 2,
 };
 
@@ -103,15 +103,16 @@ const HeroImage = () => {
           id="homepage"
         >
           <div className=" mt-3 pt-1 pt-4 ms-4"></div>
-          <h6 className="mt-5 pt-5 ms-2  text-white">
-           {t('Parental Control Application')}
-          </h6>
-
-          <h1 className="  ms-2 fw-bold text-white w-85 my-2">
+          <h1 className="  ms-2 fw-bold text-white w-85  mt-5 pt-5">
             {" "}
             {t('AI-Based Online Child Safety Service')}
             {" "}
           </h1>
+          <h6 className="my-2 ms-2  text-white">
+           {t('Parental Control Application')}
+          </h6>
+
+         
 
           <Row className="d-flex justify-content-evenly align-content-center">
             <Col className="my-5 ms-2">
@@ -124,7 +125,7 @@ const HeroImage = () => {
               </NavLink>
 
               <IconButton
-                className="text-light ms-4 bg-light bg-opacity-10 blur "
+                className="text-light ms-4 bg-light bg-opacity-10 blur  mt-2 "
                 aria-label="Play Video"
                 onClick={handleOpen}
 

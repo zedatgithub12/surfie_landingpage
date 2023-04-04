@@ -7,6 +7,10 @@ body{
   padding:0px;
   margin:0px;
 }
+#root{
+  padding:0px;
+  margin:0px;
+}
 .secondary-color {
   color:#d1d1d1
 }
@@ -361,12 +365,8 @@ justify-content: center;
   top: 15vh;
 
  }
- #image{
-  width: 50vw;
-  height: 50vw;
-  padding-top: 0vh;
-  padding-bottom: 0vh;
-}
+ #image{ display: none;}
+
     
 #card{
     padding-left: 10vw;

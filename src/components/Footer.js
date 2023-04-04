@@ -143,7 +143,7 @@ const updateEmail =(event)=>{
                         className="fs-6 fw-normal text-dark"
                       >
                         <AiFillWarning size={28} className="text-danger mx-2" />
-                        We have already sent you an emailcheck your inbox or spam folder!
+                        {t('We have already sent you an emailcheck your inbox or spam folder!')}
                       </FormHelperText>
                     )}
                     {data.status === "failure" && (
@@ -154,7 +154,7 @@ const updateEmail =(event)=>{
                         className="fs-6 fw-normal"
                       >
                         <AiFillWarning size={28} className="text-dark mx-2" />
-                        Oops! something went wrong, please try again later.
+                       {t('Oops! something went wrong')}
                       </FormHelperText>
                     )}
 
@@ -163,7 +163,7 @@ const updateEmail =(event)=>{
                         className="text-success fw-semibold"
                       >
                         <AiFillCheckCircle size={20} className="text-succees mx-2" />
-                        The link to download the app is sent to email provided!
+                        {t('The link to download the app is sent to email provided!')}
                       </FormHelperText>
                     )}
                   </FormControl>
@@ -176,7 +176,7 @@ const updateEmail =(event)=>{
       <Row className="primary-fill pt-4 ps-3 text-white pb-4">
         <Col sm={4} className="align-items-center">
         <img className="mt-4" src={Surfie} alt="Surfief" width={110} />
-            <p className="pt-3 mb-1">AI-Based Online Child Safety Service </p>
+            <p className="pt-3 mb-1">{t('AI-Based Online Child Safety Service')} </p>
 
           <ul className="list-unstyled text-small mt-1 d-flex ">
           
@@ -213,7 +213,7 @@ const updateEmail =(event)=>{
 
         <Col sm={4} className="align-items-center">
           <h5>
-            Menus <hr className="w-25" />
+            {t('Menus')} <hr className="w-25" />
           </h5>
          
             <ul className="list-unstyled text-small mt-1">
@@ -222,7 +222,7 @@ const updateEmail =(event)=>{
                   to="/"
                   className="text-white text-decoration-none nav-link"
                 >
-                  Home
+                  {t('Home')}
                 </NavLink>
               </li>
               <li className="mb-1">
@@ -230,7 +230,7 @@ const updateEmail =(event)=>{
                   to="/features"
                   className="text-white text-decoration-none nav-link"
                 >
-                  Features
+                  {t('Features')}
                 </NavLink>
               </li>
               <li className="mb-1">
@@ -238,7 +238,7 @@ const updateEmail =(event)=>{
                   to="/pricing"
                   className="text-white text-decoration-none nav-link"
                 >
-                  Pricing
+                  {t('Pricing')}
                 </NavLink>
               </li>
               <li className="mb-1">
@@ -246,7 +246,7 @@ const updateEmail =(event)=>{
                   to="/about"
                   className="text-white text-decoration-none nav-link"
                 >
-                  About us
+                  {t('About Us')}
                 </NavLink>
               </li>
               <li className="mb-1">
@@ -254,7 +254,7 @@ const updateEmail =(event)=>{
                   to="/contact"
                   className="text-white text-decoration-none nav-link"
                 >
-                  Contact us
+                  {t('Contact us')}
                 </NavLink>
               </li>
               <li className="mb-1">
@@ -262,7 +262,7 @@ const updateEmail =(event)=>{
                   to="/account"
                   className="text-white text-decoration-none nav-link"
                 >
-                  Get Started
+                  {t('Get started')}
                 </NavLink>
               </li>
             </ul>
@@ -271,7 +271,7 @@ const updateEmail =(event)=>{
 
         <Col sm={4} className="align-items-center">
           <h5>
-            Contact us
+            {t('Contact us')}
             <hr className="w-25" />
           </h5>
           <ul className="list-unstyled text-small mt-1 fw-normal">
@@ -293,8 +293,7 @@ const updateEmail =(event)=>{
             <li className="mb-1 text-white text-decoration-none d-flex">
               <HiOutlineLocationMarker size={30} className="me-2" />
               <span>
-             <p> Husen Building, 2nd Floor,
-Bole 24, Addis ababa Ethiopia</p>
+             <p> {t('Husen Building, 2nd Floor, Bole 24, Addis ababa Ethiopia')} </p>
             
              </span>
              </li>
@@ -304,7 +303,7 @@ Bole 24, Addis ababa Ethiopia</p>
       <Row className="pt-3 copyright">
         <Col className="d-flex align-items-center justify-content-center">
           <p className=" text-small text-white ">
-            ©2023 AfroMiNA Digital Technologies PLC. All Right Reserved.
+            ©2023 {t('AfroMiNA Digital Technologies PLC. All Right Reserved.')}
           </p>
         </Col>
       </Row>

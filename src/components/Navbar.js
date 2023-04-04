@@ -9,9 +9,9 @@ import { useTranslation } from "react-i18next";
 
 const Navbars = () => {
   
-  const [lang, setLang] = React.useState("🇺🇸 English");
   const { t, i18n } = useTranslation();
-
+  const [lang, setLang] = React.useState("🇺🇸 English");
+  
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
