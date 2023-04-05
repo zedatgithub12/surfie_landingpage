@@ -165,7 +165,7 @@ const Contact = () => {
                 <Accordion.Item eventKey="2">
                   <Accordion.Header>
                   <p className=" py-2 text-secondary ">
-                      {t('During the Surfie-Kid app installation, I got a VPN connection error "Your certeficate is permature" what shouid i do?')}
+                      {t("During the Surfie-Kid app installation, I got a VPN connection error 'Your certeficate is permature' what shouid i do?")}
                     </p>
                   </Accordion.Header>
                   <Accordion.Body className="text-muted my-3">
@@ -261,7 +261,7 @@ const Contact = () => {
                 <Accordion.Item eventKey="10">
                   <Accordion.Header>
                   <p className=" py-2 text-secondary ">
-                      {t('I subscribed from your service, How do i delete my account?')}
+                      {t('I subscribed to your service, How do i delete my account?')}
                     </p>
                   </Accordion.Header>
                   <Accordion.Body className="text-muted my-3">
@@ -279,7 +279,7 @@ const Contact = () => {
                     </p>
                   </Accordion.Header>
                   <Accordion.Body className="text-muted my-3">
-                    {t("It’s very easy. Open the parent-app (Surfie-Parent) and tabthe “Connect button” on the top of daughter’s profile. Within a few seconds the device will be reconnected to the Internet.")}
+                    {t("It’s very easy. Open the parent-app (Surfie-Parent) and tab the “Connect button” on the top of daughter’s profile. Within a few seconds the device will be reconnected to the Internet.")}
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="13">
@@ -295,7 +295,7 @@ const Contact = () => {
                 <Accordion.Item eventKey="14">
                   <Accordion.Header>
                   <p className=" py-2 text-secondary ">
-                      {("I do not see my daughter's location anymore and i don't get notification when she leaves school. what can i do?")}
+                      {t("I do not see my daughter's location anymore and i don't get notification when she leaves school. what can i do?")}
                     </p>
                   </Accordion.Header>
                   <Accordion.Body className="text-muted my-3">
