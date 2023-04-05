@@ -8,7 +8,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import CreateAccount from "./pages/CreateAccount";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import NotFound from './pages/NotFound';
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/account" element={<CreateAccount />} />
-      
+        <Route path="/*" element={<NotFound />} />
 
       </Routes>
 
