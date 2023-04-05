@@ -9,7 +9,7 @@ const NotFound = () => {
     <Container>
       <Row className="d-flex justify-content-center align-items-center">
         <Col sm={7} className="p-5 pb-3">
-          <img src={imgNotFound} class="img-fluid" alt="Responsive image" />
+          <img src={imgNotFound} class="img-fluid" alt="Not Found" />
         </Col>
       </Row>
       <Row className="d-flex justify-content-center align-items-center">
