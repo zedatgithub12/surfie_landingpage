@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const NotFound = () => {
     const navigate = useNavigate();
   return (
-    <Container>
+    <Container >
       <Row className="d-flex justify-content-center align-items-center">
         <Col sm={7} className="p-5 pb-3">
           <img src={imgNotFound} class="img-fluid" alt="Not Found" />

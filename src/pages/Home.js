@@ -11,7 +11,7 @@ import Pricingcom from "../components/Pricingcom";
 
 const Home=()=>{
     return(
-       <div>
+       <div style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} >
        
         <Navbars/>  
         <HeroImage/>

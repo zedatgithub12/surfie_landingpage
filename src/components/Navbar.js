@@ -7,8 +7,10 @@ import { NavLink } from "react-router-dom";
 import { NavItem, NavDropdown } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
+
 const Navbars = () => {
-  
+
+
   const { t, i18n } = useTranslation();
   const [lang, setLang] = React.useState("🇺🇸 English");
   
@@ -93,10 +95,11 @@ const Navbars = () => {
 
           <NavLink
             to="/account"
-            className="ms-3 px-4 button btn btn-outline-light get"
+            className="mx-3  px-4 button btn btn-outline-light get"
           >
             {t("Get started")}
           </NavLink>
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>

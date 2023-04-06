@@ -3,13 +3,19 @@
   margin:0px;
 }
 body{
-  background-color: #fbffff;
+ 
   padding:0px;
   margin:0px;
+}
+.inputBorder{
+  border: 0.5px, solid #314f5371;
 }
 #root{
   padding:0px;
   margin:0px;
+}
+#accordian-header{
+  background-color: #2abe80;
 }
 .secondary-color {
   color:#d1d1d1
