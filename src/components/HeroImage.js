@@ -81,7 +81,7 @@ const HeroImage = () => {
 
   const { t } = useTranslation();
 
-  const videoId = 'JNH03jZ2xOg'; // Replace with your YouTube video ID
+  const videoId = 'hW_DFYLeVa8'; // Replace with your YouTube video ID
   const opts = {
     height: '100%',
     width: '100%',
