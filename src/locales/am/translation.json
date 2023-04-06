@@ -153,5 +153,83 @@
      "I do not see my daughter's location anymore and i don't get notification when she leaves school. what can i do?":"ልጄ የምትገኝበትን ቦታ ማወቅ አልቻልኩም፣ ከትምህርት ቤት ስትወጣ ማሳወቂያም አይደርሰኝም። ምን ላድርግ?",
      "In such a case you need to check a few things on your child’s mobile device.":"በእንደዚህ ዓይነት ሁኔታ በልጅዎ ተንቀሳቃሽ መሳሪያ ላይ ጥቂት ነገሮችን መፈተሽ ያስፈልግዎታል.",
      "For Android devices: First check if GPS is turned on and if high accuracy mode is selected. Go to Settings, look for location and update the GPS and accuracy mode settings. Secondly, you need to check if Surfie-Kids still has the required location permissions. Go to Settings, Manage Apps, look for Surfie-Kids, go to permissions and make sure that the location permission is turned on and set to “always allow” (Note, the terms used by each phone manufacturer might be slightly different.) If you need help, let us know.":"ለአንድሮይድ መሳሪያዎች፡ በመጀመሪያ GPS መብራቱን እና ትክክለኛነት Setting መመረጡን ያረጋግጡ። ወደ ‘Setting’ ይሂዱ, አካባቢን ይፈልጉ እና የGPS Setting ያስተካክሉ. በሁለተኛ ደረጃ፣ Surfie-Kids አሁንም አስፈላጊው የGPS ፍቃድ እንዳለው ማረጋገጥ አለቦት። ወደ ‘Setting’  ይሂዱ፣ ‘Manage Apps’ ፣ ሰርፊ-ክድ መተግበረያ ይፈልጉ፣ ወደ ‘permissions’ ይሂዱ እና የGPS ፈቃድ መብራቱን ያረጋግጡ እና  “always allow” Setting ያብሩ (ማስታወሻ፣ እያንዳንዱ የስልክ አምራች የሚጠቀሙባቸው ውሎች ትንሽ ሊለያዩ ይችላሉ።) እርዳታ ከፈለጉ ፣ ያሳውቁን።",
-     "For iOS devices: Check if the location permission for Surfie Kids is turned on. Go to settings, scroll down to Surfie-Kids and make sure the location permission is turned on and set to always allow.":"ለiOS መሣሪያዎች፡ የSurfie-Kids ‘location permission’ መብራቱን ያረጋግጡ። ወደ ‘Setting’ ይሂዱ፣ ወደታች ወደ Surfie-Kids ይሸብልሉ እና የ 'location permission' መብራቱን እና 'always allow'  መሆኑን ያረጋግጡ።"
+     "For iOS devices: Check if the location permission for Surfie Kids is turned on. Go to settings, scroll down to Surfie-Kids and make sure the location permission is turned on and set to always allow.":"ለiOS መሣሪያዎች፡ የSurfie-Kids ‘location permission’ መብራቱን ያረጋግጡ። ወደ ‘Setting’ ይሂዱ፣ ወደታች ወደ Surfie-Kids ይሸብልሉ እና የ 'location permission' መብራቱን እና 'always allow'  መሆኑን ያረጋግጡ።",
+     "Caught your kid in the act of watching porn? For young children especially, this can be incredibly worrying. You wanted to have a conversation about sex and intimacy at a designated time, providing them with a more open and realistic environment to discuss sexual behavior.":"ልጅዎ የብልግና ምስሎችን ሲመለከት ይዘውት ያውቃሉ? በተለይ ለትንንሽ ወጣት ልጆች በማይታመን ሁኔታ አሳሳቢ ነው፡፡ ስለ ወሲባዊ ባህሪ እና መቀራረብ በተወሰነ ጊዜ ላይ ውይይት ማድረግ እና የበለጠ ግልጽ እና ተጨባጭ ሁኔታን መስጠት ፈልገው ይሆናል፡፡",
+   "Or maybe your child has heard alarming discussions about the need to look and behave a certain way, and then started researching ways to lose weight quickly.":"ወይም ደግሞ ልጅዎ ስለ ገጽታ አስፈላጊነት እና ስለ የባህሪ መንገድ አነቃቂ ውይይቶችን ሰምቶ እና ከዚያም ክብደትን በፍጥነት ለመቀነስ መንገዶችን መመርመር ይጀምራል፡፡",
+   "In both of these cases, you should be alerted and ready to take the course of action necessary to protect your children. PureSight’s Advanced Internet Filtering alerts you to any potentially worrying content competition, alerting you as and when you need to be aware. Surfie will adjust the acceptable content to each child’s age, meaning a 7 year old will be allowed to view different content to a 14 year old.":"በእነዚህ በሁለቱም ሁኔታዎች ልጆቻችሁን ለመጠበቅ አስፈላጊውን እርምጃ ለመውሰድ ዝግጁ መሆን አለባችሁ። በሰርፊ ኢትዮጲያ የላቀ የበይነመረብ ማጣሪያ መሰረት ማንኛውም አስጨናቂ ሊሆን የሚችል የይዘት ውድድር ያስጠነቅቀዎታል፣ መቼ ማወቅ እንዳለቦት ያሳውቅዎታል። ሰርፊ ተቀባይነት ያለውን ይዘት ከእያንዳንዱ ልጅ ዕድሜ ጋር ያስተካክላል፣ ይህም ማለት የ7 አመት ልጅ ከ14 አመት ልጅ የተለየ ይዘት እንዲያይ ይፈቀድለታል።",
+   "The content filtering feature covers a range of categories, including drugs, hateful content., violence, gambling, cyberbullying and more.":"የይዘት ማጣሪያ ባህሪው አደንዛዥ እጾችን፣ የጥላቻ ይዘትን፣ ጥቃትን፣ ቁማርን፣ ሳይበር ጉልበተኝነትን እና ሌሎችንም ጨምሮ የተለያዩ ምድቦችን ይሸፍናል።",
+
+
+
+
+   "Social Media Monitoring":"የማህበራዊ ሚዲያ ክትትል",
+   "Track conversations across popular platforms like WhatsApp, Instagram, Viber and Facebook for troubling keywords to do with inappropriate situations, behaviors and conversations.":"እንደ ዋትስአፕ፣ ኢንስታግራም፣ ቫይበር እና ፌስቡክ ባሉ ታዋቂ ማህበራዊ ሚዲያ ላይ የሚደረጉ ውይይቶችን ተገቢ ያልሆኑ  ቃላት አላስፈላጊ ሁኔታዎች ውስጥ የሚከት፣ ባህሪያት እና ንግግሮች መከታተያ።",
+   "How can you tell that your child is chatting with appropriate people – and that they’re not being secretly groomed? Can you be certain you know their chat partners are safe, and who they say they are? How about what your children are chatting about?":"ልጅዎ ከጠቃሚ ሰዎች ጋር እየተነጋገረ መሆኑን - እና በድብቅ እየተዘጋጁ እንዳልሆነ እንዴት ማወቅ ይችላሉ? እርግጠኛ መሆን ይቻላሉ የውይይት አጋሮቻቸው ጠቃሚ እንደሆኑ እና እነማን ናቸው የሚሉት? ልጆችዎ ስለሚወያዩበት ነገርስ?",
+   "Surfie monitors your children’s chats, making sure they are safe and talking to people in their contact list, and about safe topics. You’ll receive notifications should any potentially troubling keywords come up, and know at all times who your kids are chatting with. Enjoy a middle-ground for you both – allowing your kids to keep their privacy, while you protect them from any digital harm.":"ሰርፊ የልጆቻችሁን ውይይቶች ይከታተላል፣ ደህንነታቸው የተጠበቀ እና የስልክ ዝርዝራቸው ውስጥ ካሉ ሰዎች ጋር መነጋገራቸው፣ እና ደህንነታቸው የተጠበቁ ርዕሶች ማንሳታቸውን ይቆጣጠራል። አስጨናቂ ሊሆኑ የሚችሉ ቃላቶች ከመጡባቸው እና ልጆቻችሁ ከማን ጋር እየተወያዩ እንደሆነ ሁል ጊዜ መረጃ ይደርሶታል። ለሁለታችሁም በመሀል ጠቃሚ ነው - ልጆቻችሁ ግላዊነትን እንዲጠብቁ በመፍቀድ ከማንኛውም ዲጂታል ጉዳት የጠብቋቸዋል።",
+
+
+
+   "Parental Alert Notifications":"የወላጅ ማንቂያ ማሳወቂያዎች",
+   "Receive notifications once certain flags are raised – if something happens, a keyword is triggered or otherwise.":"የተወሰኑ መተላለፎች ከተከሰቱ ማሳወቂያዎች ይደርሶታል - የሆነ ነገር ከተከሰተ፣ ጎጂ ቃል ደርሷቸዋል ማለት ነው ወይም በሌላ።",
+   "Has your child received a message that their friend’s parents aren’t at home? Or about something secual, drug-related, violent or otherwise inappropriate?":"ልጅዎ የጓደኛቸው ወላጆች እቤት ውስጥ እንደማይገኙ የሚገልጽ መልእክት ደርሷቸዋል? ወይም ስለ ወሲባዊ ነገር፣ ከአደንዛዥ ዕፅ ጋር የተገናኘ፣ ዓመፀኛ ወይም ሌላ ተገቢ ያልሆነ ነገር?",
+   "No matter the inappropriate action or content, Surfie will alert you – according to pre-defined, age-appropriate filters – when something has triggered the inappropriate content filter and let you know all about it. Once you receive a notification, you can then choose which action to take in response – block, restrict or otherwise. It’s your call.":"ተገቢ ያልሆነ ተግባር ወይም ይዘት ምንም ይሁን ምን ሰርፊ እርስዎን ያስጠነቅቀዎታል - አስቀድሞ በተገለጸው መሰረት ከእድሜ ጋር ተዛማጅነት ባላቸው ማጣሪያዎች - የሆነ ነገር አግባብ ያልሆነውን የይዘት ማጣሪያ ሲያስጀምረው ስለሚሆነው ነገር ያሳውቅዎታል። አንዴ ማሳወቂያ ከተቀበሉ በኋላ ምላሽ ለመስጠት የትኛውን እርምጃ እንደሚወስዱ መምረጥ ይችላሉ - ማገድ፣ መገደብ ወይም ሌላ።",
+   
+
+
+   "24/7 Cross-Device Monitoring":"24/7 የቴክኖሎጂ መሳሪያ ክትትል",
+   "Do you know how your kids use their devices at night? Now you can, and will! Monitor your kids’ devices 24/7, all from one easy-to-use dashboard.":"ልጆችዎ በምሽት የቴክኖሎጂ መሣሪያዎቻቸውን እንዴት እንደሚጠቀሙ ያውቃሉ? እንግዲያውስ አሁን ማወቅ ይችላሉ! የልጆችዎን የቴክኖሎጂ መሳሪያዎች 24/7 ይቆጣጠሩ፣ ሁሉም ከአንድ ለአጠቃቀም ቀላል ከሆነ የመረጃ ቋት ላይ ክትትሉ ይደርሶታል።",
+   "Is your child secretly messaging someone late at night, long after you’d thought they;d gone to bed? Are they spending too much time on their apps and social media? Could they be secretly watching porn? Surfie will let you know exactly what they’re doing, when and how – you’ll be notified as and when something isn’t right, across multiple devices – all from one secure dashboard.":"ልጅዎ ተኝቷል ብለው ካሰቡ ከረጅም ሰአት በኋላ በምሽት ከአንድ ሰው ጋር በድብቅ መልእክት ይላላካሉ? በመተግበሪያዎቻቸው እና በማህበራዊ ሚዲያዎቻቸው ላይ በጣም ብዙ ጊዜ ያሳልፋሉ? የብልግና ምስሎችንስ በድብቅ ይመለከቱ ይሆን? ሰርፊ ኢትዮጲያ በትክክል ምን እንደሚሰሩ፣ መቼ እና እንዴት ሚለውን ያሳውቅዎታል - የሆነ ነገር ትክክል ካልሆነ ማሳወቂያ ይደርስዎታል፣ በሁሉም የቴክኖሎጂ መሳሪያዎች ላይ - ሁሉም መልእክቶች ከአስተማማኝ የመረጃ ቋት ላይ ይደርሶታል።",
+
+
+   "Screen Time Limits":"የመጠቀሚያ ጊዜ ገደቦች",
+   "Set the limits and Surfie will make sure they’re stuck to, meaning no more arguments! Block, restrict uses of apps, and limit the amount of time for use per app, or for screen time in total.":"ገደቦቹን በሰአት ይሙሉ እና ሰርፊ ኢትዮጲያ የተሞላው ጊዜ መያዛቸውን ያረጋግጣል፣ ይህም ማለት ተጨማሪ ክርክሮች የሉም! እንዳይጠቀሙ ማገድ፣ የመተግበሪያዎች አጠቃቀምን ገድብ እና ለአንድ መተግበሪያ ጥቅም ላይ የሚውልበትን ጊዜ ወይም በአጠቃላይ የመጠቀሚያ ጊዜን ይገድባል።",
+   "Are you worried your children are spending too long on their devices, or on certain apps,and you can’t think of a way to track or limit this? Surfie will do it all for you: you’ll receive a detailed report of how long your children have spent on devices and apps, and know exactly how long your kids are spending with their screens, broken down by app and activity, then limit the time being used by certain apps, or restrict them completely.":"ልጆችዎ በቴክኖሎጂ መሣሪያዎቻቸው ላይ ወይም በተወሰኑ መተግበሪያዎች ላይ በጣም ረጅም ጊዜ ሲያጠፉ ይጨነቁዎታል? እና ይህን የሚከታተሉበት ወይም የሚገድቡበትን መንገድ አስበው ይሆን? ሰርፊ ኢትዮጲያ ሁሉንም ያደርግልዎታል፡ ልጆችዎ በቴክኖሎጂ መሳሪያዎቻቸው እና መተግበሪያዎች ላይ ለምን ያህል ጊዜ እንዳጠፉ የሚያሳይ ዝርዝር ዘገባ ይደርስዎታል እና ልጆችዎ በመተግበሪያ እና በእንቅስቃሴ የተከፋፈሉ በቴክኖሎጂ መሣሪያቸው ምን ያህል ጊዜ እንደሚያሳልፉ በትክክል ይወቁ እና ከዚያ የመጠቀሚያ ጊዜ ገደብ ያድርጉ። በተወሰኑ መተግበሪያዎች ጥቅም ላይ የሚውሉበት ጊዜ ወይም ሙሉ በሙሉ የመጠቀሚያ ጊዜያቸውን መገደብ ይችላሉ።",
+
+
+   "Manage Apps and Games":"መተግበሪያዎችን እና መጫወቻዎችን መቆጣጠርያ",
+   "Choose which apps your kids can use and block access to the ones you don’t want them to see. You can also balance the time they spend per app, and set a daily time limit for use.":"ልጆችዎ የትኛዎቹን መተግበሪያዎች መጠቀም እንደሚችሉ ይምረጡ እና እንዳይጠቀሙ የሚፈልጓቸውን ያግዱ። እንዲሁም በአንድ መተግበሪያ የሚያሳልፉትን ጊዜ ማመጣጠን እና ለመጠቀም ዕለታዊ የጊዜ ገደብ ማዘጋጀት ይችላሉ።",
+   "Don’t want your children accessing certain apps or games, or maybe you’re worried about them tringto download inappropriate ones? Surfie allows you to easily block or restrict certain apps, games and other content, meaning no more fights with your children about what they can and can’t download or play!":"ልጆቻችሁ አንዳንድ መተግበሪያዎችን ወይም ጨዋታዎችን ሲጠቀሙ ወይም ምናልባት አግባብ ያልሆኑትን ለማውረድ መሞከራቸው አሳስቦት ይሆን? ሰርፊ ኢትዮጲያ የተወሰኑ መተግበሪያዎችን፣ ጨዋታዎችን እና ሌሎች ይዘቶችን በቀላሉ እንዲያግዱ ወይም እንዲገድቡ ይፈቅድልዎታል፣ ይህ ማለት ከልጆችዎ ጋር ማውረድ እና መጠቀም ስለሚችሉት እና ስለማይችሉት ነገር አያከራክሮትም!",
+
+
+   "Find Your Kids’ Geolocation":"የልጆችዎን መገኛ አካባቢ መከታተያ",
+   "Hyper-accurate geolocation tracking – know exactly where your kids are, and get reliable, accurate location alerts when they reach certain places.":"ልዕለ-ትክክለኛ የመገኛ አካባቢ መከታተያ - ልጆችዎ የት እንዳሉ በትክክል ይወቁ እና አንዳንድ ቦታዎች ላይ ሲደርሱ አስተማማኝ ትክክለኛ የአካባቢ ማሳወቂያዎችን ያግኙ።",
+   "How can you know that your children are where they say they are, and who they’re with, or if they’re safely on their way home? Surfie’s hyper-accurate geolocation feature allows you to know exactly where your kids are, and even receive notifications when they leave a predefined point!":"ልጆቻችሁ እነሱ በሚነግሯችሁ ቦታ፣ እና ከማን ጋር እንደሆኑ፣ ወይም በሰላም ወደ ቤት እየሄዱ መሆናቸውን እንዴት ማወቅ ያስችሎታል? የሰርፊ ኢትዮጲያ ልዕለ-ትክክለኛ የመገኛ አካባቢ አገልግሎታችን አማካኝነት ልጆችዎ የት እንዳሉ በትክክል እንዲያውቁ እና አስቀድሞ የሞሉትን የመገኛ ቦታቸውን ሲለቁ ማሳወቂያዎችን እንዲቀበሉ ያስችልዎታል!",
+
+
+   "Eyes Up Internet Disconnect":"የበይነመረብ ግንኙነት ማቋረጥ",
+   "Disconnect your kids from the internet, all from the click of a button! Choose your moment, and…all eyes will magically lift upwards from their screens!":"ልጆችዎን ከበይነመረቡ ጋር ያላቸውን ግንኙነት አንድ ቁልፍ በመጫን ማቋረጥ ይችላሉ፡፡ ",
+   "How many times have you called your family for dinner, only to find your kids sitting there like zombies, refusing to disconnect from their devices? With the Eyes Up internet Disconnect feature, you can disconnect the internet, so they’re forced to be parted from their dearly beloved phones for the duration of your choosing! Choose when and who to reconnect to the internet at your leisure, and enjoy quiet, screen-free family time when you want to.":"ምን ያህል ጊዜ ልጆችዎ ለእራት እንዲቀርቡ ተጣርተዋል ግን ልጆችዎ እዚያ ተቀምጠው ከቴክኖሎጂ መሳሪያዎቻቸው ጋር ግንኙነት ለማቋረጥ ፈቃደኛ ሳይሆኑ ያገኙዋቸዋል? በበይነመረብ ግንኙነት ማቋረጥ አገልግሎታችን አማካኝነት የኢንተርኔት ግንኙነታቸውን ማቋረጥ ይችላሉ፣ ስለዚህ እርስዎ እስከ መረጡት ጊዜ ድረስ ከሚወዷቸው ስልኮቻቸው ለመለያየት ይገደዳሉ! በመዝናኛ ጊዜዎ መቼ እና ማን ከበይነመረቡ ጋር እንዲገናኝ እንደፈቀዱ ይምረጡ፣ እና ሲፈልጉ በጸጥታ የበይነመረብ ግንኙነት ነጻ በሆነ የቤተሰብ ጊዜ ያሳልፉ።",
+
+
+   "Browsing Habits":"የአሰሳ ልማዶች",
+   "Alongside the top blocked websites, Surfie will give you a list of your kids’ top 10 most-visited websites. You’ll be able to see if your kids’ preferences change, for example, due to something they’ve recently experienced, or should any new behaviors develop. This feature can also be used to understand your kids’ areas of interest.":"እርሶ ካገዷቸው ድረ-ገጾች ጎን ለጎን ሰርፊ ኢትዮጲያ በልጆችዎ በጣም የተጎበኙ 10 የተመረጡ ድረ-ገጾች ዝርዝር ያሳውቆታል። የልጆቻችሁ ምርጫዎች ከተቀያየሩ ለምሳሌ በቅርብ ባጋጠሟቸው አንድ ነገር ምክንያት፣ ወይም ማናቸውም አዲስ ባህሪያት መፈጠር ካለባቸው ይበልጥ ለማወቅ የበይነመረብ አሰሳን ያካሂዳሉ። በዚህም አገልግሎት የልጆችዎን የፍላጎት ቦታዎች ለመረዳትም ሊያገለግዎ ይችላል።",
+   "Kids tent to search their area of interest so as a parent its important to know it. Changes in the area of interest may point on event they have been involvement or new discussion they are part of it. Surfie will provide you the info for better parenting.":"የልጆች የፍላጎት አካባቢያቸውን ለማወቅ መፈለግ እንደ ወላጅ አስፈላጊ ነው። በልጆች ፍላጎት አካባቢ የሚደረጉ ለውጦች የተሳተፉበትን ክስተት ወይም አዲስ ውይይት አካል መሆናቸውን ሊጠቁሙ ይችላሉ። ሰርፊ ኢትዮጲያ ለተሻለ ወላጅነት መረጃውን ይሰጥዎታል።",
+  
+
+    "Family Safety Dashboard":"የቤተሰብ ደህንነት የመረጃ ቋት",
+    "Our Surfie parent app is your family digital dashboard! The app will give you an overview of all your kid’s potential digital risks – aloof their devices, operating systems, and aloof your children, in one convenient, centralized place. The app will also proactively alert you in case something needs your attention, meaning you get to make the right digital parenting decisions, in real-time.":"የእኛ ሰርፊ ኢትዮጲያ መተግበሪያ የእርስዎ የቤተሰብ ዲጂታል የመረጃ ቋት ነው! መተግበሪያው ሁሉንም የልጅዎ ዲጂታል ስጋቶች አጠቃላይ እይታ ይሰጥዎታል - የቴክኖሎጂ መሳሪያዎቻቸውን፣ ኦፕሬቲንግ ሲስተሞችዎን በአንድ ምቹ እና የተማከለ ቦታ ያገኙታል። እንዲሁም የሆነ ነገር የእርስዎን ትኩረት የሚፈልግ ከሆነ መተግበሪያው በንቃት ያሳውቅዎታል ይህም ማለት ትክክለኛውን ዲጂታል የወላጅነት ውሳኔዎችን በቅጽበት እንዲወስኑ ያስችልዎታል።",
+    "You can add all your kids and all their devices including you family shared devices. Surfie covers all kids digital threats and challenges such as content filtering, screen time, location, social applications monitoring and much more…":"ሁሉንም ልጆችዎን እና ሁሉንም የቴክጅኖሎጂ መሳሪያዎቻቸውን ጨምሮ እንዲሁም የቤተሰብ የጋራ መሳሪያዎችን በአንድ ማከል ይችላሉ። ሰርፊ ኢትዮጲያ እንደ የይዘት ማጣሪያ፣ የመጠቀሚያ ጊዜ፣ መገኛ አካባቢ፣ የማህበራዊ አፕሊኬሽኖች ክትትል እና ሌሎችንም የመሳሰሉ ሁሉንም የልጆች የዲጂታል ስጋቶች እና ፈተናዎችን ይሸፍናል።",
+
+
+    "New online trends and risks":"አዲስ የመስመር ላይ ልምዶች  እና አደጋዎች",
+    "The internet removes all of the real life geographical, age and cultural boundaries, meaning there are a wealth of new daily risks and threats that are ever-changing, and potentially dangerous for our kids’ online lives. Challenges such as the Momo Challange and the Blue Whale challenge are online trends erncouraging kids to perform a series of dangerous tasks including violent attacks, self-harm and even suicide.":"በይነመረብ ሁሉንም የእውነተኛ ህይወት መገኛ አካባቢ፣ እድሜ እና የባህል ድንበሮችን ያስወግዳል፣ ይህም ማለት ብዙ አዳዲስ ዕለታዊ ስጋቶች እና ሁል ጊዜ የሚለዋወጡ ስጋቶች ለልጆቻችን የበይነመረብ መስመር ላይ ህይወት አደገኛ ሊሆኑ ይችላሉ። እንደ ቻሌንጅ ያሉ ተግዳሮቶች ልጆች ተከታታይ አደገኛ ተግባራትን እንዲፈጽሙ የሚያበረታታ የአመፅ ጥቃቶች፣ ራስን መጉዳት እና ራስን ማጥፋትን ጨምሮ  የበይነመረብ መስመር ላይ ልምዶች ናቸው።",
+    "PureSight has an established Content Lab with international content analysts, researching the emerging trends for children of all ages. Those threats are published to the PureSight site and uploaded to the Surfie service, alerting parents in case their children discuss or look into these new threats. With Surfie from Puresight, you’ll always be up-to-date with ever emerging risk and threats.":"ድርጅታችን በሁሉም ዕድሜ ላሉ ሕፃናት ብቅ ያሉ ልምዶችን በመመርመር ከዓለም አቀፍ የይዘት ተንታኞች ጋር የቆመ የይዘት ቤተ-ሙከራ አለው። እነዚያ አደገኛ ተግባራት ወደ PureSight ድረ-ገጽ ታትመው ወደ ሰርፊ ኢትዮጲያ አገልግሎት ይውላሉ፣ ለወላጆች ልጆቻቸው ስለእነዚህ አዳዲስ አደገኛ ተግባራት ሲወያዩ ወይም ሲመለከቱ ያሳውቃል ስለዚህ በሰርፊ ኢትዮጲያ ከድርጅታችን ሁልጊዜ በሚመጡ አዳዲስ አደጋዎች እና ስጋቶች ወቅታዊ መረጃ ይደርሶታል፡፡",
+
+
+    "Advantages of using Surfie Ethiopia":"የሰርፊ ኢትዮጵያ ጥቅሞች",
+    "Total Overlook":"አጠቃላይ እይታ",
+    "Easy understanding of your child’s digital lifestyle, making it easier to start an open conversation about online behaviors.":"ስለ የበይነመረብ መስመር ላይ ባህሪያት ግልጽ ውይይት ለመጀመር የልጅዎን ዲጂታል አጠቃቀም ቀላል ማድረግ።",
+
+
+    "Parenting Style":"የወላጅነት ዘይቤ",
+    "Define age-appropriate boundaries, monitor digital use, or just simply get alerts.":"ከእድሜ ጋር የሚስማሙ ድንበሮችን ይግለጹ፣ ዲጂታል አጠቃቀምን ይቆጣጠሩ ወይም በቀላሉ ማንቂያዎችን ያግኙ።",
+
+
+    "Peace of Mind":"የኣእምሮ ሰላም",
+    "Know you child’s current activity at a glance, get immediate alerts and prevent screen addiction.":"የልጅዎን ወቅታዊ እንቅስቃሴ ይወቁ፣ ፈጣን ማንቂያዎችን ያግኙ እና የመጠቀም ጊዜ ሱስን ይከላከሉ።",
+
+    
+    "24/7 Support":"24/7 ድጋፍ",
+    "Unlike other apps, with Surfie you are not left behind – support is here when you need it.":"እንደሌሎች መተግበሪያዎች በተለየ ከሰርፊ ኢትዮጲያ ጋር ወደ ኋላ አይቀሩም - ድጋፍ በሚፈልጉበት ጊዜ ሁሉ አለን።"
+
   }

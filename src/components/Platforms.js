@@ -163,30 +163,16 @@ function Platforms() {
               {advanced ? (
                 <>
                   <p className="just text-muted">
-                    Caught your kid in the act of watching porn? For young
-                    children especially, this can be incredibly worrying. You
-                    wanted to have a conversation about sex and intimacy at a
-                    designated time, providing them with a more open and
-                    realistic environment to discuss sexual behavior.
+                    {t("Caught your kid in the act of watching porn? For young children especially, this can be incredibly worrying. You wanted to have a conversation about sex and intimacy at a designated time, providing them with a more open and realistic environment to discuss sexual behavior.")}
                   </p>
                   <p className="just text-muted">
-                    Or maybe your child has heard alarming discussions about the
-                    need to look and behave a certain way, and then started
-                    researching ways to lose weight quickly.{" "}
+                    {t("Or maybe your child has heard alarming discussions about the need to look and behave a certain way, and then started researching ways to lose weight quickly.")}
                   </p>
                   <p className="just text-muted">
-                    In both of these cases, you should be alerted and ready to
-                    take the course of action necessary to protect your
-                    children. PureSight’s Advanced Internet Filtering alerts you
-                    to any potentially worrying content competition, alerting
-                    you as and when you need to be aware. Surfie will adjust the
-                    acceptable content to each child’s age, meaning a 7 year old
-                    will be allowed to view different content to a 14 year old.
+                   {t("In both of these cases, you should be alerted and ready to take the course of action necessary to protect your children. PureSight’s Advanced Internet Filtering alerts you to any potentially worrying content competition, alerting you as and when you need to be aware. Surfie will adjust the acceptable content to each child’s age, meaning a 7 year old will be allowed to view different content to a 14 year old.")}
                   </p>
                   <p className="just text-muted">
-                    The content filtering feature covers a range of categories,
-                    including drugs, hateful content., violence, gambling,
-                    cyberbullying and more.
+                    {t("The content filtering feature covers a range of categories, including drugs, hateful content., violence, gambling, cyberbullying and more.")}
                   </p>
                 </>
               ) : null}
@@ -198,11 +184,9 @@ function Platforms() {
           {/* start two */}
           <Row className="d-flex my-4 justify-content-center align-items-center reverseit ">
             <Col sm={5} >
-              <h4 className=""> Social Media Monitoring </h4>
+              <h4 className=""> {t("Social Media Monitoring")} </h4>
               <p className=" text-muted">
-                Track conversations across popular platforms like WhatsApp,
-                Instagram, Viber and Facebook for troubling keywords to do with
-                inappropriate situations, behaviors and conversations.
+                {t("Track conversations across popular platforms like WhatsApp, Instagram, Viber and Facebook for troubling keywords to do with inappropriate situations, behaviors and conversations.")}
               </p>
               {advanced1 ? (
                 <Button
@@ -210,7 +194,7 @@ function Platforms() {
                   className="btnn rounded-pill bg "
                   onClick={() => setAdvanced1(false)}
                 >
-                  Read Less
+                  {t("Read Less")}
                 </Button>
               ) : (
                 <Button
@@ -218,7 +202,7 @@ function Platforms() {
                   className="btnn rounded-pill primary-fill"
                   onClick={() => setAdvanced1(true)}
                 >
-                  Read More
+                  {t("Read More")}
                 </Button>
               )}
             </Col>
@@ -238,20 +222,10 @@ function Platforms() {
               {advanced1 ? (
                 <>
                   <p className="just text-muted">
-                    How can you tell that your child is chatting with
-                    appropriate people – and that they’re not being secretly
-                    groomed? Can you be certain you know their chat partners are
-                    safe, and who they say they are? How about what your
-                    children are chatting about?
+                    {t("How can you tell that your child is chatting with appropriate people – and that they’re not being secretly groomed? Can you be certain you know their chat partners are safe, and who they say they are? How about what your children are chatting about?")}
                   </p>
                   <p className="just text-muted">
-                    Surfie monitors your children’s chats, making sure they are
-                    safe and talking to people in their contact list, and about
-                    safe topics. You’ll receive notifications should any
-                    potentially troubling keywords come up, and know at all
-                    times who your kids are chatting with. Enjoy a middle-ground
-                    for you both – allowing your kids to keep their privacy,
-                    while you protect them from any digital harm.{" "}
+                    {t("Surfie monitors your children’s chats, making sure they are safe and talking to people in their contact list, and about safe topics. You’ll receive notifications should any potentially troubling keywords come up, and know at all times who your kids are chatting with. Enjoy a middle-ground for you both – allowing your kids to keep their privacy, while you protect them from any digital harm.")}
                   </p>
                 </>
               ) : null}
@@ -272,10 +246,9 @@ function Platforms() {
             </Col>
 
             <Col sm={5}>
-              <h4 className=""> Parental Alert Notifications</h4>
+              <h4 className=""> {t("Parental Alert Notifications")}</h4>
               <p className=" text-muted">
-                Receive notifications once certain flags are raised – if
-                something happens, a keyword is triggered or otherwise.
+                {t("Receive notifications once certain flags are raised – if something happens, a keyword is triggered or otherwise.")}
               </p>
               {advanced2 ? (
                 <Button
@@ -283,7 +256,7 @@ function Platforms() {
                   className="btnn rounded-pill bg "
                   onClick={() => setAdvanced2(false)}
                 >
-                  Read Less
+                  {t("Read Less")}
                 </Button>
               ) : (
                 <Button
@@ -291,7 +264,7 @@ function Platforms() {
                   className="btnn rounded-pill primary-fill"
                   onClick={() => setAdvanced2(true)}
                 >
-                  Read More
+                  {t("Read More")}
                 </Button>
               )}
             </Col>
@@ -301,18 +274,10 @@ function Platforms() {
               {advanced2 ? (
                 <>
                   <p className="just text-muted">
-                    Has your child received a message that their friend’s
-                    parents aren’t at home? Or about something secual,
-                    drug-related, violent or otherwise inappropriate?
+                   {t("Has your child received a message that their friend’s parents aren’t at home? Or about something secual, drug-related, violent or otherwise inappropriate?")}
                   </p>
                   <p className="just text-muted">
-                    No matter the inappropriate action or content, Surfie will
-                    alert you – according to pre-defined, age-appropriate
-                    filters – when something has triggered the inappropriate
-                    content filter and let you know all about it. Once you
-                    receive a notification, you can then choose which action to
-                    take in response – block, restrict or otherwise. It’s your
-                    call.{" "}
+                   {t("No matter the inappropriate action or content, Surfie will alert you – according to pre-defined, age-appropriate filters – when something has triggered the inappropriate content filter and let you know all about it. Once you receive a notification, you can then choose which action to take in response – block, restrict or otherwise. It’s your call.")}
                   </p>
                 </>
               ) : null}
@@ -324,11 +289,9 @@ function Platforms() {
           {/* start four */}
           <Row className="d-flex my-4 justify-content-center align-items-center reverseit">
             <Col sm={5}>
-              <h4 className="">24/7 Cross-Device Monitoring </h4>
+              <h4 className="">{t("24/7 Cross-Device Monitoring")} </h4>
               <p className=" text-muted">
-                Do you know how your kids use their devices at night? Now you
-                can, and will! Monitor your kids’ devices 24/7, all from one
-                easy-to-use dashboard.
+                {t("Do you know how your kids use their devices at night? Now you can, and will! Monitor your kids’ devices 24/7, all from one easy-to-use dashboard.")}
               </p>
               {advanced3 ? (
                 <Button
@@ -336,7 +299,7 @@ function Platforms() {
                   className="btnn rounded-pill bg "
                   onClick={() => setAdvanced3(false)}
                 >
-                  Read Less
+                  {t("Read Less")}
                 </Button>
               ) : (
                 <Button
@@ -344,7 +307,7 @@ function Platforms() {
                   className="btnn rounded-pill primary-fill"
                   onClick={() => setAdvanced3(true)}
                 >
-                  Read More
+                  {t("Read More")}
                 </Button>
               )}
             </Col>
@@ -364,13 +327,7 @@ function Platforms() {
               {advanced3 ? (
                 <>
                   <p className="just text-muted">
-                    Is your child secretly messaging someone late at night, long
-                    after you’d thought they;d gone to bed? Are they spending
-                    too much time on their apps and social media? Could they be
-                    secretly watching porn? Surfie will let you know exactly
-                    what they’re doing, when and how – you’ll be notified as and
-                    when something isn’t right, across multiple devices – all
-                    from one secure dashboard.
+                    {t("Is your child secretly messaging someone late at night, long after you’d thought they;d gone to bed? Are they spending too much time on their apps and social media? Could they be secretly watching porn? Surfie will let you know exactly what they’re doing, when and how – you’ll be notified as and when something isn’t right, across multiple devices – all from one secure dashboard.")}
                   </p>
                 </>
               ) : null}
@@ -391,12 +348,9 @@ function Platforms() {
             </Col>
 
             <Col sm={5}>
-              <h4 className=""> Screen Time Limits</h4>
+              <h4 className=""> {t("Screen Time Limits")}</h4>
               <p className=" text-muted">
-                Set the limits and Surfie will make sure they’re stuck to,
-                meaning no more arguments! Block, restrict uses of apps, and
-                limit the amount of time for use per app, or for screen time in
-                total.
+                {t("Set the limits and Surfie will make sure they’re stuck to, meaning no more arguments! Block, restrict uses of apps, and limit the amount of time for use per app, or for screen time in total.")}
               </p>
               {advanced4 ? (
                 <Button
@@ -404,7 +358,7 @@ function Platforms() {
                   className="btnn rounded-pill bg "
                   onClick={() => setAdvanced4(false)}
                 >
-                  Read Less
+                  {t("Read Less")}
                 </Button>
               ) : (
                 <Button
@@ -412,7 +366,7 @@ function Platforms() {
                   className="btnn rounded-pill primary-fill"
                   onClick={() => setAdvanced4(true)}
                 >
-                  Read More
+                  {t("Read More")}
                 </Button>
               )}
             </Col>
@@ -422,14 +376,7 @@ function Platforms() {
               {advanced4 ? (
                 <>
                   <p className="just text-muted">
-                    Are you worried your children are spending too long on their
-                    devices, or on certain apps,and you can’t think of a way to
-                    track or limit this? Surfie will do it all for you: you’ll
-                    receive a detailed report of how long your children have
-                    spent on devices and apps, and know exactly how long your
-                    kids are spending with their screens, broken down by app and
-                    activity, then limit the time being used by certain apps, or
-                    restrict them completely.
+                    {t("Are you worried your children are spending too long on their devices, or on certain apps,and you can’t think of a way to track or limit this? Surfie will do it all for you: you’ll receive a detailed report of how long your children have spent on devices and apps, and know exactly how long your kids are spending with their screens, broken down by app and activity, then limit the time being used by certain apps, or restrict them completely.")}
                   </p>
                 </>
               ) : null}
@@ -441,11 +388,9 @@ function Platforms() {
           {/* start six */}
           <Row className="d-flex my-4 justify-content-center align-items-center reverseit">
             <Col sm={5}>
-              <h4 className="">Manage Apps and Games </h4>
+              <h4 className="">{t("Manage Apps and Games")} </h4>
               <p className=" text-muted">
-                Choose which apps your kids can use and block access to the ones
-                you don’t want them to see. You can also balance the time they
-                spend per app, and set a daily time limit for use.
+                {t("Choose which apps your kids can use and block access to the ones you don’t want them to see. You can also balance the time they spend per app, and set a daily time limit for use.")}
               </p>
               {advanced5 ? (
                 <Button
@@ -453,7 +398,7 @@ function Platforms() {
                   className="btnn rounded-pill bg "
                   onClick={() => setAdvanced5(false)}
                 >
-                  Read Less
+                  {t("Read Less")}
                 </Button>
               ) : (
                 <Button
@@ -461,7 +406,7 @@ function Platforms() {
                   className="btnn rounded-pill primary-fill"
                   onClick={() => setAdvanced5(true)}
                 >
-                  Read More
+                  {t("Read More")}
                 </Button>
               )}
             </Col>
@@ -481,12 +426,7 @@ function Platforms() {
               {advanced5 ? (
                 <>
                   <p className="just text-muted">
-                    Don’t want your children accessing certain apps or games, or
-                    maybe you’re worried about them tringto download
-                    inappropriate ones? Surfie allows you to easily block or
-                    restrict certain apps, games and other content, meaning no
-                    more fights with your children about what they can and can’t
-                    download or play!
+                    {t("Don’t want your children accessing certain apps or games, or maybe you’re worried about them tringto download inappropriate ones? Surfie allows you to easily block or restrict certain apps, games and other content, meaning no more fights with your children about what they can and can’t download or play!")}
                   </p>
                 </>
               ) : null}
@@ -507,11 +447,9 @@ function Platforms() {
             </Col>
 
             <Col sm={5}>
-              <h4 className=""> Find Your Kids’ Geolocation</h4>
+              <h4 className=""> {t("Find Your Kids’ Geolocation")}</h4>
               <p className=" text-muted">
-                Hyper-accurate geolocation tracking – know exactly where your
-                kids are, and get reliable, accurate location alerts when they
-                reach certain places.
+                {t("Hyper-accurate geolocation tracking – know exactly where your kids are, and get reliable, accurate location alerts when they reach certain places.")}
               </p>
               {advanced6 ? (
                 <Button
@@ -519,7 +457,7 @@ function Platforms() {
                   className="btnn rounded-pill bg "
                   onClick={() => setAdvanced6(false)}
                 >
-                  Read Less
+                  {t("Read Less")}
                 </Button>
               ) : (
                 <Button
@@ -527,7 +465,7 @@ function Platforms() {
                   className="btnn rounded-pill primary-fill"
                   onClick={() => setAdvanced6(true)}
                 >
-                  Read More
+                  {t("Read More")}
                 </Button>
               )}
             </Col>
@@ -537,11 +475,7 @@ function Platforms() {
               {advanced6 ? (
                 <>
                   <p className="just text-muted">
-                    How can you know that your children are where they say they
-                    are, and who they’re with, or if they’re safely on their way
-                    home? Surfie’s hyper-accurate geolocation feature allows you
-                    to know exactly where your kids are, and even receive
-                    notifications when they leave a predefined point!
+                    {t("How can you know that your children are where they say they are, and who they’re with, or if they’re safely on their way home? Surfie’s hyper-accurate geolocation feature allows you to know exactly where your kids are, and even receive notifications when they leave a predefined point!")}
                   </p>
                 </>
               ) : null}
@@ -553,11 +487,9 @@ function Platforms() {
           {/* start eight */}
           <Row className="d-flex my-4 justify-content-center align-items-center reverseit">
             <Col sm={5}>
-              <h4 className="">Eyes Up Internet Disconnect </h4>
+              <h4 className="">{t("Eyes Up Internet Disconnect")} </h4>
               <p className=" text-muted">
-                Disconnect your kids from the internet, all from the click of a
-                button! Choose your moment, and…all eyes will magically lift
-                upwards from their screens!
+                {t("Disconnect your kids from the internet, all from the click of a button! Choose your moment, and…all eyes will magically lift upwards from their screens!")}
               </p>
               {advanced7 ? (
                 <Button
@@ -565,7 +497,7 @@ function Platforms() {
                   className="btnn rounded-pill bg "
                   onClick={() => setAdvanced7(false)}
                 >
-                  Read Less
+                  {t("Read Less")}
                 </Button>
               ) : (
                 <Button
@@ -573,7 +505,7 @@ function Platforms() {
                   className="btnn rounded-pill primary-fill"
                   onClick={() => setAdvanced7(true)}
                 >
-                  Read More
+                 {t("Read More")}
                 </Button>
               )}
             </Col>
@@ -593,14 +525,7 @@ function Platforms() {
               {advanced7 ? (
                 <>
                   <p className="just text-muted">
-                    How many times have you called your family for dinner, only
-                    to find your kids sitting there like zombies, refusing to
-                    disconnect from their devices? With the Eyes Up internet
-                    Disconnect feature, you can disconnect the internet, so
-                    they’re forced to be parted from their dearly beloved phones
-                    for the duration of your choosing! Choose when and who to
-                    reconnect to the internet at your leisure, and enjoy quiet,
-                    screen-free family time when you want to.
+                  {t("How many times have you called your family for dinner, only to find your kids sitting there like zombies, refusing to disconnect from their devices? With the Eyes Up internet Disconnect feature, you can disconnect the internet, so they’re forced to be parted from their dearly beloved phones for the duration of your choosing! Choose when and who to reconnect to the internet at your leisure, and enjoy quiet, screen-free family time when you want to.")}
                   </p>
                 </>
               ) : null}
@@ -621,14 +546,9 @@ function Platforms() {
             </Col>
 
             <Col sm={5}>
-              <h4 className=""> Browsing Habits</h4>
+              <h4 className=""> {t("Browsing Habits")}</h4>
               <p className=" text-muted">
-                Alongside the top blocked websites, Surfie will give you a list
-                of your kids’ top 10 most-visited websites. You’ll be able to
-                see if your kids’ preferences change, for example, due to
-                something they’ve recently experienced, or should any new
-                behaviors develop. This feature can also be used to understand
-                your kids’ areas of interest.
+                {t("Alongside the top blocked websites, Surfie will give you a list of your kids’ top 10 most-visited websites. You’ll be able to see if your kids’ preferences change, for example, due to something they’ve recently experienced, or should any new behaviors develop. This feature can also be used to understand your kids’ areas of interest.")}
               </p>
               {advanced8 ? (
                 <Button
@@ -636,7 +556,7 @@ function Platforms() {
                   className="btnn rounded-pill bg "
                   onClick={() => setAdvanced8(false)}
                 >
-                  Read Less
+                 {t("Read Less")}
                 </Button>
               ) : (
                 <Button
@@ -644,7 +564,7 @@ function Platforms() {
                   className="btnn rounded-pill primary-fill"
                   onClick={() => setAdvanced8(true)}
                 >
-                  Read More
+                  {t("Read More")}
                 </Button>
               )}
             </Col>
@@ -654,11 +574,7 @@ function Platforms() {
               {advanced8 ? (
                 <>
                   <p className="just text-muted">
-                    Kids tent to search their area of interest so as a parent
-                    its important to know it. Changes in the area of interest
-                    may point on event they have been involvement or new
-                    discussion they are part of it. Surfie will provide you the
-                    info for better parenting.
+                    {t("Kids tent to search their area of interest so as a parent its important to know it. Changes in the area of interest may point on event they have been involvement or new discussion they are part of it. Surfie will provide you the info for better parenting.")}
                   </p>
                 </>
               ) : null}
@@ -670,15 +586,9 @@ function Platforms() {
           {/* start ten */}
           <Row className="d-flex my-4 justify-content-center align-items-center reverseit">
             <Col sm={5}>
-              <h4 className="">Family Safety Dashboard </h4>
+              <h4 className="">{t("Family Safety Dashboard")} </h4>
               <p className=" text-muted">
-                Our Surfie parent app is your family digital dashboard! The app
-                will give you an overview of all your kid’s potential digital
-                risks – aloof their devices, operating systems, and aloof your
-                children, in one convenient, centralized place. The app will
-                also proactively alert you in case something needs your
-                attention, meaning you get to make the right digital parenting
-                decisions, in real-time.
+                {t("Our Surfie parent app is your family digital dashboard! The app will give you an overview of all your kid’s potential digital risks – aloof their devices, operating systems, and aloof your children, in one convenient, centralized place. The app will also proactively alert you in case something needs your attention, meaning you get to make the right digital parenting decisions, in real-time.")}
               </p>
               {advanced9 ? (
                 <Button
@@ -686,7 +596,7 @@ function Platforms() {
                   className="btnn rounded-pill bg "
                   onClick={() => setAdvanced9(false)}
                 >
-                  Read Less
+                  {t("Read Less")}
                 </Button>
               ) : (
                 <Button
@@ -694,7 +604,7 @@ function Platforms() {
                   className="btnn rounded-pill primary-fill"
                   onClick={() => setAdvanced9(true)}
                 >
-                  Read More
+                  {t("Read More")}
                 </Button>
               )}
             </Col>
@@ -714,11 +624,7 @@ function Platforms() {
               {advanced9 ? (
                 <>
                   <p className="just text-muted">
-                    You can add all your kids and all their devices including
-                    you family shared devices. Surfie covers all kids digital
-                    threats and challenges such as content filtering, screen
-                    time, location, social applications monitoring and much
-                    more…
+                    {t("You can add all your kids and all their devices including you family shared devices. Surfie covers all kids digital threats and challenges such as content filtering, screen time, location, social applications monitoring and much more…")}
                   </p>
                 </>
               ) : null}
@@ -739,15 +645,9 @@ function Platforms() {
             </Col>
 
             <Col sm={5}>
-              <h4 className=""> New online trends and risks</h4>
+              <h4 className=""> {t("New online trends and risks")}</h4>
               <p className=" text-muted">
-              The internet removes all of the real life geographical, 
-              age and cultural boundaries, meaning there are a wealth of 
-              new daily risks and threats that are ever-changing, and potentially 
-              dangerous for our kids’ online lives. Challenges such as the Momo 
-              Challange and the Blue Whale challenge are online trends erncouraging 
-              kids to perform a series of 
-              dangerous tasks including violent attacks, self-harm and even suicide.
+              {t("The internet removes all of the real life geographical, age and cultural boundaries, meaning there are a wealth of new daily risks and threats that are ever-changing, and potentially dangerous for our kids’ online lives. Challenges such as the Momo Challange and the Blue Whale challenge are online trends erncouraging kids to perform a series of dangerous tasks including violent attacks, self-harm and even suicide.")}
               </p>
               {advanced10 ? (
                 <Button
@@ -755,7 +655,7 @@ function Platforms() {
                   className="btnn rounded-pill bg "
                   onClick={() => setAdvanced10(false)}
                 >
-                  Read Less
+                  {t("Read Less")}
                 </Button>
               ) : (
                 <Button
@@ -763,7 +663,7 @@ function Platforms() {
                   className="btnn rounded-pill primary-fill"
                   onClick={() => setAdvanced10(true)}
                 >
-                  Read More
+                  {t("Read More")}
                 </Button>
               )}
             </Col>
@@ -773,10 +673,7 @@ function Platforms() {
               {advanced10 ? (
                 <>
                   <p className="just text-muted">
-                  PureSight has an established Content Lab with international 
-                  content analysts, researching the emerging trends for children 
-                  of all ages. Those threats are published to the PureSight site and uploaded to the Surfie service, alerting parents in case their children discuss or look into these new threats. With Surfie from Puresight, 
-                  you’ll always be up-to-date with ever emerging risk and threats.  
+                  {t("PureSight has an established Content Lab with international content analysts, researching the emerging trends for children of all ages. Those threats are published to the PureSight site and uploaded to the Surfie service, alerting parents in case their children discuss or look into these new threats. With Surfie from Puresight, you’ll always be up-to-date with ever emerging risk and threats.")} 
                   </p>
                  
                 </>
@@ -792,7 +689,7 @@ function Platforms() {
       </Container>
 
       <Row className=" mt-5  d-flex pb-5 d-flex justify-content-center align-items-center">
-        <p className="mt-3  text-center pb-1 fw-bold fs-3">Advantages of using Surfie Ethiopia </p>
+        <p className="mt-3  text-center pb-1 fw-bold fs-3">{t("Advantages of using Surfie Ethiopia")} </p>
       </Row>
 
       <Container className="mb-5">
@@ -804,11 +701,9 @@ function Platforms() {
                   <GiBinoculars size={40} className="primary-bg m-auto" />
                 </div>
 
-                <Card.Title>Total Overlook</Card.Title>
+                <Card.Title>{t("Total Overlook")}</Card.Title>
                 <Card.Text>
-                  Easy understanding of your child’s digital lifestyle, making
-                  it easier to start an open conversation about online
-                  behaviors.
+                  {t("Easy understanding of your child’s digital lifestyle, making it easier to start an open conversation about online behaviors.")}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -821,10 +716,9 @@ function Platforms() {
                   <RiParentLine size={40} className="primary-bg m-auto" />
                 </div>
 
-                <Card.Title>Parenting Style</Card.Title>
+                <Card.Title>{t("Parenting Style")}</Card.Title>
                 <Card.Text>
-                  Define age-appropriate boundaries, monitor digital use, or
-                  just simply get alerts.
+                  {t("Define age-appropriate boundaries, monitor digital use, or just simply get alerts.")}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -837,10 +731,9 @@ function Platforms() {
                   <FcMindMap size={40} className="primary-bg m-auto" />
                 </div>
 
-                <Card.Title>Peace of Mind</Card.Title>
+                <Card.Title>{t("Peace of Mind")}</Card.Title>
                 <Card.Text>
-                  Know you child’s current activity at a glance, get immediate
-                  alerts and prevent screen addiction.
+                  {t("Know you child’s current activity at a glance, get immediate alerts and prevent screen addiction.")}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -856,10 +749,9 @@ function Platforms() {
                   />
                 </div>
 
-                <Card.Title>24/7 Support</Card.Title>
+                <Card.Title>{t("24/7 Support")}</Card.Title>
                 <Card.Text>
-                  Unlike other apps, with Surfie you are not left behind –
-                  support is here when you need it.
+                  {t("Unlike other apps, with Surfie you are not left behind – support is here when you need it.")}
                 </Card.Text>
               </Card.Body>
             </Card>
