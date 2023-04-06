@@ -1,0 +1,13 @@
+:root {
+    --bg-color: #f8f8f8;
+    --text-color: #141414;
+    --sec-bg:#ffffff;
+    --input-bg: #ffffff;
+  }
+  
+  [data-theme="dark"] {
+    --bg-color: #141414;
+    --text-color: #f5f5f5;
+    --sec-bg:#112123;
+    --input-bg: #314f5371;
+  }

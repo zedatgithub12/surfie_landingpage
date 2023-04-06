@@ -50,17 +50,17 @@ function Pricingcom() {
       </Row>
 
       <Container>
-        <div className="row  mb-5 text-center d-flex justify-content-center">
-          <div className="col-sm-3 mb-3 ">
-            <div className="position-relative p-5 d-flex justify-content-center align-items-center bg-white m-auto border border-3 border-info rounded-circle license text-center">
+        <div className="row  mb-5 text-center d-flex justify-content-center" >
+          <div className="col-sm-3 mb-3 " >
+            <div className="position-relative p-5 d-flex justify-content-center align-items-center m-auto border border-3 border-info rounded-circle license text-center" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               <h1 className="m-2 "> 1 </h1>
             </div>
 
-            <div className="card overflow-visible border-0 rounded-3 shadow-sm space py-2">
+            <div className="card overflow-visible border-0 rounded-3 shadow space py-2" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               <div className="rounded-top py-5 primary-fill rounded-top-3">
-                <h4 className="mt-3 fw-normal text-white ">{t('Device Licence')}</h4>
+                <h4 className="mt-3 fw-normal text-white " >{t('Device Licence')}</h4>
               </div>
-              <div className="card-body cardcol ">
+              <div className="card-body  ">
                 {monthly ? (
                   <p className=" pricing-card-title fs-4 pt-2">
                     300 {t('Birr')}{" "}
@@ -94,14 +94,14 @@ function Pricingcom() {
           </div>
 
           <div className="col-sm-3 mb-3">
-            <div className="position-relative p-5 d-flex justify-content-center align-items-center bg-white m-auto border border-3 border-info rounded-circle license text-center">
+            <div className="position-relative p-5 d-flex justify-content-center align-items-center  m-auto border border-3 border-info rounded-circle license text-center" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               <h1 className="m-2 "> 3 </h1>
             </div>
-            <div className="card overflow-visible border-0 rounded-3 shadow-sm space py-2">
+            <div className="card overflow-visible border-0 rounded-3 shadow space py-2" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               <div className="rounded-top py-5 primary-fill">
                 <h4 className="mt-3 fw-normal text-white">{t('Device Licence')}</h4>
               </div>
-              <div className="card-body cardcol">
+              <div className="card-body" >
                 {monthly ? (
                   <p className="pricing-card-title fs-4 pt-2">
                     450 {t('Birr')}{" "}
@@ -133,14 +133,14 @@ function Pricingcom() {
           </div>
 
           <div className="col-sm-3 mb-3">
-            <div className="position-relative p-5 d-flex justify-content-center align-items-center bg-white m-auto border border-3 border-info rounded-circle license text-center">
+            <div className="position-relative p-5 d-flex justify-content-center align-items-center  m-auto border border-3 border-info rounded-circle license text-center" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               <h1 className="m-2 "> 5 </h1>
             </div>
-            <div className="card overflow-visible border-0 rounded-3 shadow-sm space py-2">
+            <div className="card overflow-visible border-0 rounded-3 shadow space py-2" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               <div className="rounded-top py-5 primary-fill">
                 <h4 className="mt-3 fw-normal text-white">{t('Device Licence')}</h4>
               </div>
-              <div className="card-body cardcol">
+              <div className="card-body">
                 {monthly ? (
                   <p className="card-title pricing-card-title fs-4  pt-2">
                     600 {t('Birr')}{" "}
@@ -191,7 +191,8 @@ function Pricingcom() {
           >
             <NavLink
               to="/contact"
-              className="btn btn-light primary-bg text-dark  fw-semibold p-2 px-5 text-decoration-none"
+              className="btn btn-light primary-bg border-0  fw-semibold p-2 px-5 text-decoration-none"
+              style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
             >
               {t('Contact')}
             </NavLink>

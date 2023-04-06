@@ -44,8 +44,8 @@ function Platforms() {
       <Row className="py-3">
         <Col sm={1}></Col>
         <Col sm={2}>
-          <div className=" mt-4 d-flex justify-content-center align-items-center rounded-circle features shadow-sm  colored2 m-auto ">
-            <MdOutlineAppShortcut size={80} className="primary-bg m-auto" />
+          <div className=" mt-4 d-flex justify-content-center align-items-center rounded-circle features shadow m-auto " style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
+            <MdOutlineAppShortcut size={80} className="primary-bg m-auto"  />
           </div>
         </Col>
         <Col sm={6} className="ps-4">
@@ -66,13 +66,14 @@ function Platforms() {
       <Row className="d-flex justify-content-center align-items-center">
         <h3 className="text-center  pb-3 ">{t('Surfie Platforms')} </h3>
       </Row>
-        <Row className="p-3 d-flex justify-content-center ">
+        <Row className="p-3 d-flex justify-content-center " >
           <Col
             sm={3}
             className=" primary-fill m-2 text-center border-0 shadow-sm  mb-4 p-3 rounded"
+            
           >
             
-              <Card.Body>
+              <Card.Body >
                 <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm border-0 primary-bg border-0 m-auto ">
                   <RiParentLine size={60} className="text-white m-auto" />
                 </div>
@@ -669,11 +670,11 @@ function Platforms() {
             </Col>
           </Row>
           <Row>
-            <Col sm={10} className=" text-center m-auto">
+            <Col sm={10} className=" text-center m-auto" >
               {advanced10 ? (
                 <>
                   <p className="just text-muted">
-                  {t("PureSight has an established Content Lab with international content analysts, researching the emerging trends for children of all ages. Those threats are published to the PureSight site and uploaded to the Surfie service, alerting parents in case their children discuss or look into these new threats. With Surfie from Puresight, you’ll always be up-to-date with ever emerging risk and threats.")} 
+                  {t("Surfie Ethiopia has an established Content Lab with international content analysts, researching the emerging trends for children of all ages. Those threats are published to the PureSight site and uploaded to the Surfie service, alerting parents in case their children discuss or look into these new threats. With Surfie from Puresight, you’ll always be up-to-date with ever emerging risk and threats.")} 
                   </p>
                  
                 </>
@@ -695,7 +696,7 @@ function Platforms() {
       <Container className="mb-5">
         <Row>
           <Col sm={3}>
-            <Card className="text-center border-0 shadow-sm m-2 mb-3 p-3 h-100">
+            <Card className="text-center border-0 shadow m-2 mb-3 p-3 h-100" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }} >
               <Card.Body>
                 <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm  colored2 m-auto ">
                   <GiBinoculars size={40} className="primary-bg m-auto" />
@@ -710,7 +711,7 @@ function Platforms() {
           </Col>
 
           <Col sm={3}>
-            <Card className="text-center border-0  shadow-sm m-2 mb-3 p-3  h-100">
+            <Card className="text-center border-0  shadow m-2 mb-3 p-3  h-100" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }} >
               <Card.Body>
                 <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm colored2 m-auto ">
                   <RiParentLine size={40} className="primary-bg m-auto" />
@@ -725,14 +726,14 @@ function Platforms() {
           </Col>
 
           <Col sm={3}>
-            <Card className="text-center border-0  shadow-sm m-2 mb-3 p-3  h-100">
+            <Card className="text-center border-0  shadow m-2 mb-3 p-3  h-100" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }} >
               <Card.Body>
                 <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm colored2 m-auto ">
                   <FcMindMap size={40} className="primary-bg m-auto" />
                 </div>
 
                 <Card.Title>{t("Peace of Mind")}</Card.Title>
-                <Card.Text>
+                <Card.Text >
                   {t("Know you child’s current activity at a glance, get immediate alerts and prevent screen addiction.")}
                 </Card.Text>
               </Card.Body>
@@ -740,7 +741,7 @@ function Platforms() {
           </Col>
 
           <Col sm={3}>
-            <Card className="text-center border-0  shadow-sm m-2 mb-3 p-3  h-100">
+            <Card className="text-center border-0  shadow m-2 mb-3 p-3  h-100" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }} >
               <Card.Body>
                 <div className="mb-4 d-flex justify-content-center align-items-center rounded-circle fcard shadow-sm colored2 m-auto ">
                   <MdOutlineSupportAgent

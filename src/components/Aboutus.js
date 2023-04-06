@@ -18,8 +18,8 @@ function Aboutus() {
       <Row className="py-3">
         <Col sm={1}></Col>
         <Col sm={2}>
-          <div className=" mt-4 d-flex justify-content-center align-items-center rounded-circle features shadow-sm  colored2 m-auto ">
-          <AiOutlineProfile size={80} className="primary-bg m-auto" />
+          <div className=" mt-4 d-flex justify-content-center align-items-center rounded-circle features shadow  m-auto " style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
+          <AiOutlineProfile size={70} className="primary-bg m-auto" />
           </div>
         </Col>
         <Col sm={6} className=" ps-4">
@@ -60,7 +60,7 @@ function Aboutus() {
       <Container>
 
   
-      <Marquee gradientWidth={50} className=" colored1 ">
+      <Marquee gradientWidth={4} style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
         
       <Row className=" align-items-center justify-content-between ">
        

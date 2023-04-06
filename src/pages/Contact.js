@@ -120,12 +120,12 @@ const Contact = () => {
     }
   };
   return (
-    <>
+    <div style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} >
       <Navbars />
       <>
         <Row className="mt-3 d-flex pb-4 ">
           <Col sm={2}>
-            <div className=" mt-3 mb-2  d-flex justify-content-center align-items-center rounded-circle faq shadow-sm colored2 m-auto ">
+            <div className=" mt-3 mb-2  d-flex justify-content-center align-items-center rounded-circle faq shadow  m-auto " style={{ color: 'var(--bg-color)' }}>
               <AiOutlineQuestionCircle
                 size={50}
                 className="primary-bg m-auto "
@@ -138,23 +138,25 @@ const Contact = () => {
         </Col>
         </Row>
 
-        <Container>
-          <Row className="pb-5 d-flex justify-content-center align-items-center ">
+        <Container >
+          <Row className="pb-5 d-flex justify-content-center align-items-center " style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} >
             <Col sm={10}>
-              <Accordion flush>
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header >
+              <Accordion flush >
+                <Accordion.Item eventKey="0" style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} >
+                  <Accordion.Header style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} id="accordian-header" >
                     <p className=" py-2 text-secondary ">
                       {t("Can i disconnect my children's devices from the Internet in case they spent too much time online?")}
                     </p>
                   </Accordion.Header>
-                  <Accordion.Body className="text-muted my-3">
+                  <Accordion.Body className="text-muted my-3" >
                     {t('Yes, you can. Just open the parent app (Surfie-Parent) and tab the disconnect button on the bottom of the Family Overview screen. If you want to disconnect just some of your children, then select the disconnect button on the relevant profiles.')}
                   </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="1">
-                  <Accordion.Header>
-                  <p className=" py-2 text-secondary ">
+                </Accordion.Item >
+
+
+                <Accordion.Item eventKey="1" style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} >
+                  <Accordion.Header >
+                  <p className=" py-2 text-secondary " >
                       {t('I installed the child-app on my childrens iphones but i do not see any information on what application they used?')}
                     </p>
                   </Accordion.Header>
@@ -162,7 +164,9 @@ const Contact = () => {
                    {t('At this stage, our protection for iPhones include: WhatsApp and Facebook cyber-bullying alerts, location tracking and location alerts and website filtering. In the new future we will also introduce app-usage tracking for iOS devices (as we already have for Android phones and tablets).')}
                   </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item eventKey="2">
+
+
+                <Accordion.Item eventKey="2" style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} >
                   <Accordion.Header>
                   <p className=" py-2 text-secondary ">
                       {t("During the Surfie-Kid app installation, I got a VPN connection error 'Your certeficate is permature' what shouid i do?")}
@@ -177,7 +181,7 @@ const Contact = () => {
                   </Accordion.Body>
                 </Accordion.Item>
 
-                <Accordion.Item eventKey="3">
+                <Accordion.Item eventKey="3" style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} >
                   <Accordion.Header>
                   <p className=" py-2 text-secondary ">
                       {t('I forgot my Parental app password. what can i do?')}
@@ -187,7 +191,9 @@ const Contact = () => {
                     {t("Tab the 'Forgot Password' option on the sign in screen of the parent app. An email will be sent to you to reset your password.")}
                   </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item eventKey="5">
+
+
+                <Accordion.Item eventKey="5" style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} >
                   <Accordion.Header>
                   <p className=" py-2 text-secondary ">
                       {t('I have Surfie installed on my son device and i want to give this device to my daughter now. How can i change the profile?')}
@@ -197,7 +203,9 @@ const Contact = () => {
                    {t('Login to our parent web-portal at: http://surfie.puresight.com. We recommend to use a PC for that. Select Settings, Advanced Setting and finally Device settings. Look for your son’s device and select your daughter’s profile from the drop-down list. Click Save Changes.')}
                   </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item eventKey="6">
+
+
+                <Accordion.Item eventKey="6" style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} >
                   <Accordion.Header>
                   <p className=" py-2 text-secondary ">
                       {t('How can i block or allow specific website?')}
@@ -221,7 +229,9 @@ const Contact = () => {
                     </ul>
                   </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item eventKey="7">
+
+
+                <Accordion.Item eventKey="7" style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} >
                   <Accordion.Header>
                   <p className=" py-2 text-secondary ">
                       {t('How can i change my child profile picture?')}
@@ -238,6 +248,8 @@ const Contact = () => {
                     </ul>
                   </Accordion.Body>
                 </Accordion.Item>
+
+                
                 <Accordion.Item eventKey="8">
                   <Accordion.Header>
                   <p className=" py-2 text-secondary ">
@@ -319,10 +331,11 @@ const Contact = () => {
 
         <Row className=" pt-3 d-flex pb-5 ">
           <Col sm={2}>
-            <div className=" mb-3 primary-fill d-flex justify-content-center align-items-center rounded-circle faq shadow-sm colored2 m-auto ">
+            <div className=" mb-3 d-flex justify-content-center align-items-center rounded-circle faq shadow m-auto " style={{ color: 'var(--bg-color)' }}>
               <MdOutlineAlternateEmail
                 size={50}
                 className="primary-bg m-auto"
+                
               />
             </div>
           </Col>
@@ -333,7 +346,7 @@ const Contact = () => {
             <form>
               <Row>
                 <Col>
-                  <Form.Group className="bg-light mb-3" controlId="Name">
+                  <Form.Group className=" mb-3" controlId="Name">
                     <Form.Control
                       type="text"
                       required
@@ -342,11 +355,12 @@ const Contact = () => {
                       className="form-control border p-2 ps-3"
                       value={info.username}
                       onChange={updateName}
+                      style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
                     />
                   </Form.Group>
                 </Col>
                 <Col>
-                  <Form.Group className="bg-light mb-3" controlId="Email">
+                  <Form.Group className=" mb-3" controlId="Email">
                     <Form.Control
                       type="email"
                       required
@@ -354,12 +368,13 @@ const Contact = () => {
                       className="form-control border p-2 ps-3"
                       value={info.email}
                       onChange={updateEmail}
+                      style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
                     />
                   </Form.Group>
                 </Col>
               </Row>
 
-              <Form.Group className="bg-light mb-3" controlId="Textarea">
+              <Form.Group className=" mb-3" controlId="Textarea" style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
                 <Form.Control
                   as="textarea"
                   rows={8}
@@ -368,6 +383,7 @@ const Contact = () => {
                   className="form-control border p-2 ps-3"
                   value={info.message}
                   onChange={updateMessage}
+                  style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
                 />
               </Form.Group>
               <Row className="d-flex justify-content-evenly align-content-center ">
@@ -404,6 +420,7 @@ const Contact = () => {
                     <BiErrorCircle
                       size={30}
                       className="align-content-center m-auto me-2 text-danger"
+                      
                     />
                     <p className="text-danger m-auto">{t(info.prompt)} </p>
                   
@@ -417,10 +434,10 @@ const Contact = () => {
             <Card className="rounded-3 primary-fill">
               <Card.Body className=" py-4">
                 <Card.Title className="pt-2 ps-3 pb-2">
-                  <p className="fs-3 fw-bold">{t('Get in Touch')}</p>
+                  <p className="fs-3 fw-bold" style={{ color: 'var(--bg-color)' }}>{t('Get in Touch')}</p>
                 </Card.Title>
 
-                <p className="ps-3 pe-3 pt-0 just text-white fs-6">
+                <p className="ps-3 pe-3 pt-0 just  fs-6" style={{ color: 'var(--bg-color)' }}>
                   {t("Don’t hesitate to contact us at any time")} <br />
                   {t('we are 24/7 available.')}
                 </p>
@@ -429,15 +446,15 @@ const Contact = () => {
                   <Row className="ps-3 d-flex justify-content-between align-items-center">
                     <Col sm={2} className="hid">
                       <div className=" mt-2 d-flex justify-content-center  rounded-circle contact shadow-sm  textcolor-ct ">
-                        <GoLocation size={28} className="m-auto" />
+                        <GoLocation size={28} className="m-auto"  style={{ color: 'var(--bg-color)' }}/>
                       </div>
                     </Col>
                     <Col sm={9} className="mt-2">
-                      <span className=" fs-5 fw-semibold pe-3 ">
+                      <span className=" fs-5 fw-semibold pe-3 " style={{ color: 'var(--bg-color)' }}>
                        
                         {t('Visit Us')}
                       </span>
-                      <p className=" fs-6 pe-3 small">
+                      <p className=" fs-6 pe-3 small" style={{ color: 'var(--bg-color)' }}>
                        {t('Husen Building, 2nd Floor, Bole 24, Addis ababa Ethiopia')}
                       </p>
                     </Col>
@@ -448,12 +465,12 @@ const Contact = () => {
                   <Row className="ps-3 d-flex justify-content-between align-items-center">
                     <Col sm={2} className="hid">
                       <div className="hid mt-2 d-flex justify-content-center  rounded-circle contact shadow-sm  textcolor-ct ">
-                        <FiMail size={28} className="m-auto" />
+                        <FiMail size={28} className="m-auto" style={{ color: 'var(--bg-color)' }} />
                       </div>
                     </Col>
                     <Col sm={9} className="mt-2 ">
-                      <span className=" fs-5 fw-semibold pe-3 "> {t('Mail Us')} </span>
-                      <p className=" fs-6 pe-3 small">
+                      <span className=" fs-5 fw-semibold pe-3 " style={{ color: 'var(--bg-color)' }}> {t('Mail Us')} </span>
+                      <p className=" fs-6 pe-3 small" style={{ color: 'var(--bg-color)' }}>
                         support@surfieethiopia.com <br />
                         contact@surfieethiopia.com
                       </p>
@@ -465,12 +482,12 @@ const Contact = () => {
                   <Row className="ps-3 d-flex justify-content-between align-items-center">
                     <Col sm={2} className="hid">
                       <div className=" hid mt-2 d-flex justify-content-center rounded-circle contact shadow-sm  textcolor-ct">
-                        <FiPhoneCall size={28} className="m-auto" />
+                        <FiPhoneCall size={28} className="m-auto" style={{ color: 'var(--bg-color)' }} />
                       </div>
                     </Col>
                     <Col sm={9} className="mt-2 ">
-                      <span className=" fs-5 fw-semibold pe-3 "> {t('Call Us')} </span>
-                      <p className=" fs-6 pe-3 small">
+                      <span className=" fs-5 fw-semibold pe-3 " style={{ color: 'var(--bg-color)' }}> {t('Call Us')} </span>
+                      <p className=" fs-6 pe-3 small" style={{ color: 'var(--bg-color)' }}>
                         +251-992 758 586 <br />
                         +251-911 287 546
                       </p>
@@ -489,7 +506,7 @@ const Contact = () => {
         </Row>
       </>
       <Footer />
-    </>
+    </div>
   );
 };
 export default Contact;

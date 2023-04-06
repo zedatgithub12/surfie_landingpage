@@ -5,7 +5,7 @@ import Navbars from "../components/Navbar";
 
 const About=()=>{
     return(
-       <div>
+       <div style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} >
         <Navbars/>      
        <Aboutus/>
        <Footer/> 

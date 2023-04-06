@@ -76,12 +76,13 @@ export default function VerticalLinearStepper() {
                   <button type="button"  className="mt-2 p-2 btncolor"
                     variant="light"
                     onClick={handleNext}
+                    style={{color: 'var(--sec-bg)' }}
                     sx={{ mt: 1, mr: 1 }}
                   >
                     {t(index === steps.length - 1 ? 'Finish' : 'Continue')}
                   </button>
 
-                  <button type="button"  href="/" class=" ms-3 btn btn-white text-dark fw-normal border-0 "
+                  <button type="button"  href="/" class=" ms-3 btn btn-white text-dark fw-normal border-0 " 
                     disabled={index === 0}
                     onClick={handleBack}
                     sx={{ mt: 1, mr: 1 }}
@@ -95,9 +96,9 @@ export default function VerticalLinearStepper() {
         ))}
       </Stepper>
       {activeStep === steps.length && (
-        <Paper square elevation={0} sx={{ p: 3 }} className="bg-light rounded-4">
+        <Paper square elevation={0} sx={{ p: 3 }} className="rounded-4" style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
           <Typography className="primary-bg" >{t('All steps completed happy parenting')}</Typography>
-          <button type="button" className="mt-3 btn btn-light shadow-sm px-4 text-muted" onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+          <button type="button" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }} className="mt-3 btn  shadow-sm px-4 " onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
             {t('Reset')}
           </button>
         </Paper>

@@ -143,7 +143,7 @@ const HeroImage = () => {
         ></Col>
       </Row>
 
-      <Marquee gradientWidth={50} speed={10} className=" colored1 ">
+      <Marquee gradientWidth={4} speed={10} className=" " style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
         <Row className=" align-items-center justify-content-between ">
           <Col>
             <img className="image_wrap" src={Afromina} alt="Afromina" />

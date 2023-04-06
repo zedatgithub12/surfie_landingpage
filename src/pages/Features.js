@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 const Features = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} >
      
      <Navbars className=""/>  
       <Platforms />

@@ -339,105 +339,119 @@ function CreateAccount() {
 
   
   return (
-    <>
+    <div style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} className="m-auto">
     <Navbars/>
-      <Container>
+      <Container style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
         <Row>
           <Col
             sm={10}
-            className="bg-white m-auto p-4 pb-0 mt-4 mb-3 rounded shadow-sm"
+            className=" m-auto p-4 pb-0 mt-4 mb-3 rounded shadow-sm"
+            style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}
           >
-            <MDBContainer className="bg-white">
+            <MDBContainer className="" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               <MDBRow
                 sm={10}
                 className="d-flex justify-content-center align-items-center h-100 "
               >
                 <MDBCol>
-                  <MDBCard className="my-4 ">
+                  <MDBCard className="my-4 " style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
                     <form className="needs-validation">
                       <MDBRow className="g-0">
                         <MDBCol sd="6">
-                          <MDBCardBody className="text-black d-flex flex-column justify-content-center ">
-                            <h4 className="mb-4 text-uppercase fw-bold">
+                          <MDBCardBody className="text-black d-flex flex-column justify-content-center " style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
+                            <h4 className="mb-4 text-uppercase fw-bold" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
                               {t('Create Account')}
                             </h4>
 
-                            <MDBRow>
+                            <MDBRow style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }} className="mb-3">
                               <p className="fw-semibold primary-text">
                                 {t('Add User Information')}
                               </p>
-                              <MDBCol sm="6">
+                              <MDBCol sm="6" >
+                                
                                 <MDBInput
-                                  wrapperClass="mb-2"
-                                  label={t("First Name")}
+                                  wrapperClass="mb-2 "
+                                  placeholder={t("First Name")}
                                   size="md"
                                   id="form1"
                                   type="text"
                                   required
                                   defaultValue={input.firstname}
                                   onChange={UpdateFname}
+                                  style={{ backgroundColor: 'var(--input-bg)', color: 'var(--text-color)' }}
+                                  className="inputBorder"
                                 />
                               </MDBCol>
 
                               <MDBCol sm="6">
                                 <MDBInput
                                   wrapperClass="mb-2"
-                                  label={t("Middle Name")}
+                                  placeholder={t("Middle Name")}
                                   size="md"
                                   id="form2"
                                   type="text"
                                   required
                                   defaultValue={input.middlename}
                                   onChange={UpdateMname}
+                                  style={{ backgroundColor: 'var(--input-bg)', color: 'var(--text-color)' }}
+                                  className="inputBorder"
                                 />
                               </MDBCol>
                             </MDBRow>
                             <MDBInput
                               wrapperClass="mb-2"
-                              label={t("Last Name")}
+                              placeholder={t("Last Name")}
                               size="md"
                               id="form9"
                               type="text"
                               required
                               defaultValue={input.lastname}
                               onChange={UpdateLname}
+                              style={{ backgroundColor: 'var(--input-bg)', color: 'var(--text-color)' }}
+                              className="inputBorder mb-3"
                             />
-                            <MDBRow>
+                            <MDBRow style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }} className="mb-3">
                               <MDBCol sm="6">
                                 <MDBInput
                                   wrapperClass="mb-2"
-                                  label={t("Email Address")}
+                                  placeholder={t("Email Address")}
                                   size="md"
                                   id="form3"
                                   type="email"
                                   required
                                   defaultValue={input.emailaddress}
                                   onChange={UpdateEmail}
+                                  style={{ backgroundColor: 'var(--input-bg)', color: 'var(--text-color)' }}
+                                  className="inputBorder"
                                 />
                               </MDBCol>
 
                               <MDBCol sm="6">
                                 <MDBInput
                                   wrapperClass="mb-2"
-                                  label={t("Phone")}
+                                  placeholder={t("Phone")}
                                   size="md"
                                   id="form4"
                                   type="phone"
                                   required
                                   defaultValue={input.phone}
                                   onChange={UpdatePhone}
+                                  style={{ backgroundColor: 'var(--input-bg)', color: 'var(--text-color)' }}
+                                  className="inputBorder"
                                 />
                               </MDBCol>
                             </MDBRow>
 
-                            <MDBInput
+                            <MDBInput 
                               wrapperClass="mb-2"
-                              label={t("Living Address")}
+                              placeholder={t("Living Address")}
                               size="md"
                               id="form5"
                               type="address"
                               defaultValue={input.address}
                               onChange={UpdateAddress}
+                              style={{ backgroundColor: 'var(--input-bg)', color: 'var(--text-color)' }}
+                              className="inputBorder"
                             />
 
                             <p className="fw-semibold primary-text mt-3">
@@ -447,25 +461,29 @@ function CreateAccount() {
 
                             <MDBInput
                               wrapperClass="mt-2 mb-1"
-                              label={t("Username")}
+                              placeholder={t("Username")}
                               size="md"
                               id="form6"
                               type="text"
                               required
                               defaultValue={input.username}
                               onChange={UpdateUsername}
+                              style={{ backgroundColor: 'var(--input-bg)', color: 'var(--text-color)' }}
+                              className="inputBorder mb-3"
                             />
-                            <MDBRow>
+                            <MDBRow style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }} className="mb-3">
                               <MDBCol sm="6">
                                 <MDBInput
                                   wrapperClass="mb-2"
-                                  label={t("Password")}
+                                  placeholder={t("Password")}
                                   size="md"
                                   id="form7"
                                   type={showpass ? "text" : "password"}
                                   required
                                   defaultValue={input.password}
                                   onChange={UpdatePassword}
+                                  style={{ backgroundColor: 'var(--input-bg)', color: 'var(--text-color)' }}
+                                  className="inputBorder"
                                 />
                               </MDBCol>
 
@@ -475,13 +493,15 @@ function CreateAccount() {
                               >
                                 <MDBInput
                                   wrapperClass={input.passmatch + "mb-4"}
-                                  label={t("Confirm Password")}
+                                  placeholder={t("Confirm Password")}
                                   size="md"
                                   id="form8"
                                   type={showpass ? "text" : "password"}
                                   required
                                   defaultValue={input.confirmpassword}
                                   onChange={UpdateConfirmPass}
+                                  style={{ backgroundColor: 'var(--input-bg)', color: 'var(--text-color)' }}
+                                  className="inputBorder"
                                 />
                                 <Button
                                   title="show password"
@@ -504,20 +524,22 @@ function CreateAccount() {
                               </MDBCol>
                             </MDBRow>
 
-                            <MDBRow>
+                            <MDBRow style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }} className="mb-3">
                               <MDBCol>
                                 <Dropdown size="md">
                                   <Dropdown.Toggle
                                     variant="light"
                                     title="Licenses"
-                                    className="text-dark border m-0 me-5 fw-semibold font-link"
+                                    className=" border m-0 me-5  font-link"
+                                    style={{ backgroundColor: 'var(--input-bg)', color: 'var(--text-color)' }}
+                                  
                                   >
                                     {license === "Select License"
                                       ? t("Select License")
                                       : license + t(" License")}
                                   </Dropdown.Toggle>
 
-                                  <Dropdown.Menu variant="light" id="licenses">
+                                  <Dropdown.Menu variant="light" id="licenses" >
                                     <Dropdown.Item
                                       onClick={() => setLicense(0)}
                                     >
@@ -575,8 +597,10 @@ function CreateAccount() {
                           md="10"
                           lg="6"
                           className="order-1 order-lg-2 border-start-1 align-items-center"
+                         
+                       
                         >
-                          <MDBRow className="mt-5 pt-5" id="image">
+                          <MDBRow className="mt-5 pt-5" id="image" >
                             <MDBCardImage
                               src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
                               className="img-fluid"
@@ -623,6 +647,7 @@ function CreateAccount() {
                                         }
                                         onChange={() => Select(item.id)}
                                         className="align-self-start me-2 "
+                                        
                                       />
                                       {t(item.name)}
                                     </div>
@@ -675,7 +700,7 @@ function CreateAccount() {
             </MDBContainer>
           </Col>
         </Row>
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose} style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
           <Modal.Header closeButton/>
           <Modal.Body>
      
@@ -720,7 +745,7 @@ function CreateAccount() {
         </Modal.Body>
         </Modal>
       </Container>
-    </>
+    </div>
   );
 }
 

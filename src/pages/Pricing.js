@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Navbars from "../components/Navbar";
 const Pricing = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
        <Navbars/>  
       <Pricingcom/>
       <Footer />

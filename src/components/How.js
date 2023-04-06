@@ -32,7 +32,7 @@ function How() {
 
         <Row>
           <Col id="card">
-            <Card className="border-0 shadow-sm m-2 mb-4 p-2 primary">
+            <Card className="border-0 shadow-sm m-2 mb-4 p-2 primary" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               <Card.Body>
                 <div className="d-flex justify-content-end position-absolute end-0 bottom-0 m-2 ">
                   <span className="align-items-center rounded-circle  ">
@@ -48,11 +48,11 @@ function How() {
               
             </Card>
 
-            <Card className="border-0 shadow-sm m-2 mb-4 p-2 ">
+            <Card className="border-0 shadow-sm m-2 mb-4 p-2 " style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               <Card.Body>
                 <div className="d-flex justify-content-end position-absolute end-0 bottom-0 m-2 ">
                   <span className="align-items-center rounded-circle">
-                    <MdDevices size={42} className="m-2 secondary-color" />
+                    <MdDevices size={42} className="m-2 secondary-color"  />
                   </span>
                 </div>
                 <Card.Title className="primary-bg mt-2">{t('Cross Devices Protection')}</Card.Title>
@@ -62,7 +62,7 @@ function How() {
               </Card.Body>
             </Card>
 
-            <Card className="border-0 shadow-sm m-2 mb-4 p-2">
+            <Card className="border-0 shadow-sm m-2 mb-4 p-2" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               <Card.Body>
                 <div className="d-flex justify-content-end position-absolute end-0 bottom-0 m-2 ">
                   <span className="align-items-center rounded-circle">
@@ -92,7 +92,7 @@ function How() {
           </Col>
 
           <Col id="card">
-            <Card className="border-0 shadow-sm m-2 mb-4 p-2">
+            <Card className="border-0 shadow-sm m-2 mb-4 p-2" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               <Card.Body>
                 <div className="d-flex justify-content-end position-absolute end-0 bottom-0 m-2 ">
                   <span className="align-items-center rounded-circle">
@@ -107,7 +107,7 @@ function How() {
               </Card.Body>
             </Card>
 
-            <Card className="border-0 shadow-sm m-2 mb-4 p-2">
+            <Card className="border-0 shadow-sm m-2 mb-4 p-2" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               <Card.Body>
                 <div className="d-flex justify-content-end position-absolute end-0 bottom-0 m-2 ">
                   <span className="align-items-center rounded-circle">
@@ -124,7 +124,7 @@ function How() {
               </Card.Body>
             </Card>
 
-            <Card className="border-0 shadow-sm m-2 mb-4 p-2">
+            <Card className="border-0 shadow-sm m-2 mb-4 p-2 " style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               <Card.Body>
                 <div className="d-flex justify-content-end position-absolute end-0 bottom-0 m-2 ">
                   <span className="align-items-center rounded-circle  ">
@@ -141,7 +141,7 @@ function How() {
               </Card.Body>
             </Card>
 
-            <Link className="btn btn-md btn-light secondary-color px-3 ms-2 mb-5 p-2 fs-6 fw-semibold shadow-sm " id="find" to="/features">
+            <Link className="btn btn-md btn-light  px-3 ms-2 mb-5 p-2 fs-6 fw-semibold shadow-sm " id="find" to="/features" style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}>
               {t('Find More')} <BsFillArrowRightCircleFill size={16} className="float-right  ms-4"/>
             </Link>
           </Col>
@@ -153,7 +153,7 @@ function How() {
         <Row className=" mb-3 p-4 rounded-4 gradient blur">
           
         <Col lg={6} className="mt-3 mb-3 ms-3">
-        <p className="text-left fs-2 text-white "> {t('How to get started')}</p>
+        <p className="text-left fs-2 " style={{color: 'var(--sec-bg)' }}> {t('How to get started')}</p>
             <Progressbar />
           </Col>
           <Col sm={1} className="mt-5"></Col>
