@@ -230,6 +230,18 @@
 
     
     "24/7 Support":"24/7 ድጋፍ",
-    "Unlike other apps, with Surfie you are not left behind – support is here when you need it.":"እንደሌሎች መተግበሪያዎች በተለየ ከሰርፊ ኢትዮጲያ ጋር ወደ ኋላ አይቀሩም - ድጋፍ በሚፈልጉበት ጊዜ ሁሉ አለን።"
+    "Unlike other apps, with Surfie you are not left behind – support is here when you need it.":"እንደሌሎች መተግበሪያዎች በተለየ ከሰርፊ ኢትዮጲያ ጋር ወደ ኋላ አይቀሩም - ድጋፍ በሚፈልጉበት ጊዜ ሁሉ አለን።",
 
+    "Apply Coupon Code":"የኩፖን ኮድዎን ያስገቡ",
+    "Coupon Code":"የኩፖን ኮድ",
+    "First enter coupon code":"መጀመሪያ የኩፖን ኮድዎን ያስገቡ",
+    "Coupon code must be more than four character":"የኩፖን ኮድ ከአራት ፊደል በላይ መሆን አለበት።",
+    "Successfully Applied Coupon Code!":"በተሳካ ሁኔታ ተከናውኗል",
+    "Coupon Code doesn't exist or expired!":"የኩፖን ኮድ የለም ወይም ጊዜው ያለፈበት ነው!",
+    "Error Applying Coupon Code!":"የኩፖን ኮድ ላይ ስህተት አለ!",
+    "Please fill all fields":"እባክዎ ሁሉንም መስኮች ይሙሉ",
+    "Password you entered doesn't match":"ያስገቡት የይለፍ ቃል ተመሳሳይ አይደለም።",
+    "Please select payment option!":"እባክዎ የክፍያ አማራጭን ይምረጡ!",
+    "Successfully Created!":"መለያ! በተሳካ ሁኔታ ተፈጥሯል።",
+    "There is Missing Parameter!":"የጎደሉ መስኮች አሉ!"
   }

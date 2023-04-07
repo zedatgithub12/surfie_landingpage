@@ -26,7 +26,7 @@ function App() {
   };
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className="position-fixed bottom-0 end-0 m-5 pe-4 s">
+      <div className="position-fixed bottom-0 end-0 m-5 pe-1 overflow-visible zindex-tooltip">
         <IconButton
           className="w-100 h-100 rounded-circle blur p-3 shadow "
           style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}
@@ -34,9 +34,9 @@ function App() {
           aria-label="toggle"
         >
           {theme === "dark" ? (
-            <BsFillSunFill size={30} />
+            <BsFillSunFill size={24} />
           ) : (
-            <BsFillMoonStarsFill size={30} />
+            <BsFillMoonStarsFill size={24} />
           )}
         </IconButton>
       </div>

@@ -1,7 +1,7 @@
 const Connection = {
     url: "http://localhost:3000",
-    // api: "http://localhost:8000/api",
-    api: "https://admin.surfieethiopia.com/backend/api",
+    api: "http://localhost:8000/api",
+    // api: "https://admin.surfieethiopia.com/backend/api",
     remote: "https://pstest.puresight.com/cgi-bin/ProvisionAPI/",
     login: "/login",
     customers: "/customers",
@@ -28,6 +28,10 @@ const Connection = {
 
     //free trial email collection api
     trial: "/trial",
+
+    //Coupon code
+    coupon: "/coupon/"
+
 };
 
 export default Connection;
