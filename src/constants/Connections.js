@@ -1,6 +1,6 @@
 const Connection = {
     url: "http://localhost:3000",
-    api: "http://localhost:8000/api",
+     api: "http://localhost:8000/api",
     // api: "https://admin.surfieethiopia.com/backend/api",
     remote: "https://pstest.puresight.com/cgi-bin/ProvisionAPI/",
     login: "/login",
@@ -14,23 +14,16 @@ const Connection = {
     pending: "/pending",
     activate: "/activate/",
 
-
     // support api's
     support: "/support",
     newQuery: "/newquery",
     closeTicket: "/closeticket/",
 
-    //mailing api's
-    compose: "/compose",
-
-    //drop message
-    contact: "/contact",
-
-    //free trial email collection api
-    trial: "/trial",
-
-    //Coupon code
-    coupon: "/coupon/"
+    compose: "/compose", //mailing api's
+    contact: "/contact", //drop message
+    trial: "/trial", //free trial email collection api
+    coupon: "/coupon/", //Coupon code
+    chapaResponse:"/chapa", //payment gateways
 
 };
 

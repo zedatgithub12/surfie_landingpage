@@ -10,7 +10,7 @@ i18n
       en: { translation: en },
       am: { translation: am }
     },
-    lng: 'en', // Set your default language here
+    lng:  localStorage.getItem("lang") ? localStorage.getItem("lang") : 'en', // Set your default language here
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false
