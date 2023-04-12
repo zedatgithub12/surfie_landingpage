@@ -72,7 +72,7 @@ const updateEmail =(event)=>{
       body: JSON.stringify(datas)
     }).then((response) => response.json())
     .then((response)=>{
-
+        
       if(response === "succeed"){
         setData({
           ...data,
@@ -100,7 +100,7 @@ const updateEmail =(event)=>{
   return (
     <Container fluid >
       <Row className="fot text-white  pt-3">
-      <p className="fs-4 text-center text-dark mt-2" >
+      <p className="fs-4 text-center text-dark mt-2" style={{ color: 'var(--bg-color)'}} >
                   {t('Do you feel like trying?')}
                 </p>
         <Col sm={4} className="pb-4">

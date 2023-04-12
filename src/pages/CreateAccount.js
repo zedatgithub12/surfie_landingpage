@@ -405,6 +405,7 @@ function CreateAccount() {
     return true;
   };
 
+
   return (
     <div
       style={{ backgroundColor: "var(--bg-color)", color: "var(--text-color)" }}

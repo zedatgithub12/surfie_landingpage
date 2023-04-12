@@ -15,10 +15,14 @@ import { ThemeContext } from "./components/ThemeContext";
 import { BsFillSunFill, BsFillMoonStarsFill } from "react-icons/bs";
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(
+    localStorage.getItem("themes") ? localStorage.getItem("themes") : "light"
+  );
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("themes", theme);
+    return () => {};
   }, [theme]);
 
   const toggleTheme = () => {
@@ -26,10 +30,16 @@ function App() {
   };
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className="position-fixed bottom-0 end-0 m-5 pe-1 overflow-visible zindex-tooltip">
+      <div
+        className="position-fixed bottom-0 end-0 m-5 pe-1 overflow-visible zindex-tooltip"
+        id="themeController"
+      >
         <IconButton
           className="w-100 h-100 rounded-circle blur p-3 shadow "
-          style={{ backgroundColor: 'var(--sec-bg)', color: 'var(--text-color)' }}
+          style={{
+            backgroundColor: "var(--sec-bg)",
+            color: "var(--text-color)",
+          }}
           onClick={toggleTheme}
           aria-label="toggle"
         >
