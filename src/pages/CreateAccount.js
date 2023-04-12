@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -405,25 +405,6 @@ function CreateAccount() {
     return true;
   };
 
-  // useEffect(()=>{
-    
-
-  //   const chapaResponse = async () => {
-  //     try {
-  //       var Api =  Connection.api+Connection.chapaResponse;
-  //       await fetch(Api).then((response)=>response.json())
-  //       .then((response) => {
-  //         console.log(response);
-  //       }
-  //       ).catch((e)=>{
-  //         console.log(e);
-  //       });
-  //     } catch (error) {
-  //       console.error('Error fetching backend condition:', error);
-  //     }
-  //   };
-  //   chapaResponse();
-  // },[])
 
   return (
     <div
