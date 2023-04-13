@@ -12,7 +12,7 @@ const Navbars = () => {
 
 
   const { t, i18n } = useTranslation();
-  const [lang, setLang] = React.useState(localStorage.getItem("lang") === 'en' ? "🇺🇸 English" : "🇪🇹 Amharic");
+  const [lang, setLang] = React.useState(localStorage.getItem("lang") === 'am' ? "🇪🇹 Amharic" : "🇺🇸 English");
   
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
