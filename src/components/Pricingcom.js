@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import Cash from "../assets/cash.png";
 import Chapa from "../assets/chapa.png";
 import { useTranslation } from 'react-i18next';
+import Pricing from "../constants/Constants";
 
 function Pricingcom() {
   const [monthly, setMonthly] = useState(true);
@@ -63,12 +64,12 @@ function Pricingcom() {
               <div className="card-body  ">
                 {monthly ? (
                   <p className=" pricing-card-title fs-4 pt-2">
-                    300 {t('Birr')}{" "}
+                    { Pricing.monthlyone} {t('Birr')}{" "}
                     <small className="text-muted fw-light">/{t('month')}</small>
                   </p>
                 ) : (
                   <p className="pricing-card-title fs-4 pt-2">
-                    3,300 {t('Birr')}
+                    { Pricing.annuallyone} {t('Birr')}
                     <small className="text-muted fw-light">/{t('annual')}</small>
                   </p>
                 )}
@@ -79,7 +80,7 @@ function Pricingcom() {
                   </ul>
                 ) : (
                   <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>{t('Annually Pay only 3,300 Birr Get 1 month free')}</li>
+                    <li>Annually Pay only  {Pricing.annuallyone} Birr Get 1 month free</li>
                   </ul>
                 )}
 
@@ -104,12 +105,12 @@ function Pricingcom() {
               <div className="card-body" >
                 {monthly ? (
                   <p className="pricing-card-title fs-4 pt-2">
-                    450 {t('Birr')}{" "}
+                     { Pricing.monthlythree} { t('Birr')}{" "}
                     <small className="text-muted fw-light">/{t('month')}</small>
                   </p>
                 ) : (
                   <p className="card-title pricing-card-title fs-4 pt-2">
-                    4,950 {t('Birr')}
+                   { Pricing.annuallythree} {t('Birr')}
                     <small className="text-muted fw-light">/{t('annual')}</small>
                   </p>
                 )}
@@ -119,7 +120,7 @@ function Pricingcom() {
                   </ul>
                 ) : (
                   <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>{t('Annually Pay only 4,950 Birr Get 1 month free')}</li>
+                    <li> Annually Pay only { Pricing.annuallythree} Birr Get 1 month free</li>
                   </ul>
                 )}
                 <Link
@@ -143,12 +144,12 @@ function Pricingcom() {
               <div className="card-body">
                 {monthly ? (
                   <p className="card-title pricing-card-title fs-4  pt-2">
-                    600 {t('Birr')}{" "}
+                   { Pricing.monthlyfive}{t('Birr')}{" "}
                     <small className="text-muted fw-light">/{t('month')}</small>
                   </p>
                 ) : (
                   <p className="card-title pricing-card-title fs-4  pt-2">
-                    6,600 {t('Birr')}
+                    { Pricing.annuallyfive} {t('Birr')}
                     <small className="text-muted fw-light">/{t('annual')}</small>
                   </p>
                 )}
@@ -158,7 +159,7 @@ function Pricingcom() {
                   </ul>
                 ) : (
                   <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>{t('Annually Pay only 6,600 ETB Get 1 month free')}</li>
+                    <li>Annually Pay only { Pricing.annuallyfive} Birr Get 1 month free</li>
                   </ul>
                 )}
                 <Link
