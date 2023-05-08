@@ -7,19 +7,17 @@ import { NavLink } from "react-router-dom";
 import { NavItem, NavDropdown } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-
 const Navbars = () => {
-
-
   const { t, i18n } = useTranslation();
-  const [lang, setLang] = React.useState(localStorage.getItem("lang") === 'am' ? "🇪🇹 Amharic" : "🇺🇸 English");
-  
+  const [lang, setLang] = React.useState(
+    localStorage.getItem("lang") === "am" ? "🇪🇹 Amharic" : "🇺🇸 English"
+  );
+
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
 
-  const changeLang=(country, title)=>{
-
+  const changeLang = (country, title) => {
     changeLanguage(country);
     localStorage.setItem("lang", country);
     setLang(title);
@@ -28,14 +26,14 @@ const Navbars = () => {
   return (
     <Navbar className="navbar colored blur" expand="lg" sticky="top">
       <Container fluid>
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/home">
           <img
             className=" ms-4 "
             src={Surfie}
             alt="Surfie"
             width="90px"
             height="43px"
-          />{" "}
+          />
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -48,51 +46,50 @@ const Navbars = () => {
 
             <NavItem>
               <NavLink to="/" className=" text-white nav-link ps-5 ">
-                {t('Home')}
+                {t("Home")}
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink to="/features" className="nav-link text-white ps-5">
-                {t('Features')}
+                {t("Features")}
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink to="/pricing" className="nav-link text-white ps-5">
-                {t('Pricing')}
+                {t("Pricing")}
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink to="/about" className="nav-link text-white ps-5">
-                {t('About Us')}
+                {t("About Us")}
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink to="/contact" className="nav-link pb-3 text-white ps-5">
-                {t('Contact us')}
+                {t("Contact us")}
               </NavLink>
             </NavItem>
           </Nav>
-          <NavDropdown title= {t(lang)} id="nav-dropdown">
-          
+          <NavDropdown title={t(lang)} id="nav-dropdown">
             <NavDropdown.Item
               eventKey="4.2"
-              onClick={() => changeLang("en","🇺🇸 English")}
+              onClick={() => changeLang("en", "🇺🇸 English")}
             >
               {t("🇺🇸 English")}
             </NavDropdown.Item>
             <NavDropdown.Item
               eventKey="4.3"
-              onClick={() =>  changeLang("am","🇪🇹 Amharic")}
+              onClick={() => changeLang("am", "🇪🇹 Amharic")}
             >
               {t("🇪🇹 Amharic")}
             </NavDropdown.Item>
           </NavDropdown>
 
-          {/* <NavItem>
-            <NavLink to="/" className="nav-link ps-4 me-3">
+          <NavItem>
+            <NavLink to="/auth" className="nav-link ps-4 me-3">
               Signin
             </NavLink>
-          </NavItem> */}
+          </NavItem>
 
           <NavLink
             to="/account"
@@ -100,7 +97,6 @@ const Navbars = () => {
           >
             {t("Get started")}
           </NavLink>
-          
         </Navbar.Collapse>
       </Container>
     </Navbar>
