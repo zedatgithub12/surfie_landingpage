@@ -3,8 +3,13 @@ const Connection = {
   api: "http://localhost:8000/api",
   //   api: "https://admin.surfieethiopia.com/backend/api",
   login: "/parentlogin",
+  changepassword: "/changeppass/",
+  forgot: "/parentfpassword",
+  reset: "/parentrpassword",
   customers: "/customers",
-  addlicense: "/add/",
+  renew: "/renewal/",
+  upgrade: "/upgrade/",
+  changeLicense: "/add/",
   deactivate: "/deactivate/",
 };
 

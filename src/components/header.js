@@ -7,7 +7,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context";
 import { Typography } from "@mui/material";
-
+import { GrUpdate } from "react-icons/gr";
 function Header() {
   const navigate = useNavigate();
   const { SignOut } = React.useContext(AuthContext);
@@ -51,7 +51,7 @@ function Header() {
               </Dropdown.Toggle>
 
               <Dropdown.Menu variant="light" className="">
-                <Row className="p-3 pt-0 pb-0">
+                <Row className="ps-3 p-3 pe-5">
                   <Typography className="fw-semibold fs-6 primary-text textdec">
                     {user.first_name} {user.middle_name}
                   </Typography>
@@ -59,10 +59,17 @@ function Header() {
                   <span>{user.email}</span>
                 </Row>
                 <hr />
+                <Dropdown.Item
+                  onClick={() => navigate("/changepassword")}
+                  className="text-muted fw-semibold mb-2"
+                >
+                  <GrUpdate size={14} color="#888" className="me-2" />
+                  Change Password
+                </Dropdown.Item>
 
                 <Dropdown.Item
                   onClick={() => LogOut("Signout")}
-                  className="text-muted"
+                  className="text-muted fw-semibold mb-2"
                 >
                   <FaArrowLeft size={16} color="#888" className="me-2" />
                   Log Out

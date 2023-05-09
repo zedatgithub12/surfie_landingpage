@@ -35,7 +35,7 @@ function Dashboard() {
     email: customer.email === null ? "" : customer.email,
     phone: customer.phone === null ? "" : customer.phone,
     date: customer.created_at === null ? "" : customer.created_at,
-    address: customer.address === null ? "" : customer.address,
+    address: customer.living_address === null ? "" : customer.living_address,
     payment_method:
       customer.payment_method === null ? "" : customer.payment_method,
   });
@@ -83,23 +83,29 @@ function Dashboard() {
       var day = date.slice(8, 10);
       duedate = day + "/" + month + "/" + year;
     }
-
     return duedate;
   };
-  const DaysLeft = () => {
-    var daysleft = "";
-    var date = new Date();
-    if (user.subscription === "monthly") {
-      var day = user.duedate.slice(8, 10);
-      daysleft = 30 - day;
-    } else {
-      var month = date.slice(5, 7);
-      var day = date.slice(8, 10);
-      daysleft = 365 - month * 30 + day;
-    }
 
-    return daysleft;
-  };
+  function getDaysLeft(subscriptionEndDate, subscriptionType) {
+    const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
+    const today = new Date();
+    const endDate = new Date(subscriptionEndDate);
+    const diffInTime = endDate.getTime() - today.getTime();
+    const diffInDays = Math.round(diffInTime / oneDay);
+
+    if (subscriptionType === "monthly") {
+      return diffInDays % 30; // Assuming a month has 30 days
+    } else if (subscriptionType === "annual") {
+      return diffInDays;
+    } else {
+      return null; // Invalid subscription type
+    }
+  }
+
+  // dayleft for next subscription
+  const duedates = user.duedate.slice(0, 10); // YYYY-MM-DD format
+  const monthlyDaysLeft = getDaysLeft(duedates, user.subscription);
+
   const Payment = (mode) => {
     var gateway;
 
@@ -121,6 +127,7 @@ function Dashboard() {
   };
   const userPackage = Licenses.find((p) => p.device === user.license);
   const price = userPackage ? userPackage[user.subscription + "_price"] : 0;
+  const annualPrice = userPackage ? userPackage["annual_price"] : 0;
 
   const OpenDialog = (item, operation) => {
     var info = operation === "add" ? "Change to" : "Downgrade to";
@@ -177,115 +184,107 @@ function Dashboard() {
   };
   const UpgradeSub = () => {
     setRenew(false);
-    setUpgrade(true);
+    setUpgrade(!upgrade);
   };
   const AddSubscription = () => {
     var currentPackages = `AFROMINA_${initialValue.currentPlan}`;
     var packages = `AFROMINA_${license}`;
 
-    if (initialValue.cid !== "") {
-      setactionload(true);
+    setactionload(true);
 
-      var Api = Connection.api + Connection.addlicense + initialValue.lid;
-      var headers = {
-        accept: "application/json",
-        "Content-Type": "application/json",
-      };
+    var Api = Connection.api + Connection.changeLicense + customer.id;
+    var headers = {
+      accept: "application/json",
+      "Content-Type": "application/json",
+    };
 
-      var Data = {
-        remoteid: initialValue.cid,
-        localid: initialValue.lid,
-        license: license,
-        package: packages,
-        currentPackage: currentPackages,
-      };
+    var Data = {
+      remoteid: customer.remote_id,
+      localid: customer.id,
+      license: license,
+      package: packages,
+      currentPackage: currentPackages,
+    };
 
-      fetch(Api, {
-        method: "PUT",
-        headers: headers,
-        body: JSON.stringify(Data),
-      })
-        .then((response) => response.json())
-        .then((response) => {
-          // the action will be taken depending on the server response
-          console.log(response);
-          if (response == 0) {
-            setConfirm("3");
-            setInitialValue({
-              ...initialValue,
-              cofirmationtxt: `Succeessfully Upgraded to ${license} device license`,
-              errormsg: "",
-            });
-            setactionload(false);
-          } else if (response == 1001) {
-            setInitialValue({
-              ...initialValue,
-              cofirmationtxt: "",
-              lid: "",
-              cid: "",
-              errormsg: "Mandatory parameter missing!",
-            });
-            setactionload(false);
-          } else if (response == 1002) {
-            setInitialValue({
-              ...initialValue,
-              errormsg: "Invalid Username or Password!",
-            });
-            setactionload(false);
-          } else if (response == 1003) {
-            setInitialValue({
-              ...initialValue,
-              errormsg: "Already Subscribed!",
-            });
-            setactionload(false);
-          } else if (response == 1004) {
-            setInitialValue({
-              ...initialValue,
-              errormsg: "Invalid Package Id!",
-            });
-            setactionload(false);
-          } else if (response == 1021) {
-            setInitialValue({
-              ...initialValue,
-              errormsg: "Email already exist!",
-            });
-            setactionload(false);
-          } else if (response == 1022) {
-            setInitialValue({
-              ...initialValue,
-              errormsg: "Phone number already exist!",
-            });
-            setactionload(false);
-          } else {
-            setInitialValue({
-              ...initialValue,
-              errormsg: "Failed to to upgrade license",
-            });
-            setactionload(false);
-          }
-        });
-    } else {
-      setInitialValue({
-        ...initialValue,
-        errormsg: "Please enter remote customer id!",
+    fetch(Api, {
+      method: "PUT",
+      headers: headers,
+      body: JSON.stringify(Data),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        // the action will be taken depending on the server response
+
+        if (response == 0) {
+          setConfirm("3");
+          setInitialValue({
+            ...initialValue,
+            cofirmationtxt: `Succeessfully Changed to ${license} device license`,
+            errormsg: "",
+          });
+          setactionload(false);
+        } else if (response == 1001) {
+          setInitialValue({
+            ...initialValue,
+            cofirmationtxt: "",
+            lid: "",
+            cid: "",
+            errormsg: "Mandatory parameter missing!",
+          });
+          setactionload(false);
+        } else if (response == 1002) {
+          setInitialValue({
+            ...initialValue,
+            errormsg: "Invalid Username or Password!",
+          });
+          setactionload(false);
+        } else if (response == 1003) {
+          setInitialValue({
+            ...initialValue,
+            errormsg: "Already Subscribed!",
+          });
+          setactionload(false);
+        } else if (response == 1004) {
+          setInitialValue({
+            ...initialValue,
+            errormsg: "Invalid Package Id!",
+          });
+          setactionload(false);
+        } else if (response == 1021) {
+          setInitialValue({
+            ...initialValue,
+            errormsg: "Email already exist!",
+          });
+          setactionload(false);
+        } else if (response == 1022) {
+          setInitialValue({
+            ...initialValue,
+            errormsg: "Phone number already exist!",
+          });
+          setactionload(false);
+        } else {
+          setInitialValue({
+            ...initialValue,
+            errormsg: "Failed to to upgrade license",
+          });
+          setactionload(false);
+        }
       });
-      setactionload(false);
-    }
   };
   // deactivate customer account
   const Deactivate = () => {
     if (initialValue.cid !== "") {
       setactionload(true);
 
-      var Api = Connection.api + Connection.deactivate + initialValue.lid;
+      var Api = Connection.api + Connection.deactivate + customer.id;
       var headers = {
         accept: "application/json",
         "Content-Type": "application/json",
       };
 
       var Data = {
-        remoteid: initialValue.cid,
-        localid: initialValue.lid,
+        remoteid: customer.remote_id,
+        localid: customer.id,
         cstatus: 3,
       };
 
@@ -347,8 +346,36 @@ function Dashboard() {
       setactionload(false);
     }
   };
-  const ConfirmRenewal = () => {
-    var Api = Connection.api + Connection.renew + user.id;
+  const handleRenewal = () => {
+    
+    var Api = Connection.api + Connection.renew + customer.id;
+    var headers = {
+      accept: "application/json",
+      "Content-Type": "application/json",
+    };
+
+    var data = {
+      id: customer.id,
+      channel: pmodal,
+    };
+
+    fetch(Api, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        if (response.original.status === "success") {
+          window.location.href = response.original.data.checkout_url;
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+  const handleUpgrade = () => {
+    var Api = Connection.api + Connection.upgrade + user.id;
     var headers = {
       accept: "application/json",
       "Content-Type": "application/json",
@@ -373,44 +400,74 @@ function Dashboard() {
       });
   };
 
-  useEffect(() => {
-    return () => {};
-  }, []);
   return (
-    <>
+    <div
+      style={{
+        backgroundColor: "var(--bg-color)",
+        color: "var(--text-color)",
+      }}
+    >
       <Header />
-      <Container>
+      <Container
+        style={{
+          backgroundColor: "var(--sec-bg)",
+          color: "var(--text-color)",
+        }}
+      >
         <Row className="mt-5 shadow bg-whiten py-3 rounded px-3 pt-3">
           <Row className="px-2 mb-4">
-            <Col className="pt-3">
-              <div className="d-flex justify-content-between align-items-center p-3 shadow border border-warning  border-4 border-end-0  border-top-0  border-bottom-0 bg-white bg-gradient-white rounded-3 shadow-sm text-muted fw-semibold">
+            <Col
+              className="pt-3"
+              style={{
+                backgroundColor: "var(--sec-bg)",
+                color: "var(--text-color)",
+              }}
+            >
+              <div className="d-flex justify-content-between align-items-center p-3 shadow border border-warning  border-4 border-end-0  border-top-0  border-bottom-0  rounded-3 shadow-sm text-muted fw-semibold">
                 <div>
-                  <span className="fs-4 fw-semibold text-dark">
+                  <span
+                    className="fs-4 fw-semibold"
+                    style={{
+                      color: "var(--text-color)",
+                    }}
+                  >
                     {user.license} Device
                   </span>
                   <br />
-                  <small>License</small>
+                  <Typography className="text-capitalize">License</Typography>
                 </div>
                 <FcStackOfPhotos size={40} />
               </div>
             </Col>
 
             <Col className="pt-3">
-              <div className="d-flex justify-content-between align-items-center p-3 shadow border   border-4 border-end-0  border-top-0  border-bottom-0 bg-white bg-gradient-white rounded-3 shadow-sm text-muted fw-semibold">
+              <div className="d-flex justify-content-between align-items-center p-3 shadow border   border-4 border-end-0  border-top-0  border-bottom-0  rounded-3 shadow-sm text-muted fw-semibold">
                 <div>
-                  <span className="fs-4 fw-semibold text-dark text-capitalize">
+                  <span
+                    className="fs-4 fw-semibold text-capitalize"
+                    style={{
+                      color: "var(--text-color)",
+                    }}
+                  >
                     {user.subscription}
                   </span>
                   <br />
-                  <small>Subscription</small>
+                  <Typography className="text-capitalize">
+                    Subscription
+                  </Typography>
                 </div>
                 <FcCalendar size={40} className="primary-text" />
               </div>
             </Col>
             <Col className="pt-3">
-              <div className="d-flex justify-content-between align-items-center p-3 shadow border border-4 border-end-0  border-top-0  border-bottom-0 bg-white bg-gradient-white rounded-3 shadow-sm text-muted fw-semiboldd">
+              <div className="d-flex justify-content-between align-items-center p-3 shadow border border-4 border-end-0  border-top-0  border-bottom-0  rounded-3 shadow-sm text-muted fw-semiboldd">
                 <div>
-                  <span className="fs-4 fw-semibold text-dark text-capitalize">
+                  <span
+                    className="fs-4 fw-semibold text-capitalize"
+                    style={{
+                      color: "var(--text-color)",
+                    }}
+                  >
                     {price} ETB
                   </span>
                   <br />
@@ -422,10 +479,15 @@ function Dashboard() {
               </div>
             </Col>
             <Col className="pt-3">
-              <div className="d-flex justify-content-between align-items-center p-3 shadow border   border-4 border-end-0  border-top-0  border-bottom-0 bg-white bg-gradient-white rounded-3 shadow-sm text-muted fw-semibold">
+              <div className="d-flex justify-content-between align-items-center p-3 shadow border   border-4 border-end-0  border-top-0  border-bottom-0  rounded-3 shadow-sm text-muted fw-semibold">
                 <div>
-                  <span className="fs-4 fw-semibold text-dark text-capitalize">
-                    {DaysLeft()}
+                  <span
+                    className="fs-4 fw-semibold text-capitalize"
+                    style={{
+                      color: "var(--text-color)",
+                    }}
+                  >
+                    {monthlyDaysLeft}
                   </span>
                   <br />
                   <Typography className="text-capitalize">Days left</Typography>
@@ -441,14 +503,26 @@ function Dashboard() {
                 Your Details
               </Typography>
             </div>
-            <div className="d-flex justify-content-between align-items-center px-2 bg-light py-2  rounded">
+            <div
+              className="d-flex justify-content-between align-items-center px-2 shadow-sm  py-2  rounded"
+              style={{
+                backgroundColor: "var(--sec-bg)",
+                color: "var(--text-color)",
+              }}
+            >
               <p className=" my-auto">Full name</p>
               <p className="fw-semibold text-muted  my-auto text-capitalize">
                 {user.fname} {user.mname}
               </p>
             </div>
 
-            <div className="d-flex justify-content-between align-items-center px-2 bg-light py-2 mt-2 rounded">
+            <div
+              className="d-flex justify-content-between align-items-center px-2  py-2 mt-2 rounded shadow-sm"
+              style={{
+                backgroundColor: "var(--sec-bg)",
+                color: "var(--text-color)",
+              }}
+            >
               <p className=" my-auto">Status</p>
               <p className="fw-semibold text-muted  my-auto text-capitalize">
                 {user.status == 1 ? (
@@ -460,8 +534,8 @@ function Dashboard() {
                     Expired
                   </span>
                 ) : user.status == 3 ? (
-                  <span class="badge bg-dark bg-opacity-10 text-dark pe-1 rounded-1">
-                    Terminated
+                  <span class="badge bg-danger bg-opacity-10 text-danger pe-1 rounded-1">
+                    Deactivated
                   </span>
                 ) : (
                   <span class="badge bg-secondary bg-opacity-10 text-secondary pe-1 rounded-1">
@@ -471,41 +545,41 @@ function Dashboard() {
               </p>
             </div>
 
-            <div className="d-flex justify-content-between align-items-center px-2 bg-light py-2 mt-2 rounded">
+            <div className="d-flex justify-content-between align-items-center px-2 py-2 shadow-sm mt-2 rounded">
               <p className=" my-auto">License</p>
               <p className="fw-semibold text-muted  my-auto">
                 {user.license} Device
               </p>
             </div>
-            <div className="d-flex justify-content-between align-items-center px-2 bg-light py-2 mt-2 rounded">
+            <div className="d-flex justify-content-between align-items-center px-2 py-2  shadow-sm mt-2 rounded">
               <p className=" my-auto">Subscription</p>
               <p className="fw-semibold text-muted  my-auto text-capitalize">
                 {user.subscription}
               </p>
             </div>
-            <div className="d-flex justify-content-between align-items-center px-2 bg-light py-2 mt-2 rounded">
+            <div className="d-flex justify-content-between align-items-center px-2 py-2  shadow-sm mt-2 rounded">
               <p className=" my-auto">Subscribed on</p>
               <p className="fw-semibold text-muted  my-auto">
                 {DateSlice(user.date)}
               </p>
             </div>
-            <div className="d-flex justify-content-between align-items-center px-2 bg-light py-2 mt-2 rounded">
+            <div className="d-flex justify-content-between align-items-center px-2 shadow-sm py-2 mt-2 rounded">
               <p className=" my-auto">Due Date</p>
               <p className="fw-semibold text-muted  my-auto">
                 {user.status == 0 ? "Not Activated" : ExpireDate(user.duedate)}
               </p>
             </div>
-            <div className="d-flex justify-content-between align-items-center px-2 bg-light py-2 mt-2 rounded">
+            <div className="d-flex justify-content-between align-items-center px-2 shadow-sm py-2 mt-2 rounded">
               <p className=" my-auto">Email</p>
               <p className="fw-semibold text-muted  my-auto">{user.email}</p>
             </div>
-            <div className="d-flex justify-content-between align-items-center px-2 bg-light py-2 mt-2 rounded">
+            <div className="d-flex justify-content-between align-items-center px-2 shadow-sm py-2 mt-2 rounded">
               <p className=" my-auto">Phone</p>
               <p className="fw-semibold text-muted  my-auto">{user.phone}</p>
             </div>
 
             {user.address ? (
-              <div className="d-flex justify-content-between align-items-center px-2 bg-light py-2 mt-2 rounded">
+              <div className="d-flex justify-content-between align-items-center px-2 shadow-sm py-2 mt-2 rounded">
                 <p className=" my-auto">Address</p>
                 <p className="fw-semibold text-muted  my-auto">
                   {user.address}
@@ -513,7 +587,7 @@ function Dashboard() {
               </div>
             ) : null}
 
-            <div className="d-flex justify-content-between align-items-center px-2 bg-light py-2 mt-2 rounded">
+            <div className="d-flex justify-content-between align-items-center px-2 shadow-sm py-2 mt-2 rounded">
               <p className=" my-auto">Paid with</p>
               <p className="fw-semibold text-muted  my-auto">
                 {Payment(user.payment_method)}
@@ -521,25 +595,26 @@ function Dashboard() {
             </div>
           </Col>
           <Col sm={4}>
-            <div className=" bg-light rounded mt-4 pt-2 p-4 ">
+            <div className="rounded mt-4 pt-2 p-4 ">
               <Button
                 onClick={() => Renew()}
                 id="primarybtn"
-                className="border-0 fw-semibold small mt-3  rounded shadow-sm text-white"
+                className="w-75 border-0 fw-semibold small mt-3  rounded shadow-sm text-white"
               >
                 Renew License
               </Button>
               <br />
-              <ButtonBase
-                onClick={() => UpgradeSub()}
-                className="bg-dark text-white p-2 px-4 rounded shadow-sm  fw-normal mt-3"
-              >
-                Upgrade Subscription
-              </ButtonBase>
-              <br />
+              {user.subscription === "monthly" && (
+                <ButtonBase
+                  onClick={() => UpgradeSub()}
+                  className="w-75 bg-dark text-white p-2 px-4 rounded shadow-sm  fw-normal mt-3"
+                >
+                  Upgrade Subscription
+                </ButtonBase>
+              )}
               <ButtonBase
                 onClick={() => OpenDialog(user, "add")}
-                className="bg-dark text-white p-2 px-4 rounded shadow-sm  fw-normal mt-3"
+                className="w-75 bg-dark text-white p-2 px-4 rounded shadow-sm  fw-normal mt-3"
               >
                 Change License
               </ButtonBase>
@@ -600,17 +675,77 @@ function Dashboard() {
                   type="button"
                   id="primarybtn"
                   className="btn  mt-4 form-control"
-                  onClick={() => ConfirmRenewal()}
+                  onClick={() => handleRenewal()}
                 >
                   Renew
+                </button>
+              </div>
+            ) : null}
+
+            {upgrade ? (
+              <div className="bg-primary bg-opacity-10 rounded mt-2 pt-2 p-4 border  ">
+                <div className="d-flex justify-content-between align-items-center px-2 py-2 mt-2 rounded">
+                  <p className=" my-auto">License</p>
+                  <p className="fw-semibold text-muted  my-auto">
+                    {user.license} Device
+                  </p>
+                </div>
+                <div className="d-flex justify-content-between align-items-center px-2  py-2  rounded">
+                  <p className=" my-auto">Subscription </p>
+                  <p className="fw-semibold text-muted  my-auto text-capitalize">
+                    Annual
+                  </p>
+                </div>
+                <div className="d-flex justify-content-between align-items-center px-2  py-2  rounded">
+                  <p className=" my-auto">Fee Amount </p>
+                  <p className="fw-semibold text-muted  my-auto text-capitalize">
+                    {annualPrice} ETB
+                  </p>
+                </div>
+                <div className="d-flex justify-content-between align-items-center px-2  py-2  rounded">
+                  <p className=" my-auto">Pay With </p>
+                  <p className=" my-auto">
+                    <Dropdown className="">
+                      <Dropdown.Toggle
+                        id="dropdown-button-dark-example1"
+                        variant="light"
+                        className="border"
+                      >
+                        {choseen.name}
+                      </Dropdown.Toggle>
+
+                      <Dropdown.Menu variant="light">
+                        {Channels.map((channel) => (
+                          <Dropdown.Item
+                            onClick={() => setPModal(channel.id)}
+                            active
+                          >
+                            {channel.name}
+                          </Dropdown.Item>
+                        ))}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  className="btn btn-primary mt-4 form-control"
+                  onClick={() => handleUpgrade()}
+                >
+                  Upgrade
                 </button>
               </div>
             ) : null}
           </Col>
         </Row>
       </Container>
-      <Container>
-        <Row className="d-flex justify-content-between align-items-center  p-3 rounded shadow bg-white mt-2">
+      <Container
+        style={{
+          backgroundColor: "var(--sec-bg)",
+          color: "var(--text-color)",
+        }}
+      >
+        <Row className="d-flex justify-content-between align-items-center  p-3 rounded shadow  mt-2">
           <Col sm={2}>
             <FcCollaboration size={60} className="text-warning" />
           </Col>
@@ -668,15 +803,14 @@ function Dashboard() {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu variant="light">
-                      <Dropdown.Item onClick={() => setLicense(5)}>
-                        5 License
-                      </Dropdown.Item>
-                      <Dropdown.Item onClick={() => setLicense(10)}>
-                        10 License
-                      </Dropdown.Item>
-                      <Dropdown.Item onClick={() => setLicense(15)}>
-                        15 License
-                      </Dropdown.Item>
+                      {Licenses.map((license, index) => (
+                        <Dropdown.Item
+                          key={index}
+                          onClick={() => setLicense(license.device)}
+                        >
+                          {license.device} License
+                        </Dropdown.Item>
+                      ))}
                     </Dropdown.Menu>
                   </Dropdown>
                 </Col>
@@ -723,7 +857,7 @@ function Dashboard() {
           ) : null}
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 }
 

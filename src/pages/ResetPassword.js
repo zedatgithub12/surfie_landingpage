@@ -124,104 +124,115 @@ function ResetPassword() {
         </Row>
       </Container>
       <Container maxWidth="lg">
-        <Grid container spacing={1} className="m-auto my-4">
-          <Grid item xs={12} md={12}>
-            <Container className="mt-5 py-2" id="authcard">
-              <Row className="d-flex justify-content-center align-items-center p-4 ">
-                <Col className="bg-light border-0 rounded-2 shadow-sm p-4  ">
-                  <Row className="d-flex justify-content-between align-items-center ">
-                    <Col sm={8} className=" text-start">
-                      <p className="fw-bold fs-3 text-muted">Reset Password</p>
-                    </Col>
-                  </Row>
+        <Grid container spacing={2} className="m-auto my-4">
+          <Grid item xs={12} md={12} alignItems="center">
+            <Row className="d-flex justify-content-center align-items-center p-4 ">
+              <Col
+                sm={4}
+                className="bg-light border-0 rounded-2 shadow-sm p-4  "
+              >
+                <Row className="d-flex justify-content-between align-items-center ">
+                  <Col sm={8} className=" text-start">
+                    <p className="fw-bold fs-4 text-muted">Reset Password</p>
+                  </Col>
+                </Row>
 
-                  <div className="input-group mt-3">
-                    <input
-                      type={show ? "text" : "password"}
-                      id="password"
-                      className={
-                        Input.passwordbc
-                          ? "form-control border-danger"
-                          : "form-control "
-                      }
-                      placeholder="Password"
-                      aria-label="Password"
-                      value={Input.password}
-                      onChange={UpdatePass}
-                    />
-                  </div>
-                  <small class="form-text mt-0 text-danger">
-                    {Input.passwordht}
-                  </small>
-                  <div className="input-group mt-3">
-                    <input
-                      type={show ? "text" : "password"}
-                      id="cpassword"
-                      className={
-                        Input.cpasswordbc
-                          ? "form-control border-danger"
-                          : "form-control "
-                      }
-                      placeholder="Confirm Password"
-                      aria-label="Confirm Password"
-                      value={Input.cpassword}
-                      onChange={UpdateCPass}
-                    />
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      onClick={() => setShow(!show)}
-                    >
-                      {show ? <BsEye size={18} /> : <BsEyeSlash size={18} />}
-                    </button>
-                  </div>
-
-                  <small class="form-text mt-0 text-danger">
-                    {Input.cpasswordht}
-                  </small>
-
+                <div className="input-group mt-3">
+                  <input
+                    type={show ? "text" : "password"}
+                    id="password"
+                    className={
+                      Input.passwordbc
+                        ? "form-control border-danger"
+                        : "form-control "
+                    }
+                    placeholder="Password"
+                    aria-label="Password"
+                    value={Input.password}
+                    onChange={UpdatePass}
+                  />
+                </div>
+                <small class="form-text mt-0 text-danger">
+                  {Input.passwordht}
+                </small>
+                <div className="input-group mt-3">
+                  <input
+                    type={show ? "text" : "password"}
+                    id="cpassword"
+                    className={
+                      Input.cpasswordbc
+                        ? "form-control border-danger"
+                        : "form-control "
+                    }
+                    placeholder="Confirm Password"
+                    aria-label="Confirm Password"
+                    value={Input.cpassword}
+                    onChange={UpdateCPass}
+                  />
                   <button
                     type="button"
-                    id="primarybtn"
-                    className="btn  mt-4 form-control"
-                    onClick={() => Forgot()}
+                    className="btn btn-secondary"
+                    onClick={() => setShow(!show)}
                   >
-                    {resetting ? (
-                      <div
-                        className="spinner-border spinner-border-sm text-light "
-                        role="status"
-                      >
-                        <span className="visually-hidden">Loading...</span>
-                      </div>
-                    ) : (
-                      "Reset Password"
-                    )}
+                    {show ? <BsEye size={18} /> : <BsEyeSlash size={18} />}
                   </button>
-                  <Row className="d-flex justify-content-between align-items-center text-center mt-3">
-                    <Col>
-                      <NavLink to="/" id="link">
-                        Sign In
-                      </NavLink>
-                    </Col>
-                  </Row>
+                </div>
+
+                <small class="form-text mt-0 text-danger">
+                  {Input.cpasswordht}
+                </small>
+
+                <button
+                  type="button"
+                  id="primarybtn"
+                  className="btn  mt-4 form-control"
+                  onClick={() => Forgot()}
+                >
+                  {resetting ? (
+                    <div
+                      className="spinner-border spinner-border-sm text-light "
+                      role="status"
+                    >
+                      <span className="visually-hidden">Loading...</span>
+                    </div>
+                  ) : (
+                    "Reset Password"
+                  )}
+                </button>
+                <Row className="d-flex justify-content-between align-items-center text-center mt-3">
+                  <Col>
+                    <NavLink
+                      to="/auth"
+                      id="link"
+                      className="text-decoration-none fw-semibold"
+                    >
+                      Sign In
+                    </NavLink>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+            {response.status === "success" ? (
+              <Row className="d-flex align-items-center justify-content-center">
+                <Col
+                  sm={4}
+                  className="d-flex justify-content-around align-items-center px-2 py-2 mx-2 rounded bg-success bg-opacity-10 text-success"
+                >
+                  <BsCheck2Circle size={28} className=" text-success" />
+                  <Typography>{response.content}</Typography>
                 </Col>
               </Row>
-              {response.status === "success" ? (
-                <Row>
-                  <Col className="d-flex justify-content-around align-items-center px-4 py-2 mx-4 rounded bg-success bg-opacity-10 text-success">
-                    <BsCheck2Circle size={28} className=" text-success" />
-                    <Typography>{response.content}</Typography>
-                  </Col>
-                </Row>
-              ) : response.status === "error" ? (
-                <Row>
-                  <Col className="d-flex justify-content-around align-items-center px-4 py-2 mx-4 rounded bg-danger bg-opacity-10 text-danger">
-                    <IoMdWarning size={28} className=" text-danger" />
-                    <Typography>{response.content}</Typography>
-                  </Col>
-                </Row>
-              ) : null}
-            </Container>
+            ) : response.status === "error" ? (
+              <Row className="d-flex align-items-center justify-content-center">
+                <Col
+                  sm={4}
+                  className="d-flex justify-content-around align-items-center px-2 py-2 mx-2 rounded bg-danger bg-opacity-10 text-danger"
+                >
+                  <IoMdWarning size={28} className=" text-danger" />
+                  <Typography>{response.content}</Typography>
+                </Col>
+              </Row>
+            ) : null}
           </Grid>
         </Grid>
       </Container>

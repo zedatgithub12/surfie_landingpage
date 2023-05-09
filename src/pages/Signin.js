@@ -101,7 +101,6 @@ function Auth() {
       })
         .then((response) => response.json())
         .then((response) => {
-          console.log(response);
           if (!(response == "83")) {
             setLogSpinner(false);
 
