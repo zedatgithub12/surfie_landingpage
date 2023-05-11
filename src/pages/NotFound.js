@@ -4,9 +4,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const NotFound = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-    <Container >
+    <Container>
       <Row className="d-flex justify-content-center align-items-center">
         <Col sm={7} className="p-5 pb-3">
           <img src={imgNotFound} class="img-fluid" alt="Not Found" />
@@ -24,8 +24,18 @@ const NotFound = () => {
       </Row>
 
       <Row className="d-flex justify-content-center align-items-center">
-        <Col sm={4} className="d-flex justify-content-center align-items-center mt-4">
-          <button onClick={()=>navigate('/')} type="button" variant="light" class="btn  primary-bg shadow-sm  fw-semibold">Go to Homepage</button >
+        <Col
+          sm={4}
+          className="d-flex justify-content-center align-items-center mt-4"
+        >
+          <button
+            onClick={() => navigate("/")}
+            type="button"
+            variant="light"
+            class="btn  primary-btn-bg shadow-sm  fw-semibold"
+          >
+            Go to Homepage
+          </button>
         </Col>
       </Row>
     </Container>
