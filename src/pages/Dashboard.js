@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "../components/header";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-
+import { Container, Row, Col } from "react-bootstrap";
 import {
   FcCalendar,
   FcOvertime,
@@ -14,17 +12,20 @@ import { BsCheckCircle } from "react-icons/bs";
 import Licenses from "../data/packages";
 import Channels from "../data/paymentChannels";
 import Connection from "../constants/Connections";
-import { ButtonBase, Typography } from "@mui/material";
+import { ButtonBase, Typography, Button, Snackbar } from "@mui/material";
+import MuiAlert from "@mui/material/Alert";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Dropdown from "react-bootstrap/Dropdown";
 
-function Dashboard() {
-  const navigate = useNavigate();
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
+function Dashboard() {
   const userinfo = sessionStorage.getItem("user");
   const customer = JSON.parse(userinfo);
-  const [user, setUser] = useState({
+  const [user] = useState({
     fname: customer.first_name === null ? "" : customer.first_name,
     mname: customer.middle_name === null ? "" : customer.middle_name,
     lname: customer.lname === null ? "" : customer.lname,
@@ -39,7 +40,7 @@ function Dashboard() {
     payment_method:
       customer.payment_method === null ? "" : customer.payment_method,
   });
-  const [pmodal, setPModal] = useState("1002");
+  const [pmodal, setPModal] = useState("1001");
   const [renew, setRenew] = useState(false);
   const [upgrade, setUpgrade] = useState(false);
   const [actionload, setactionload] = useState(false);
@@ -53,7 +54,13 @@ function Dashboard() {
     lid: "",
     cid: "",
   });
-
+  const [renewLoader, setRenewLoader] = useState(false);
+  const [upgradeLoader, setUpgradeLoader] = useState(false);
+  const [responseMsg, setResponseMsg] = useState({
+    severity: "success",
+    content: "",
+    status: false,
+  });
   //modal dropdown license listing states
   const [license, setLicense] = useState();
   const [show, setShow] = useState(false);
@@ -61,7 +68,15 @@ function Dashboard() {
   const handleShow = () => setShow(true);
   const [confirm, setConfirm] = useState(false);
   const choseen = Channels.find((channel) => channel.id === pmodal);
+  const [open, setOpen] = useState(false);
 
+  //handles a snackbar close function
+  const handleSnackClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
   const DateSlice = (date) => {
     var subdate;
     var year = date.slice(0, 4);
@@ -215,7 +230,7 @@ function Dashboard() {
       .then((response) => {
         // the action will be taken depending on the server response
 
-        if (response == 0) {
+        if (response === 0) {
           setConfirm("3");
           setInitialValue({
             ...initialValue,
@@ -223,7 +238,7 @@ function Dashboard() {
             errormsg: "",
           });
           setactionload(false);
-        } else if (response == 1001) {
+        } else if (response === 1001) {
           setInitialValue({
             ...initialValue,
             cofirmationtxt: "",
@@ -232,31 +247,31 @@ function Dashboard() {
             errormsg: "Mandatory parameter missing!",
           });
           setactionload(false);
-        } else if (response == 1002) {
+        } else if (response === 1002) {
           setInitialValue({
             ...initialValue,
             errormsg: "Invalid Username or Password!",
           });
           setactionload(false);
-        } else if (response == 1003) {
+        } else if (response === 1003) {
           setInitialValue({
             ...initialValue,
             errormsg: "Already Subscribed!",
           });
           setactionload(false);
-        } else if (response == 1004) {
+        } else if (response === 1004) {
           setInitialValue({
             ...initialValue,
             errormsg: "Invalid Package Id!",
           });
           setactionload(false);
-        } else if (response == 1021) {
+        } else if (response === 1021) {
           setInitialValue({
             ...initialValue,
             errormsg: "Email already exist!",
           });
           setactionload(false);
-        } else if (response == 1022) {
+        } else if (response === 1022) {
           setInitialValue({
             ...initialValue,
             errormsg: "Phone number already exist!",
@@ -297,7 +312,7 @@ function Dashboard() {
         .then((response) => {
           // the action will be taken depending on the server response
 
-          if (response == 0) {
+          if (response === 0) {
             setConfirm("3");
             setInitialValue({
               ...initialValue,
@@ -305,19 +320,19 @@ function Dashboard() {
               errormsg: "",
             });
             setactionload(false);
-          } else if (response == 1002) {
+          } else if (response === 1002) {
             setInitialValue({
               ...initialValue,
               errormsg: "Invalid Username or Password!",
             });
             setactionload(false);
-          } else if (response == 1006) {
+          } else if (response === 1006) {
             setInitialValue({
               ...initialValue,
               errormsg: "Account id doesn't exist!",
             });
             setactionload(false);
-          } else if (response == 2001) {
+          } else if (response === 2001) {
             setInitialValue({
               ...initialValue,
               errormsg: "Account is not active!",
@@ -347,15 +362,63 @@ function Dashboard() {
     }
   };
   const handleRenewal = () => {
-    
+    setRenewLoader(true);
     var Api = Connection.api + Connection.renew + customer.id;
     var headers = {
       accept: "application/json",
       "Content-Type": "application/json",
     };
-
     var data = {
       id: customer.id,
+      channel: pmodal,
+    };
+    fetch(Api, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        if (response.original.status === "success") {
+          setRenewLoader(false);
+          setResponseMsg({
+            ...responseMsg,
+            severity: "info",
+            content: "Redirecting to payment gateway...",
+            status: true,
+          });
+          setOpen(true);
+          window.location.href = response.original.data.checkout_url;
+        } else {
+          setRenewLoader(false);
+          setResponseMsg({
+            ...responseMsg,
+            severity: "error",
+            content: "We couldn't renew your license for now retry later ",
+            status: true,
+          });
+          setOpen(true);
+        }
+      })
+      .catch((e) => {
+        setRenewLoader(false);
+        setResponseMsg({
+          ...responseMsg,
+          severity: "error",
+          content: "There is error renewing your license",
+          status: true,
+        });
+        setOpen(true);
+      });
+  };
+  const handleUpgrade = () => {
+    setUpgradeLoader(true);
+    var Api = Connection.api + Connection.upgrade + customer.id;
+    var headers = {
+      accept: "application/json",
+      "Content-Type": "application/json",
+    };
+    var data = {
       channel: pmodal,
     };
 
@@ -367,36 +430,35 @@ function Dashboard() {
       .then((response) => response.json())
       .then((response) => {
         if (response.original.status === "success") {
+          setUpgradeLoader(false);
+          setResponseMsg({
+            ...responseMsg,
+            severity: "info",
+            content: "Redirecting to payment gateway...",
+            status: true,
+          });
+          setOpen(true);
           window.location.href = response.original.data.checkout_url;
+        } else {
+          setUpgradeLoader(false);
+          setResponseMsg({
+            ...responseMsg,
+            severity: "error",
+            content: "We couldn't renew your license for now retry later ",
+            status: true,
+          });
+          setOpen(true);
         }
       })
       .catch((e) => {
-        console.log(e);
-      });
-  };
-  const handleUpgrade = () => {
-    var Api = Connection.api + Connection.upgrade + user.id;
-    var headers = {
-      accept: "application/json",
-      "Content-Type": "application/json",
-    };
-    var data = {
-      channel: pmodal,
-    };
-
-    fetch(Api, {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.status === "success") {
-          window.location.href = response.data.checkout_url;
-        }
-      })
-      .catch((e) => {
-        console.log(e);
+        setUpgradeLoader(false);
+        setResponseMsg({
+          ...responseMsg,
+          severity: "error",
+          content: "There is error renewing your license",
+          status: true,
+        });
+        setOpen(true);
       });
   };
 
@@ -525,15 +587,15 @@ function Dashboard() {
             >
               <p className=" my-auto">Status</p>
               <p className="fw-semibold text-muted  my-auto text-capitalize">
-                {user.status == 1 ? (
+                {user.status === 1 ? (
                   <span class="  bg-opacity-10 text-success pe-1 rounded-1">
                     Active
                   </span>
-                ) : user.status == 2 ? (
+                ) : user.status === 2 ? (
                   <span class="badge bg-danger bg-opacity-10 text-danger pe-1 rounded-1">
                     Expired
                   </span>
-                ) : user.status == 3 ? (
+                ) : user.status === 3 ? (
                   <span class="badge bg-danger bg-opacity-10 text-danger pe-1 rounded-1">
                     Deactivated
                   </span>
@@ -566,7 +628,7 @@ function Dashboard() {
             <div className="d-flex justify-content-between align-items-center px-2 shadow-sm py-2 mt-2 rounded">
               <p className=" my-auto">Due Date</p>
               <p className="fw-semibold text-muted  my-auto">
-                {user.status == 0 ? "Not Activated" : ExpireDate(user.duedate)}
+                {user.status === 0 ? "Not Activated" : ExpireDate(user.duedate)}
               </p>
             </div>
             <div className="d-flex justify-content-between align-items-center px-2 shadow-sm py-2 mt-2 rounded">
@@ -677,7 +739,14 @@ function Dashboard() {
                   className="btn  mt-4 form-control"
                   onClick={() => handleRenewal()}
                 >
-                  Renew
+                  {renewLoader ? (
+                    <div
+                      class="spinner-border spinner-border-sm text-white"
+                      role="status"
+                    ></div>
+                  ) : (
+                    <span>Renew</span>
+                  )}
                 </button>
               </div>
             ) : null}
@@ -732,7 +801,14 @@ function Dashboard() {
                   className="btn btn-primary mt-4 form-control"
                   onClick={() => handleUpgrade()}
                 >
-                  Upgrade
+                  {upgradeLoader ? (
+                    <div
+                      class="spinner-border spinner-border-sm text-white"
+                      role="status"
+                    ></div>
+                  ) : (
+                    <span>Upgrade</span>
+                  )}
                 </button>
               </div>
             ) : null}
@@ -857,6 +933,15 @@ function Dashboard() {
           ) : null}
         </Modal.Footer>
       </Modal>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleSnackClose}>
+        <Alert
+          onClose={handleSnackClose}
+          severity={responseMsg.severity}
+          sx={{ width: "100%" }}
+        >
+          {responseMsg.content}
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

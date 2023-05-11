@@ -188,7 +188,7 @@ const ChangePassword = () => {
               backgroundColor: "var(--sec-bg)",
               color: "var(--text-color)",
             }}
-            sm={4}
+            sm={6}
             className="m-auto  p-2 ps-2  shadow-sm border rounded"
           >
             <div>

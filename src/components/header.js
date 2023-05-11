@@ -17,13 +17,13 @@ function Header() {
 
   const LogOut = (status) => {
     SignOut(status);
-    navigate("/");
+    navigate("/auth");
   };
   const firstLetter = user.first_name.charAt(0);
   return (
     <Container fluid className="primary-bg  sticky-top  ">
       <Row className="d-flex justify-content-between p-1 ">
-        <Col sm={7} className="ms-4">
+        <Col onClick={() => navigate("/dashboard")} sm={7} className="ms-4">
           <img src={Logo} alt="logo" width="100" height="80" />
         </Col>
         <Col sm={4}>

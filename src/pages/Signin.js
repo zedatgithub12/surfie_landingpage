@@ -6,7 +6,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Parents from "../assets/parents.svg";
 import { BsEyeSlash, BsEye } from "react-icons/bs";
 import Connection from "../constants/Connections";
-import MuiAlert from "@mui/material/Alert";
 import {
   //   FormControlLabel,
   //   Radio,
@@ -15,21 +14,13 @@ import {
   //   Typography,
 } from "@mui/material";
 import { AuthContext } from "../context";
-
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
-
 function Auth() {
   const navigate = useNavigate();
   const { SignIn } = useContext(AuthContext);
   const Sign = (status, user) => {
     SignIn(status, user);
   };
-
   const [show, setShow] = useState(false);
-
   /****************************************** */
   //Login handling credentials
   /****************************************** */
@@ -38,12 +29,10 @@ function Auth() {
     email: "",
     emailbc: false,
     emailht: "",
-
     password: "",
     passwordbc: false,
     passwordht: "",
   });
-
   const updateLogEmail = (event) => {
     setLogInput({
       ...logInput,
@@ -56,7 +45,6 @@ function Auth() {
       password: event.target.value,
     });
   };
-
   const Login = () => {
     const re = /\S+@\S+\.\S+/;
     if (logInput.email === "") {
@@ -101,16 +89,15 @@ function Auth() {
       })
         .then((response) => response.json())
         .then((response) => {
-          if (!(response == "83")) {
+          if (!(response === "83")) {
             setLogSpinner(false);
-
             setServerResponse({
               showres: false,
               errorMsg: "",
             });
             Sign("Signed", response);
             navigate("/dashboard");
-          } else if (response.status == "83") {
+          } else if (response.status === "83") {
             setLogSpinner(false);
             setServerResponse({
               showres: true,
@@ -129,11 +116,6 @@ function Auth() {
         });
     }
   };
-
-  // the axios methos imported from AuthUser Function inside the component folder
-
-  const [loading, setLoading] = useState(false);
-
   //server reponse states
   const [serverresponse, setServerResponse] = useState({
     showres: false,
@@ -141,10 +123,12 @@ function Auth() {
   });
 
   return (
-    <>
-      <Container fluid className="primary-bg  sticky-top  ">
+    <div
+      style={{ backgroundColor: "var(--bg-color)", color: "var(--text-color)" }}
+    >
+      <Container fluid className="primary-bg  sticky-top">
         <Row>
-          <Col sm={2} className="me-3">
+          <Col onClick={() => navigate("/")} sm={2} className="me-3">
             <img src={Logo} alt="logo" width="90" height="80" />
           </Col>
           <Col sm={2}></Col>
@@ -156,9 +140,15 @@ function Auth() {
             item
             xs={12}
             md={5}
-            className="bg-white  mt-5 py-2 px-auto pe-4 border border-1 border-start-0 border-top-0 border-bottom-0"
+            id="image"
+            className="  mt-5 py-2 px-auto pe-4 border border-1 border-start-0 border-top-0 border-bottom-0"
           >
-            <>
+            <div
+              style={{
+                backgroundColor: "var(--bg-color)",
+                color: "var(--text-color)",
+              }}
+            >
               <div className="float-end mt-4 pt-2">
                 <p className="fs-3 mb-0 pe-3 text-end">
                   Surfie Ethiopia Parents Dashboard
@@ -176,12 +166,18 @@ function Auth() {
                   marginTop: 20,
                 }}
               />
-            </>
+            </div>
           </Grid>
           <Grid item xs={12} md={6}>
             <Container className="mt-3 py-5" id="authcard">
-              <Row className="d-flex justify-content-center align-items-center p-4 ">
-                <Col className="bg-light border-0 rounded-2 shadow-sm p-4  ">
+              <Row className="d-flex justify-content-center align-items-center p-4 mx-5 ">
+                <Col
+                  className="border-0 rounded-2 shadow-sm p-4"
+                  style={{
+                    backgroundColor: "var(--sec-bg)",
+                    color: "var(--text-color)",
+                  }}
+                >
                   <Row className="d-flex justify-content-between align-items-center ">
                     <Col sm={4} className=" text-start">
                       <p className="fw-bold fs-3">Login</p>
@@ -275,7 +271,7 @@ function Auth() {
           </Grid>
         </Grid>
       </Container>
-    </>
+    </div>
   );
 }
 

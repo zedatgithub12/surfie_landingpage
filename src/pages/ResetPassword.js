@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Grid, Typography } from "@mui/material";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import Connection from "../constants/Connections";
 import { BsEyeSlash, BsEye, BsCheck2Circle } from "react-icons/bs";
+
 import { IoMdWarning } from "react-icons/io";
 function ResetPassword() {
   const { token } = useParams();
+  const navigate = useNavigate();
+
   const [Input, setInput] = useState({
     password: "",
     passwordbc: false,
@@ -42,8 +45,6 @@ function ResetPassword() {
     });
   };
   const Forgot = () => {
-    const re = /\S+@\S+\.\S+/;
-
     if (Input.password === "") {
       setInput({
         ...Input,
@@ -117,7 +118,7 @@ function ResetPassword() {
     <>
       <Container fluid className="primary-bg p-3 sticky-top  ">
         <Row>
-          <Col sm={2} className="me-3">
+          <Col sm={2} className="me-3" onClick={() => navigate("/")}>
             <img src={Logo} alt="logo" width="90" height="50" />
           </Col>
           <Col sm={2}></Col>

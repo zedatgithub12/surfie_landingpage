@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Grid, Typography } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import Connection from "../constants/Connections";
 import { BsCheck2Circle } from "react-icons/bs";
@@ -9,6 +9,7 @@ import { IoMdWarning } from "react-icons/io";
 import Parents from "../assets/parents.svg";
 
 function Forgotpass() {
+  const navigate = useNavigate();
   const [forInput, setForInput] = useState({
     email: "",
     emailbc: false,
@@ -89,10 +90,12 @@ function Forgotpass() {
   };
 
   return (
-    <>
+    <div
+      style={{ backgroundColor: "var(--bg-color)", color: "var(--text-color)" }}
+    >
       <Container fluid className="primary-bg  sticky-top  ">
         <Row>
-          <Col sm={2} className="me-3">
+          <Col sm={2} className="me-3" onClick={() => navigate("/")}>
             <img src={Logo} alt="logo" width="90" height="80" />
           </Col>
           <Col sm={2}></Col>
@@ -104,7 +107,8 @@ function Forgotpass() {
             item
             xs={12}
             md={5}
-            className="bg-white  mt-5 py-2 px-auto  pe-4 border border-1 border-start-0 border-top-0 border-bottom-0"
+            id="image"
+            className=" mt-5 py-2 px-auto  pe-4 border border-1 border-start-0 border-top-0 border-bottom-0"
           >
             <>
               <div className="float-end mt-4">
@@ -128,8 +132,14 @@ function Forgotpass() {
           </Grid>
           <Grid item xs={12} md={6}>
             <Container className="mt-5 py-5" id="authcard">
-              <Row className="d-flex justify-content-center align-items-center p-4 ">
-                <Col className="bg-light border-0 rounded-2 shadow-sm p-4  ">
+              <Row className="d-flex justify-content-center align-items-center p-4 mx-5">
+                <Col
+                  className="border-0 rounded-2 shadow-sm p-4"
+                  style={{
+                    backgroundColor: "var(--sec-bg)",
+                    color: "var(--text-color)",
+                  }}
+                >
                   <Row className="d-flex justify-content-between align-items-center ">
                     <Col sm={8} className=" text-start">
                       <p className="fw-bold fs-3">Forgot Password?</p>
@@ -203,7 +213,7 @@ function Forgotpass() {
           </Grid>
         </Grid>
       </Container>
-    </>
+    </div>
   );
 }
 

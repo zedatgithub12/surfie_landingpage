@@ -26,7 +26,7 @@ function App() {
   );
 
   const [loged, setLoged] = useState(false);
-  const [user, setUser] = useState({
+  const [user] = useState({
     fname: "",
     mname: "",
     lname: "",
@@ -57,9 +57,6 @@ function App() {
           sessionStorage.clear();
           setLoged(false);
         }
-        {
-          setLoged(false);
-        }
       },
       getToken: async () => {
         const tokenString = sessionStorage.getItem("token");
@@ -73,7 +70,7 @@ function App() {
       },
       isLoggedIn: loged,
     }),
-    []
+    [loged, user]
   );
 
   useEffect(() => {
@@ -82,7 +79,7 @@ function App() {
       setLoged(true);
     }
     return () => {};
-  }, [loged]);
+  }, [loged, user]);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);

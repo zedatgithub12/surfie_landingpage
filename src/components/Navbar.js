@@ -26,7 +26,7 @@ const Navbars = () => {
   return (
     <Navbar className="navbar colored blur" expand="lg" sticky="top">
       <Container fluid>
-        <Navbar.Brand href="/home">
+        <Navbar.Brand href="/">
           <img
             className=" ms-4 "
             src={Surfie}

@@ -1,6 +1,7 @@
 * {
   padding: 0px;
   margin: 0px;
+  font-family: "ROBOTO", sans-serif;
 }
 
 body {
@@ -19,6 +20,14 @@ body {
 
 .primary-bg {
   background-color: #00C6D4;
+}
+
+#primarybg {
+  background-color: #00929c;
+}
+
+.primarytext {
+  color: #00a0ac;
 }
 
 .money-color {
@@ -306,6 +315,12 @@ body {
 
 .blur {
   backdrop-filter: blur(6px);
+}
+
+@media screen and (min-width:10px) and (max-width:280px) {
+  #image {
+    display: none;
+  }
 }
 
 @media screen and (min-width:280px) and (max-width:480px) {
