@@ -3,7 +3,7 @@ import Header from "../components/header";
 import { Container, Row, Col } from "react-bootstrap";
 import {
   FcCalendar,
-  FcOvertime,
+  // FcOvertime,
   FcCollaboration,
   FcStackOfPhotos,
   FcMoneyTransfer,
@@ -29,8 +29,8 @@ function Dashboard() {
     fname: customer.first_name === null ? "" : customer.first_name,
     mname: customer.middle_name === null ? "" : customer.middle_name,
     lname: customer.lname === null ? "" : customer.lname,
-    status: customer.status === null ? "" : customer.status,
-    license: customer.license === null ? "" : customer.license,
+    status: customer.status === null ? "" : parseInt(customer.status),
+    license: customer.license === null ? "" : parseInt(customer.license),
     subscription: customer.subscription === null ? "" : customer.subscription,
     duedate: customer.duedate === null ? "" : customer.duedate,
     email: customer.email === null ? "" : customer.email,
@@ -101,25 +101,30 @@ function Dashboard() {
     return duedate;
   };
 
-  function getDaysLeft(subscriptionEndDate, subscriptionType) {
-    const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
-    const today = new Date();
-    const endDate = new Date(subscriptionEndDate);
-    const diffInTime = endDate.getTime() - today.getTime();
-    const diffInDays = Math.round(diffInTime / oneDay);
+  // const getDaysLeft = (subscriptionEndDate, subscriptionType) => {
+  //   const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
+  //   const today = new Date();
+  //   const endDate = new Date(subscriptionEndDate);
+  //   const diffInTime = endDate.getTime() - today.getTime();
+  //   const diffInDays = Math.ceil(diffInTime / oneDay);
 
-    if (subscriptionType === "monthly") {
-      return diffInDays % 30; // Assuming a month has 30 days
-    } else if (subscriptionType === "annual") {
-      return diffInDays;
-    } else {
-      return null; // Invalid subscription type
-    }
-  }
-
-  // dayleft for next subscription
-  const duedates = user.duedate.slice(0, 10); // YYYY-MM-DD format
-  const monthlyDaysLeft = getDaysLeft(duedates, user.subscription);
+  //   if (subscriptionType === "monthly") {
+  //     const daysInMonth = new Date(
+  //       endDate.getFullYear(),
+  //       endDate.getMonth() + 1,
+  //       0
+  //     ).getDate();
+  //     const daysLeftInMonth = daysInMonth - endDate.getDate();
+  //     return Math.min(diffInDays, daysLeftInMonth);
+  //   } else if (subscriptionType === "annual") {
+  //     return diffInDays;
+  //   } else {
+  //     return null; // Invalid subscription type
+  //   }
+  // };
+  // const duedates = user.duedate.slice(0, 10); // YYYY-MM-DD format
+  // const monthlyDaysLeft = getDaysLeft(duedates, user.subscription);
+  // var totalDaysLeft = parseInt(monthlyDaysLeft);
 
   const Payment = (mode) => {
     var gateway;
@@ -540,7 +545,7 @@ function Dashboard() {
                 <FcMoneyTransfer size={40} className="money-color" />
               </div>
             </Col>
-            <Col className="pt-3">
+            {/* <Col className="pt-3">
               <div className="d-flex justify-content-between align-items-center p-3 shadow border   border-4 border-end-0  border-top-0  border-bottom-0  rounded-3 shadow-sm text-muted fw-semibold">
                 <div>
                   <span
@@ -549,14 +554,14 @@ function Dashboard() {
                       color: "var(--text-color)",
                     }}
                   >
-                    {monthlyDaysLeft}
+                    {totalDaysLeft}
                   </span>
                   <br />
                   <Typography className="text-capitalize">Days left</Typography>
                 </div>
                 <FcOvertime size={40} className="text-warning" />
               </div>
-            </Col>
+            </Col> */}
           </Row>
 
           <Col sm={8}>
@@ -920,7 +925,11 @@ function Dashboard() {
               )}
             </Button>
           ) : initialValue.operation === "deactivate" ? (
-            <Button variant="danger" onClick={() => Deactivate()}>
+            <Button
+              className=" border-0 bg-danger text-white"
+              variant="danger"
+              onClick={() => Deactivate()}
+            >
               {actionload ? (
                 <div
                   class="spinner-border spinner-border-sm text-white"
