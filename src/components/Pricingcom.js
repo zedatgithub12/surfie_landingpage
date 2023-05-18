@@ -76,12 +76,12 @@ function Pricingcom() {
               </div>
               <div className="card-body  ">
                 {monthly ? (
-                  <p className=" pricing-card-title fs-4 pt-2">
+                  <p className=" pricing-card-title fw-semibold fs-4 pt-2">
                     {Pricing.monthlyone} {t("Birr")}{" "}
                     <small className="text-muted fw-light">/{t("month")}</small>
                   </p>
                 ) : (
-                  <p className="pricing-card-title fs-4 pt-2">
+                  <p className="pricing-card-title fw-semibold fs-4 pt-2">
                     {Pricing.annuallyone} {t("Birr")}
                     <small className="text-muted fw-light">
                       /{t("annual")}
@@ -90,12 +90,22 @@ function Pricingcom() {
                 )}
 
                 {monthly ? (
-                  <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>{t("7 days free trial")}</li>
+                  <ul className="list-unstyled mt-4 mb-4 text-muted">
+                    <li className="p-3 fw-bold fs-5 ">
+                      {t("7 days free trial")}
+                    </li>
+                    <span className="py-3 px-2 mt-4 fs-6 text-center fw-normal">
+                      {t("40% Discount on Annual Subscription")}
+                    </span>
                   </ul>
                 ) : (
-                  <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>{t("7 days free trial")}</li>
+                  <ul className="list-unstyled mt-4 mb-4 text-muted">
+                    <li className="p-3 fw-bold fs-5 ">
+                      {t("7 days free trial")}
+                    </li>
+                    <span className="py-3 px-2 mt-4 fs-6 text-center fw-normal">
+                      {t("40% Discount on Annual Subscription")}
+                    </span>
                   </ul>
                 )}
 
@@ -133,12 +143,12 @@ function Pricingcom() {
               </div>
               <div className="card-body">
                 {monthly ? (
-                  <p className="pricing-card-title fs-4 pt-2">
+                  <p className="pricing-card-title fs-4 fw-semibold pt-2">
                     {Pricing.monthlythree} {t("Birr")}{" "}
                     <small className="text-muted fw-light">/{t("month")}</small>
                   </p>
                 ) : (
-                  <p className="card-title pricing-card-title fs-4 pt-2">
+                  <p className="card-title pricing-card-title fw-semibold fs-4 pt-2">
                     {Pricing.annuallythree} {t("Birr")}
                     <small className="text-muted fw-light">
                       /{t("annual")}
@@ -146,12 +156,22 @@ function Pricingcom() {
                   </p>
                 )}
                 {monthly ? (
-                  <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>{t("7 days free trial")}</li>
+                  <ul className="list-unstyled mt-4 mb-4 text-muted">
+                    <li className="p-3 fw-bold fs-5">
+                      {t("7 days free trial")}
+                    </li>
+                    <span className="py-3 px-2 mt-4 fs-6 text-center fw-normal">
+                      {t("40% Discount on Annual Subscription")}
+                    </span>
                   </ul>
                 ) : (
-                  <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>{t("7 days free trial")}</li>
+                  <ul className="list-unstyled mt-4 mb-4 text-muted">
+                    <li className="p-3 fw-bold fs-5">
+                      {t("7 days free trial")}
+                    </li>
+                    <span className="py-3 px-2 mt-4 fs-6 text-center fw-normal">
+                      {t("40% Discount on Annual Subscription")}
+                    </span>
                   </ul>
                 )}
               </div>
@@ -182,13 +202,13 @@ function Pricingcom() {
               </div>
               <div className="card-body">
                 {monthly ? (
-                  <p className="card-title pricing-card-title fs-4  pt-2">
+                  <p className="card-title pricing-card-title fs-4 fw-semibold pt-2">
                     {Pricing.monthlyfive}
-                    {t("Birr")}
+                    {t(" Birr ")}
                     <small className="text-muted fw-light">/{t("month")}</small>
                   </p>
                 ) : (
-                  <p className="card-title pricing-card-title fs-4  pt-2">
+                  <p className="card-title pricing-card-title fs-4 fw-semibold pt-2">
                     {Pricing.annuallyfive} {t("Birr")}
                     <small className="text-muted fw-light">
                       /{t("annual")}
@@ -196,12 +216,22 @@ function Pricingcom() {
                   </p>
                 )}
                 {monthly ? (
-                  <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>{t("7 days free trial")}</li>
+                  <ul className="list-unstyled mt-4 mb-4 text-muted">
+                    <li className="p-3 fw-bold fs-5">
+                      {t("7 days free trial")}
+                    </li>
+                    <span className="py-3 px-2 mt-4 fs-6 text-center fw-normal">
+                      {t("40% Discount on Annual Subscription")}
+                    </span>
                   </ul>
                 ) : (
-                  <ul className="list-unstyled mt-5 mb-5 text-muted">
-                    <li>{t("7 days free trial")}</li>
+                  <ul className="list-unstyled mt-4 mb-4 text-muted">
+                    <li className="p-3 fw-bold fs-5">
+                      {t("7 days free trial")}
+                    </li>
+                    <span className="py-3 px-2 mt-4 fs-6 text-center fw-normal">
+                      {t("40% Discount on Annual Subscription")}
+                    </span>
                   </ul>
                 )}
               </div>

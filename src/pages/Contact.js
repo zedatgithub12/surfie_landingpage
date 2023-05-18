@@ -69,7 +69,7 @@ const Contact = () => {
         ...info,
         loading: true,
       });
-      var Api = Connection.api + Connection.newQuery;
+      var Api = Connection.api + Connection.newquery;
 
       var data = {
         fullname: info.username,

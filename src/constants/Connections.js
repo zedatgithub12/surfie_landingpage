@@ -12,6 +12,9 @@ const Connection = {
   upgrade: "/upgrade/",
   changeLicense: "/add/",
   deactivate: "/deactivate/",
+
+  // support
+  newquery: "/newquery",
 };
 
 export default Connection;
