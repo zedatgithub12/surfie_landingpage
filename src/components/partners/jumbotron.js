@@ -23,9 +23,11 @@ const Jumbotron = () => {
             {t("Refer & Earn")}
           </Typography>
           <Typography className="display-5  mt-2 mb-3 ms-2 text-capitalize">
-            {t("Become partner, invite parents and get additional income")}
+            {t(
+              "Be partner, invite parents or caregivers and get performance based revenue through our affiliate marketing program."
+            )}
           </Typography>
-        
+
           <Button
             component="a"
             href="https://partners.surfieethiopia.com/"

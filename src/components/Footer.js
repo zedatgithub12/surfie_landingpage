@@ -190,7 +190,7 @@ const Footer = () => {
 
             <li className="m-2">
               <NavLink
-                to="https://www.facebook.com/profile.php?id=100091743150937"
+                to="https://www.facebook.com/profile.php?id=100092520501518"
                 target="_blank"
                 className="nav-link "
               >
