@@ -202,20 +202,37 @@ function Dashboard() {
     setUpgrade(false);
     setRenew(!renew);
   };
+
   const UpgradeSub = () => {
     setRenew(false);
     setUpgrade(!upgrade);
   };
-  const AddSubscription = () => {
+
+  const getCsrfToken = async () => {
+    var Api = Connection.api;
+    const response = await fetch(Api + "/sanctum/csrf-cookie", {
+      method: "GET",
+      credentials: "include", // Include cookies in the request
+    });
+    if (response.ok) {
+      const data = await response.json();
+      return data.csrf_token;
+    }
+    throw new Error("Failed to retrieve CSRF token");
+  };
+
+  const AddSubscription = async () => {
     var currentPackages = `AFROMINA_${initialValue.currentPlan}`;
     var packages = `AFROMINA_${license}`;
 
     setactionload(true);
 
     var Api = Connection.api + Connection.changeLicense + customer.id;
+    const token = await getCsrfToken();
     var headers = {
       accept: "application/json",
       "Content-Type": "application/json",
+      "X-CSRF-TOKEN": token,
     };
 
     var Data = {
@@ -228,6 +245,7 @@ function Dashboard() {
 
     fetch(Api, {
       method: "PUT",
+      credentials: "include",
       headers: headers,
       body: JSON.stringify(Data),
     })
@@ -292,14 +310,17 @@ function Dashboard() {
       });
   };
   // deactivate customer account
-  const Deactivate = () => {
+  const Deactivate = async () => {
     if (initialValue.cid !== "") {
       setactionload(true);
 
       var Api = Connection.api + Connection.deactivate + customer.id;
+
+      const token = await getCsrfToken();
       var headers = {
         accept: "application/json",
         "Content-Type": "application/json",
+        "X-CSRF-TOKEN": token,
       };
 
       var Data = {
@@ -310,6 +331,7 @@ function Dashboard() {
 
       fetch(Api, {
         method: "PUT",
+        credentials: "include",
         headers: headers,
         body: JSON.stringify(Data),
       })
@@ -366,12 +388,15 @@ function Dashboard() {
       setactionload(false);
     }
   };
-  const handleRenewal = () => {
+  const handleRenewal = async () => {
     setRenewLoader(true);
     var Api = Connection.api + Connection.renew + customer.id;
+
+    const token = await getCsrfToken();
     var headers = {
       accept: "application/json",
       "Content-Type": "application/json",
+      "X-CSRF-TOKEN": token,
     };
     var data = {
       id: customer.id,
@@ -379,6 +404,7 @@ function Dashboard() {
     };
     fetch(Api, {
       method: "POST",
+      credentials: "include",
       headers: headers,
       body: JSON.stringify(data),
     })
@@ -416,12 +442,15 @@ function Dashboard() {
         setOpen(true);
       });
   };
-  const handleUpgrade = () => {
+  const handleUpgrade = async () => {
     setUpgradeLoader(true);
     var Api = Connection.api + Connection.upgrade + customer.id;
+
+    const token = await getCsrfToken();
     var headers = {
       accept: "application/json",
       "Content-Type": "application/json",
+      "X-CSRF-TOKEN": token,
     };
     var data = {
       channel: pmodal,
@@ -429,6 +458,7 @@ function Dashboard() {
 
     fetch(Api, {
       method: "POST",
+      credentials: "include",
       headers: headers,
       body: JSON.stringify(data),
     })
