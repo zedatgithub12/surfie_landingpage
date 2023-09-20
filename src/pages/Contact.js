@@ -47,7 +47,20 @@ const Contact = () => {
     });
   };
 
-  const DropMessage = () => {
+  const getCsrfToken = async () => {
+    var Api = Connection.api;
+    const response = await fetch(Api + "/sanctum/csrf-cookie", {
+      method: "GET",
+      credentials: "include", // Include cookies in the request
+    });
+    if (response.ok) {
+      const data = await response.json();
+      return data.csrf_token;
+    }
+    throw new Error("Failed to retrieve CSRF token");
+  };
+
+  const DropMessage = async () => {
     const re = /\S+@\S+\.\S+/;
 
     if (info.username === "" || info.email === "" || info.message === "") {
@@ -78,11 +91,15 @@ const Contact = () => {
         status: "0",
       };
 
+      const token = await getCsrfToken();
+
       fetch(Api, {
         method: "POST",
+        credentials: "include",
         headers: {
           accept: "application/json",
           "Content-Type": "application/json",
+          "X-CSRF-TOKEN": token,
         },
         body: JSON.stringify(data),
       })

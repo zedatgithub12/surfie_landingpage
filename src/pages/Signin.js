@@ -45,7 +45,21 @@ function Auth() {
       password: event.target.value,
     });
   };
-  const Login = () => {
+
+  const getCsrfToken = async () => {
+    var Api = Connection.api;
+    const response = await fetch(Api + "/sanctum/csrf-cookie", {
+      method: "GET",
+      credentials: "include", // Include cookies in the request
+    });
+    if (response.ok) {
+      const data = await response.json();
+      return data.csrf_token;
+    }
+    throw new Error("Failed to retrieve CSRF token");
+  };
+
+  const Login = async () => {
     const re = /\S+@\S+\.\S+/;
     if (logInput.email === "") {
       setLogInput({
@@ -72,9 +86,12 @@ function Auth() {
       setLogSpinner(true);
       //the api call to the backend of the system will be made from here!
       var Api = Connection.api + Connection.login;
+
+      const token = await getCsrfToken();
       var headers = {
         accept: "application/json",
         "Content-Type": "application/json",
+        "X-CSRF-TOKEN": token,
       };
 
       var data = {
@@ -84,6 +101,7 @@ function Auth() {
 
       fetch(Api, {
         method: "POST",
+        credentials: "include",
         headers: headers,
         body: JSON.stringify(data),
       })
