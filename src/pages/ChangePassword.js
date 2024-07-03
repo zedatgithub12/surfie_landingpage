@@ -74,7 +74,20 @@ const ChangePassword = () => {
     }
   };
 
-  const SubmitChange = () => {
+  const getCsrfToken = async () => {
+    var Api = Connection.api;
+    const response = await fetch(Api + "/sanctum/csrf-cookie", {
+      method: "GET",
+      credentials: "include", // Include cookies in the request
+    });
+    if (response.ok) {
+      const data = await response.json();
+      return data.csrf_token;
+    }
+    throw new Error("Failed to retrieve CSRF token");
+  };
+
+  const SubmitChange = async () => {
     if (state.oldpassword === "") {
       setState({
         ...state,
@@ -121,9 +134,12 @@ const ChangePassword = () => {
       // the api call code is going to be written here
       setChanging(true);
       var Api = Connection.api + Connection.changepassword + customer.id;
+
+      const token = await getCsrfToken();
       var headers = {
         accept: "application/json",
         "Content-Type": "application/json",
+        "X-CSRF-TOKEN": token,
       };
       var Data = {
         oldpass: state.oldpassword,
@@ -132,6 +148,7 @@ const ChangePassword = () => {
 
       fetch(Api, {
         method: "PUT",
+        credentials: "include",
         headers: headers,
         body: JSON.stringify(Data),
       })
